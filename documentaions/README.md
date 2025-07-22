@@ -1,4 +1,4 @@
-# Bahelorarbeit
+# BACHELORARBEIT
 
 ---
 
@@ -8,7 +8,7 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 ## Forschungsfragen
 * Wie kann heterogenes Dokumentenmaterial (HTML, Word, Excel, PDF) automatisiert in ein einheitliches Markdown-Format überführt und in einer Vektor-Datenbank indexiert werden?
 * Welches Chunking-Konzept (Chunk-Größe und Überlappung) optimiert die Retrieval-Performance im RAG-Kontext?
-* In welchem Maße erhöht Fine-Tuning die Qualität der generierten Antworten im Vergleich zu reinem Prompt-Engineering?
+* In welchem Maße erhöht Fine-Tuning und Reranking die Qualität der generierten Antworten im Vergleich zu reinem Prompt-Engineering?
 * Wie kann die Pipeline so automatisiert werden, dass Aktualisierungen der Wissensbasis ohne manuellen Eingriff kontinuierlich integriert werden?
 
 ## Zielsetzung & Abgrenzung
@@ -28,10 +28,50 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 
 
 ## Literaturrecherche
-1. [**Amazon-Buch**: Building Intelligent Systems with RAG 2.0](https://www.amazon.de/gp/product/B0F91NZQVF/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
+### Bücher
+- [Building Intelligent Systems with RAG 2.0: Develop Next-Gen LLM Applications with LangChain, OpenAI, Pinecone, FAISS, Vector Databases, and LLMOps Tools](https://www.amazon.de/gp/product/B0F91NZQVF/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
 
-## Online-Ressourcen
-1. [**Coursera-Project:** Generative AI Applications with RAG and LangChain](https://www.coursera.org/learn/project-generative-ai-applications-with-rag-and-langchain)
+### Wissenschaftliche Fachartikeln für die Forschungsfragen
+
+1. Wie kann heterogenes Dokumentenmaterial (HTML, Word, Excel, PDF) automatisiert in ein einheitliches Markdown-Format überführt und in einer Vektor-Datenbank indexiert werden?
+   
+    **Fachartikel 1**: 
+
+    **Fachartikel 2**: 
+ 
+
+2. Welches Chunking-Konzept (Chunk-Größe und Überlappung) optimiert die Retrieval-Performance im RAG-Kontext?
+   
+    **Fachartikel 1**: [arxiv: Chunk-Größe](https://arxiv.org/pdf/2505.21700)
+
+    **Fachartikel 2**: 
+ 
+ 
+3. In welchem Maße erhöht Fine-Tuning und Reranking die Qualität der generierten Antworten im Vergleich zu reinem Prompt-Engineering?
+   
+    **Fachartikel 1**: 
+
+    **Fachartikel 2**: [arxiv: Reranking](https://arxiv.org/pdf/2507.12378)
+
+    **Fachartikel 3**: 
+
+
+4. Wie kann die Pipeline so automatisiert werden, dass Aktualisierungen der Wissensbasis ohne manuellen Eingriff kontinuierlich integriert werden?
+   
+    **Fachartikel 1**: 
+
+    **Fachartikel 2**: 
+ 
+
+
+### Offizielle Dokumentationen
+
+- ...
+
+### Online-Ressourcen
+- [**Coursera-Project:** Generative AI Applications with RAG and LangChain](https://www.coursera.org/learn/project-generative-ai-applications-with-rag-and-langchain)
+
+
 
 ---
 
