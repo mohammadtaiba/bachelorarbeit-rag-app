@@ -3,28 +3,45 @@
 ---
 
 ## Thema 
-Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer Fragen auf Grundlage einer dynamisch aktualisierten Wissensdatenbank
+Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer Fragen auf Grundlage einer dynamisch aktualisierten Wissensdatenbank für die Analyse von Nachhaltigkeitsberichten
+
+---
+
+## Motivation
+
+* **Bedarf**: Aktuelle KI-Tools können PDF-basierte Nachhaltigkeitsberichte nicht direkt durchsuchen und verarbeiten.
+* **Bibliotheken-Check**: Untersuchung geeigneter Open-Source-Bibliotheken zur Extraktion PDF-/HTML-Dokumenten für die weitere Verarbeitung.
+* **Domain-Fokus**: Automatisierte Analyse von Nachhaltigkeitsberichten von Stadtquartieren.
+
+---
 
 ## Forschungsfragen
-* Wie kann heterogenes Dokumentenmaterial (HTML, Word, Excel, PDF) automatisiert in ein einheitliches Markdown-Format überführt und in einer Vektor-Datenbank indexiert werden?
-* Welches Chunking-Konzept (Chunk-Größe und Überlappung) optimiert die Retrieval-Performance im RAG-Kontext?
-* In welchem Maße erhöht Fine-Tuning und Reranking die Qualität der generierten Antworten im Vergleich zu reinem Prompt-Engineering?
-* Wie kann die Pipeline so automatisiert werden, dass Aktualisierungen der Wissensbasis ohne manuellen Eingriff kontinuierlich integriert werden?
+1. Wie kann Dokumentenmaterial wie PDF-Dateien HTML-Seiten aus externen Quellen automatisiert extrahiert, in einer Vektor-Datenbank indexiert und Aktualisierungen der Wissensbasis ohne manuellen Eingriff kontinuierlich integriert werden?
+2. Welches Chunking-Konzept (Chunk-Größe und Überlappung) optimiert die Retrieval-Performance im RAG-Kontext?
+3. In welchem Maße erhöht Fine-Tuning und Reranking die Qualität der generierten Antworten im Vergleich zu reinem Prompt-Engineering?
 
-## Zielsetzung & Abgrenzung
+---
 
-### Zielsetzung
+## Zielsetzung
 * Konzeption und prototypische Implementierung einer modularen RAG-Pipeline.
 * Automatisierte Transformation heterogener Dokumente in Markdown und Indexierung in einer Vektor-DB.
-* Entwicklung einer Web-UI zur interaktiven Frage-Antwort-Nutzung.
+* Entwicklung einer Web-UI zur interaktiven Frage-Antwort-Nutzung für Nachhaltigkeitsberichte.
 * Systematische Evaluation von Chunk-Parametern (Größe, Overlap) und Fine-Tuning vs. Prompt-Engineering.
 * Implementierung einer Automatisierungslogik für kontinuierliche Integration neuer Dokumente.
 
-### Abgrenzung
+---
+
+## Abgrenzung
 #### Nicht Teil der Arbeit sind:
 * Die Entwicklung eigener Sprachmodelle; es wird bestehende GPT-Modelle genutzt.
 * Es wird nicht geprüft, ob der Inhalt der Dokumente korrekt, aktuell, relevant oder qualitativ hochwertig ist.
 * Eine tiefgehende Auseinandersetzung mit rechtlichen, ethischen oder sicherheitstechnischen Aspekten im Zusammenhang mit dem Einsatz generativer KI.
+
+---
+
+## Use Cases des Chatbots
+* **Innovative Maßnahmen**: Welche interessanten und innovativen Maßnahmen und Ideen helfen, Nachhaltigkeitsziele im Stadtquartier zu erreichen?
+* **Textbaustein-Generierung**: Welche Textbausteine lassen sich automatisiert für Nachhaltigkeitsberichte erstellen, um die Erstellung zu beschleunigen?
 
 
 ## Literaturrecherche
@@ -33,36 +50,27 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 
 ### Wissenschaftliche Fachartikeln für die Forschungsfragen
 
-1. Wie kann heterogenes Dokumentenmaterial (HTML, Word, Excel, PDF) automatisiert in ein einheitliches Markdown-Format überführt und in einer Vektor-Datenbank indexiert werden?
-   
+1. Dokumententransformation & Automatisierung
+
     **Fachartikel 1**: 
 
     **Fachartikel 2**: 
  
 
-2. Welches Chunking-Konzept (Chunk-Größe und Überlappung) optimiert die Retrieval-Performance im RAG-Kontext?
+2. Chunking-Konzept
    
     **Fachartikel 1**: [arxiv: Chunk-Größe](https://arxiv.org/pdf/2505.21700)
 
     **Fachartikel 2**: 
  
  
-3. In welchem Maße erhöht Fine-Tuning und Reranking die Qualität der generierten Antworten im Vergleich zu reinem Prompt-Engineering?
+3. Fine-Tuning vs. Prompt-Engineering
    
     **Fachartikel 1**: 
 
     **Fachartikel 2**: [arxiv: Reranking](https://arxiv.org/pdf/2507.12378)
 
-    **Fachartikel 3**: 
-
-
-4. Wie kann die Pipeline so automatisiert werden, dass Aktualisierungen der Wissensbasis ohne manuellen Eingriff kontinuierlich integriert werden?
-   
-    **Fachartikel 1**: 
-
-    **Fachartikel 2**: 
- 
-
+    **Fachartikel 3**:
 
 ### Offizielle Dokumentationen
 
