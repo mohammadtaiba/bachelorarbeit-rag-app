@@ -76,23 +76,33 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 
 ---
 
-## Domain-Ideen
+## Domain
 
-### 1. Kundensupport
+### Ideen:
+
+#### 1. Kundensupport
 * Intelligente Beantwortung von Nutzerfragen zu Produkten und Services anhand von Handbüchern, FAQs und Support-Tickets
 
-### 2. Produktions- und Fertigungsindustrie
+#### 2. Produktions- und Fertigungsindustrie
 * Unterstützung bei technischen Fragen zu Prozessen, Maschinenwartung und Qualitätsstandards.
 
-### 3. Tourismus und Kultur
+#### 3. Tourismus und Kultur
 * Auskunft zu Sehenswürdigkeiten, Routen und kulturellen Hintergründen auf Basis von Reiseführern und Webseiten.
 
-### 4. Gesundheitswesen
+#### 4. Gesundheitswesen
 * Beantwortung medizinischer Fachfragen auf Basis von Leitlinien, Studien und Patientenbroschüren.
 
-### 5. Rechtliche Fachberatung
+#### 5. Rechtliche Fachberatung
 * Automatisierte Beantwortung von Fragen zu Gesetzen, Verträgen und Urteilen mithilfe einer dynamischen Datenbank aus Rechtsdokumenten
 
+
+### Entscheidung
+
+#### Kundensupport, weil
+
+- Praxisrelevanz
+- Verfügbarkeit heterogener Dokumente
+- Bewertbarkeit
 
 
 ---
