@@ -43,10 +43,12 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 * **Innovative Maßnahmen**: Welche interessanten und innovativen Maßnahmen und Ideen helfen, Nachhaltigkeitsziele im Stadtquartier zu erreichen?
 * **Textbaustein-Generierung**: Welche Textbausteine lassen sich automatisiert für Nachhaltigkeitsberichte erstellen, um die Erstellung zu beschleunigen?
 
+---
 
 ## Literaturrecherche
 ### Bücher
-- [Building Intelligent Systems with RAG 2.0: Develop Next-Gen LLM Applications with LangChain, OpenAI, Pinecone, FAISS, Vector Databases, and LLMOps Tools](https://www.amazon.de/gp/product/B0F91NZQVF/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
+- [Building Intelligent Systems with RAG 2.0: Develop Next-Gen LLM Applications with LangChain, OpenAI, Pinecone, FAISS, Vector Databases, and LLMOps Tools.](https://www.amazon.de/gp/product/B0F91NZQVF/ref=ox_sc_saved_image_1?smid=A3JWKAKR8XB7XF&psc=1)
+- [AI Prompt Engineering Bible (7 Books in 1): Beginner-to-Pro System to Master ChatGPT and Generative AI for Powerful Results and Real Income.](https://www.amazon.de/Prompt-Engineering-Bible-Books-Beginner/dp/B0FHFL61PB/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&sr=8-1)
 
 ### Wissenschaftliche Fachartikeln für die Forschungsfragen
 
