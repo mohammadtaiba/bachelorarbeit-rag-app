@@ -74,10 +74,11 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 
     **Fachartikel 3**:
 
-### Offizielle Dokumentationen
+### Offizielle Dokumentationen (technische Referenzen)
 
 - [**llamaindex**](https://docs.llamaindex.ai/en/stable/getting_started/concepts/)
   - [**RAG-Understanding**](https://docs.llamaindex.ai/en/stable/understanding/rag/)
+  - [**Chat Engine**](https://docs.llamaindex.ai/en/stable/module_guides/deploying/chat_engines/)
 
 ### Online-Ressourcen
 - [**Coursera-Project:** Generative AI Applications with RAG and LangChain](https://www.coursera.org/learn/project-generative-ai-applications-with-rag-and-langchain)
