@@ -24,7 +24,6 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 
 ## Zielsetzung
 * Konzeption und prototypische Implementierung einer modularen RAG-Pipeline.
-* Automatisierte Transformation heterogener Dokumente in Markdown und Indexierung in einer Vektor-DB.
 * Entwicklung einer Web-UI zur interaktiven Frage-Antwort-Nutzung für Nachhaltigkeitsberichte.
 * Systematische Evaluation von Chunk-Parametern (Größe, Overlap) und Fine-Tuning vs. Prompt-Engineering.
 * Implementierung einer Automatisierungslogik für kontinuierliche Integration neuer Dokumente.
