@@ -1,6 +1,6 @@
 # Ordnerstruktur: 
 ```
-mini_lusd_bot/
+rag2-app/
 │
 ├── .gitignore
 ├── .env
@@ -9,20 +9,22 @@ mini_lusd_bot/
 │
 ├── core/
 │   ├── __init__
-│   ├── ingestion.py         # Doku laden + indexieren
-│   ├── config.py
+│   ├── ingestion.py         # md-Dateien laden + indexieren
+│   ├── config.py            # Globale Variablen
 │   └── retrieval.py         # Anfrage beantworten
 │
 ├── data/
-│   ├── raw/                # enthält alle Dateien
-│   └── markdown/           # enthält die konvertierte markdown-dateien                
+│   ├── raw/                 # enthält alle Dateien
+│   ├── upload/              # enthält alle neue Dateien
+│   └── markdown/            # enthält die konvertierte markdown-dateien (automatisch generiert)            
 │
 ├── units/
 │   ├── __init__
 │   ├── chunking.py
 │   ├── lmstudio_embed.py
 │   ├── loaders.py
-│   └── ...
+│   ├── cleanup_md.py
+│   └── raw2markdown.py
 │
 └── db/
     └── chromadb/            # Vektor-Datenbank (automatisch generiert)
