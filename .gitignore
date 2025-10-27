@@ -1,1 +1,17 @@
+# Virtual environments
+.venv/
+
+# IDEs
+.idea/
+.vscode/
+
 .env
+
+# DB
+db/
+
+# Streamlit cache
+.streamlit/
+
+# Evaluation outputs
+core/evaluation/results/**

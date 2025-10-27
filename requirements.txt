@@ -1,30 +1,16 @@
-# Core
-langchain                   # Framework for building LLM pipelines
-python-dotenv               # Manage environment variables and API keys
-streamlit                   # Simple UI framework for RAG applications
+# Requirements.txt
+## Basis
+streamlit                               # UI
+tiktoken                                # Tokenizer
+pymupdf                                 # PDF-Parsing
+openai
+python-dotenv
+pypandoc                                # für docx
+pypandoc-binary                         # für docx
 
-# Document Ingestion
-pypdf                       # PDF ingestion and chunking
-python-docx                 # Extract text from Word (.docx) documents
-openpyxl                    # Read/write Excel (.xlsx) spreadsheets
-markdownify                 # Convert HTML content into Markdown
-pandas                      # Data manipulation and tabular preprocessing
-filetype                    # Detect and verify file formats reliably
-
-# Embeddings / Vector Store / RAG
-openai                      # Compute embeddings via OpenAI API
-sentence-transformers       # Pre-trained models for local embedding (optional)
-torch                       # Backend for sentence-transformers (oder tensorflow)
-chromadb                    # Vector database for similarity search
-
-# Automatisierung
-watchdog                    # Monitor filesystem changes for automated re-indexing
-apscheduler                 # Schedule periodic jobs (z. B. Re-Chunking, Sync-Tasks)
-
-# Feintuning
-datasets                    # Laden und Vorbereiten von Datensätzen für Fine-Tuning
-accelerate                  # Optimiertes Training & verteiltes Fine-Tuning
-
-# Utility
-black                       # Code-Formatter für konsistenten Stil
-flake8                      # Linter zur Durchsetzung von Code-Qualitätsstandards
+## LangChain
+langchain>=0.3,<0.4                     # Kern-Framework
+langchain-community>=0.3,<0.4           # Loader, Ollama, Vectorstores
+langchain-text-splitters>=0.3,<0.4      # Offizielle Splitter
+langchain-chroma>=0.2.6
+langchain-openai>=0.2,<0.3
