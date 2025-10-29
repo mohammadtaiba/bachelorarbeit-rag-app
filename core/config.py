@@ -17,6 +17,12 @@ COLLECTION       = os.getenv("COLLECTION")
 RAW_DIR = Path("data/raw")
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
+UPLOAD_DIR = Path("data/upload")
+UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+
+MARKDOWN_TEMP_DIR = Path("data/markdown_temp")
+MARKDOWN_TEMP_DIR.mkdir(parents=True, exist_ok=True)
+
 MARKDOWN_DIR = Path("data/markdown")
 MARKDOWN_DIR.mkdir(parents=True, exist_ok=True)
 

@@ -82,8 +82,6 @@ def answer(q: str) -> str:
 
     return out["result"]
 
-
-
 if __name__ == "__main__":
     print()
 

@@ -1,6 +1,6 @@
 # utils/cleanup_md.py
 import re
-from core.config import MARKDOWN_DIR
+from core.config import MARKDOWN_TEMP_DIR
 
 # --- Regex-Definitionen ---
 # HTML-Elemente entfernen
@@ -22,9 +22,9 @@ TOC_TAG_RE = re.compile(r"#?_Toc\d+", re.IGNORECASE) # Anker für Tabellen
 REFERENCE_LINE_RE = re.compile(r"^\s*\[\d+\]:\s*$", re.MULTILINE) # Pandoc-Referenzlinks
 
 def cleanup_md():
-    print("Starte Bereinigung der Markdown-Dateien ...")
+    print("Bereinige der Markdown-Dateien ...")
     for ext in ("*.md", "*.gfm"):
-        for md_file in MARKDOWN_DIR.glob(ext):
+        for md_file in MARKDOWN_TEMP_DIR.glob(ext):
             text = md_file.read_text(encoding="utf-8")
 
             # HTML-Elemente entfernen
