@@ -11,7 +11,6 @@ from utils.file_operation import( convert_doc_to_docx,
                                   delete_doc_files,
                                   move_upload2raw,
                                   move_temp2markdown)
-
 from core.config import * # Alle globale Variablen & .env-Variablen stecken hier
 
 def ingestion():
@@ -31,7 +30,7 @@ def ingestion():
         docs = load_docs()
 
         # 4) Chunking
-        chunks = chunk_documents(docs, 512, 75)
+        chunks = chunk_documents(docs, 900, 90)
 
         # 5) Embeddings
         embeddings = LMStudioEmbeddings(model=EMBED_MODEL,  base_url=LMSTUDIO_URL, api_key=LMSTUDIO_API_KEY)

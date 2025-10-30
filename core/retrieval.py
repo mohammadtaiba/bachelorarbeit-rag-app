@@ -9,6 +9,7 @@ from chromadb.config import Settings
 from langchain_openai import ChatOpenAI
 from utils.lmstudio_embed import LMStudioEmbeddings
 from core.config import * # Alle globale Variablen & .env-Variablen stecken hier
+from utils.next_neighbor_retriever import NextNeighborRetriever
 
 
 
@@ -30,7 +31,9 @@ def get_chain():
     )
 
     # 3) Retriever
-    retriever = vectordb.as_retriever(search_kwargs={"k": 8})
+    base_retriever = vectordb.as_retriever(search_kwargs={"k": 5})
+    retriever = NextNeighborRetriever(base=base_retriever, vectordb=vectordb, cap=10)
+
 
     # 4) LLM
     llm = ChatOpenAI(
@@ -72,6 +75,7 @@ def answer(q: str) -> str:
     out = chain.invoke({"query": q})
     print(f"invoke-Laufzeit: {(time.perf_counter() - tmp_time) * 1000:.0f} ms")
 
+    """
     # Quelle(n) anzeigen
     print("\n--- Gefundene Chunks ---")
     for i, doc in enumerate(out["source_documents"], 1):
@@ -79,13 +83,13 @@ def answer(q: str) -> str:
         print(doc.page_content, "\n")
         print("\n---\n")
     print("\n--- Ende der Chunks. ---")
-
+    """
     return out["result"]
 
 if __name__ == "__main__":
     print()
 
-""" # Schleife
+""" # Endlose Schleife
 frage = " zusätzliche Instanzen"
 while True:
     result = answer(frage)
