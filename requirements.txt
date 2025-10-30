@@ -7,6 +7,7 @@ openai
 python-dotenv
 pypandoc                                # für docx
 pypandoc-binary                         # für docx
+pywin32
 
 ## LangChain
 langchain>=0.3,<0.4                     # Kern-Framework
