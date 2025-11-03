@@ -8,6 +8,7 @@ python-dotenv
 pypandoc                                # für docx
 pypandoc-binary                         # für docx
 pywin32
+pymupdf4llm
 
 ## LangChain
 langchain>=0.3,<0.4                     # Kern-Framework

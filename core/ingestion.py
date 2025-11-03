@@ -1,8 +1,9 @@
 # core/ingestion.py
+from pathlib import Path
+
 from langchain_chroma import Chroma
 from chromadb.config import Settings
-
-from utils.lmstudio_embed import LMStudioEmbeddings
+from utils.ollama_embed import OllamaEmbeddings
 from utils.chunking import chunk_documents
 from utils.loaders import load_docs
 from utils.raw2markdown import convert_all_to_markdown
@@ -11,11 +12,11 @@ from utils.file_operation import( convert_doc_to_docx,
                                   delete_doc_files,
                                   move_upload2raw,
                                   move_temp2markdown)
-from core.config import * # Alle globale Variablen & .env-Variablen stecken hier
+from core.preprocess import *
 
 def ingestion():
 
-    if any(Path(UPLOAD_DIR).glob("*")):
+    if any(Path(UPLOAD_PATH).glob("*")):
         print("Rohdateien gefunden, starte Ingestion ...")
 
         # 1) Konvertierung
@@ -30,10 +31,10 @@ def ingestion():
         docs = load_docs()
 
         # 4) Chunking
-        chunks = chunk_documents(docs, 900, 90)
+        chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
 
         # 5) Embeddings
-        embeddings = LMStudioEmbeddings(model=EMBED_MODEL,  base_url=LMSTUDIO_URL, api_key=LMSTUDIO_API_KEY)
+        embeddings = OllamaEmbeddings(model=EMBED_MODEL,  base_url=OLLAMA_URL)
 
         # 6) IN Chroma-DB speichern
         # 6.1) Chroma initialisieren

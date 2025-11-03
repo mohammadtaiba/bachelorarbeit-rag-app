@@ -1,6 +1,6 @@
 # utils/file_operations.py
 from pathlib import Path
-from core.config import UPLOAD_DIR, RAW_DIR, MARKDOWN_DIR, MARKDOWN_TEMP_DIR
+from core.preprocess import UPLOAD_PATH, RAW_PATH, FINAL_MD_PATH, TEMP_MD_PATH
 import shutil
 
 # --- Hilfsfunktion ---
@@ -19,7 +19,7 @@ def convert_doc_to_docx():
     import pythoncom
     import win32com.client as win32
 
-    doc_files = sorted(UPLOAD_DIR.glob("*.doc"))
+    doc_files = sorted(UPLOAD_PATH.glob("*.doc"))
     print("Gefundene DOC-Dateien:", [f.name for f in doc_files])
 
     if not doc_files:
@@ -64,7 +64,7 @@ def convert_doc_to_docx():
 
 def delete_doc_files():
     print("Lösche doc-Dateien ...")
-    doc_files = list(UPLOAD_DIR.glob("*.doc"))
+    doc_files = list(UPLOAD_PATH.glob("*.doc"))
 
     if not doc_files:
         print("Keine DOC-Dateien zum Löschen gefunden.")
@@ -79,10 +79,10 @@ def delete_doc_files():
     print("Lösche beendet.")
 
 
-# Verschiebt alle Dateien aus UPLOAD_DIR → RAW_DIR.
+# Verschiebt alle Dateien aus UPLOAD_PATH → RAW_PATH.
 def move_upload2raw():
-    print("Verschiebe aus UPLOAD_DIR → RAW_DIR ...")
-    files = list(UPLOAD_DIR.glob("*"))
+    print("Verschiebe aus UPLOAD_PATH → RAW_PATH ...")
+    files = list(UPLOAD_PATH.glob("*"))
 
     if not files:
         print("Keine Dateien in upload/ gefunden.")
@@ -90,7 +90,7 @@ def move_upload2raw():
 
     for f in files:
         try:
-            target = RAW_DIR / f.name   # baut einfach den Zielpfad zusammen
+            target = RAW_PATH / f.name   # baut einfach den Zielpfad zusammen
             shutil.move(str(f), target) # verschiebt die Datei f an den neuen Ort target
             print(f"    - {f.name} → nach raw/ verschoben")
         except Exception as e:
@@ -98,11 +98,11 @@ def move_upload2raw():
     print("Verschiebung abgeschlossen.")
 
 
-# Verschiebt alle Dateien aus MARKDOWN_TEMP_DIR → MARKDOWN_DIR.
+# Verschiebt alle Dateien aus TEMP_MD_PATH → FINAL_MD_PATH.
 def move_temp2markdown():
-    print("Verschiebe aus MARKDOWN_TEMP_DIR → MARKDOWN_DIR ...")
-    MARKDOWN_DIR.mkdir(parents=True, exist_ok=True)
-    files = list(MARKDOWN_TEMP_DIR.glob("*.md"))
+    print("Verschiebe aus TEMP_MD_PATH → FINAL_MD_PATH ...")
+    FINAL_MD_PATH.mkdir(parents=True, exist_ok=True)
+    files = list(TEMP_MD_PATH.glob("*.md"))
 
     if not files:
         print("Keine Markdown-Dateien in markdown_temp/ gefunden.")
@@ -110,7 +110,7 @@ def move_temp2markdown():
 
     for f in files:
         try:
-            target = MARKDOWN_DIR / f.name
+            target = FINAL_MD_PATH / f.name
             f.replace(target)  # schneller als shutil.move für gleiche Partition
             print(f"    - {f.name} → nach markdown/ verschoben")
         except Exception as e:

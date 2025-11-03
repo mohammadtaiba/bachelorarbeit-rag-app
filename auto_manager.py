@@ -4,9 +4,9 @@ from shutil import rmtree
 import shutil
 
 db_path = Path("db/chromadb")
-md_path = Path("data/markdown")
-raw_path = Path("data/raw")
-upload_path = Path("data/upload")
+md_path = Path("temp/markdown")
+raw_path = Path("temp/raw")
+upload_path = Path("temp/upload")
 
 """
  löscht direkt: db/ und data/markdown

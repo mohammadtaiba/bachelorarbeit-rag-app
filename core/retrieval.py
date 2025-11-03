@@ -1,26 +1,19 @@
 # core/retrieval.py
-# Chroma laden → Retriever → LM-Studio-LLM → QA
-
 import time
 from langchain_chroma import Chroma
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from chromadb.config import Settings
 from langchain_openai import ChatOpenAI
-from utils.lmstudio_embed import LMStudioEmbeddings
-from core.config import * # Alle globale Variablen & .env-Variablen stecken hier
+from utils.ollama_embed import OllamaEmbeddings
+from core.preprocess import * # Alle globale Variablen & .env-Variablen stecken hier
 from utils.next_neighbor_retriever import NextNeighborRetriever
-
-
 
 # --- Kette bauen ---
 def get_chain():
 
-    embeddings = LMStudioEmbeddings(
-        model=EMBED_MODEL,
-        base_url=LMSTUDIO_URL,
-        api_key=LMSTUDIO_API_KEY,
-    )
+    # 1) Embeddingvorberieten
+    embeddings = OllamaEmbeddings(model=EMBED_MODEL, base_url=OLLAMA_URL)
 
     # 2) Vektor-DB verbinden
     vectordb = Chroma(
@@ -34,18 +27,13 @@ def get_chain():
     base_retriever = vectordb.as_retriever(search_kwargs={"k": 5})
     retriever = NextNeighborRetriever(base=base_retriever, vectordb=vectordb, cap=10)
 
-
     # 4) LLM
-    llm = ChatOpenAI(
-        model=LLM_MODEL,
-        base_url=LMSTUDIO_URL,
-        api_key=LMSTUDIO_API_KEY,
-    )
+    llm = ChatOpenAI(model=LLM_MODEL,base_url=OLLAMA_URL)
 
     # 5) Prompt
     prompt = PromptTemplate.from_template(
         """
-        Du bist ein Schulpersonal-Assistent, der Fragen zu offiziellen LUSD-Unterlagen beantwortet. 
+        Du bist ein Persönlicher-Assistent, der Fragen zu offiziellen LUSD-Unterlagen beantwortet. 
         Antworte nur aus bereitgestelltem Kontext; sonst: ‘Keine Kontext gefunden.’. 
         Kontext:
         {context}
