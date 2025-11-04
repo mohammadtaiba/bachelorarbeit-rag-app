@@ -8,6 +8,8 @@ from langchain_openai import ChatOpenAI
 from utils.ollama_embed import OllamaEmbeddings
 from core.preprocess import * # Alle globale Variablen & .env-Variablen stecken hier
 from utils.next_neighbor_retriever import NextNeighborRetriever
+from langchain.chains import ConversationalRetrievalChain
+
 
 # --- Kette bauen ---
 def get_chain():
@@ -31,36 +33,36 @@ def get_chain():
     llm = ChatOpenAI(model=LLM_MODEL,base_url=OLLAMA_URL)
 
     # 5) Prompt
-    prompt = PromptTemplate.from_template(
-        """
-        Du bist ein Persönlicher-Assistent, der Fragen zu offiziellen RAG-Unterlagen beantwortet. 
+    prompt = PromptTemplate.from_template("""
+        Du bist ein Persönlicher-Assistent, der Fragen zu offiziellen RAG-Unterlagen beantwortet.
+        Beantworte Fragen sachlich und kurz nur aus dem bereitgestellten Kontext und dem letzten Chatverlauf.
         Antworte nur aus bereitgestelltem Kontext; sonst: ‘Keine Kontext gefunden.’. 
+        
+        Chatverlauf (letzte Turns):
+        {chat_history}
+        
         Kontext:
         {context}
 
         Frage:
         {question}
-
-        Antworte vollständig und sachlich auf die Frage (genau von dem Kontext antwroten!).
-        """
-    )
+    """)
 
     # 6) Retrieval-QA-Kette
-    a = RetrievalQA.from_chain_type(
+    chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=retriever,
-        chain_type="stuff",
-        chain_type_kwargs={"prompt": prompt},
+        combine_docs_chain_kwargs={"prompt": prompt},
         return_source_documents=True,
     )
-    return a
+    return chain
 
 # --- API ---
 start_time = time.perf_counter() # Laufzeitmessen
-def answer(q: str) -> str:
+def answer(q: str, chat_history: list[tuple[str, str]]):
     chain = get_chain()
     tmp_time = time.perf_counter()
-    out = chain.invoke({"query": q})
+    out = chain.invoke({"question": q, "chat_history": chat_history})
     print(f"invoke-Laufzeit: {(time.perf_counter() - tmp_time) * 1000:.0f} ms")
 
     """
@@ -72,7 +74,7 @@ def answer(q: str) -> str:
         print("\n---\n")
     print("\n--- Ende der Chunks. ---")
     """
-    return out["result"]
+    return out["answer"]
 
 if __name__ == "__main__":
     print()
