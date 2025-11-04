@@ -58,8 +58,8 @@ def auto_manager():
             print(
     """Was möchtest du tun?
         1) Datenbank & Markdown-Ordner löschen
-        2) Raw-Dateien bearbeiten
-        3) Ingestion starten
+        2) Raw-Dateien löschen oder verschieben
+        3) Indizieren
         4) ChatBot starten
         5) Beenden""")
 
