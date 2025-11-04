@@ -33,7 +33,7 @@ def get_chain():
     # 5) Prompt
     prompt = PromptTemplate.from_template(
         """
-        Du bist ein Persönlicher-Assistent, der Fragen zu offiziellen LUSD-Unterlagen beantwortet. 
+        Du bist ein Persönlicher-Assistent, der Fragen zu offiziellen RAG-Unterlagen beantwortet. 
         Antworte nur aus bereitgestelltem Kontext; sonst: ‘Keine Kontext gefunden.’. 
         Kontext:
         {context}

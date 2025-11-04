@@ -12,7 +12,7 @@ with open(log_path, "w", encoding="utf-8") as f:
     sys.stdout = f  # Alles print() geht in Datei
 
     db = Chroma(
-        collection_name="lusd_bot",
+        collection_name="RAG_bot",
         persist_directory="db/chromadb"
     )
 

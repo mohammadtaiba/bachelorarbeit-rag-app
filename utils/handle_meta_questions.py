@@ -27,15 +27,15 @@ def handle_meta_questions(q: str) -> bool:
 
     # ===== Identität / Fähigkeiten =====
     if any(p in q_norm for p in ["wer bist du", "wie heisst du", "wie heißt du", "was bist du"]):
-        reply_plain("Ich bin ein KI-Assistent für die LUSD. Ich helfe bei Fachfragen, Bedienung, Fehlermeldungen, "
+        reply_plain("Ich bin ein KI-Assistent für die RAG. Ich helfe bei Fachfragen, Bedienung, Fehlermeldungen, "
                     "Auswertungen, Datenpflege und zeige passende Hilfeseiten oder Schritte an.")
         return True
 
     if re.fullmatch(r"(hallo|hi|hey|moin|servus|guten (tag|morgen|abend))\s*", q_norm) \
        or re.match(r"^(hallo|hi|hey|moin|servus)\b", q_norm):
         reply_plain(
-            "Hallo! 😊 Ich bin dein LUSD-Bot und unterstütze dich gerne bei verschiedenen Themen:\n"
-            "- Fragen zur LUSD-Fachlogik beantworten\n"
+            "Hallo! 😊 Ich bin dein RAG-Bot und unterstütze dich gerne bei verschiedenen Themen:\n"
+            "- Fragen zur RAG-Fachlogik beantworten\n"
             "- Schritt-für-Schritt-Anleitungen in der Anwendung\n"
             "- Relevante Hilfeseiten oder Dokumente finden (RAG)\n"
             "- Fehlermeldungen einordnen & Lösungsvorschläge geben\n"
@@ -49,7 +49,7 @@ def handle_meta_questions(q: str) -> bool:
                                  "wobei kannst du helfen", "was kannst du tun", "was machst du"]):
         reply_plain(
             "Ich kann dir bei verschiedenen Themen helfen — je nachdem, was du brauchst. 😊\n"
-            "- Fragen zur LUSD-Fachlogik beantworten\n"
+            "- Fragen zur RAG-Fachlogik beantworten\n"
             "- Schritt-für-Schritt-Anleitungen in der Anwendung\n"
             "- Relevante Hilfeseiten/Dokumente finden (RAG)\n"
             "- Fehlermeldungen einordnen & Lösungsvorschläge\n"
