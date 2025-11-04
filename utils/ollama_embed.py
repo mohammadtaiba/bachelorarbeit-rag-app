@@ -1,7 +1,7 @@
 # utils/lmstudio_embed.py
 from langchain_core.embeddings import Embeddings
 
-# Verbindungsschicht zwischen LangChain und LM-Studio.
+# Verbindungsschicht zwischen LangChain und LM-Studio für Embedding.
 import requests
 
 class OllamaEmbeddings(Embeddings):
