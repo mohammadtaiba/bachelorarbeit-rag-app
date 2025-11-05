@@ -28,5 +28,5 @@ Invoke-RestMethod `
 > python -m core.ingestion
 ---
 > Remove-Item -Recurse -Force db/chromadb/*
--- 
+---
 > streamlit run main.py
