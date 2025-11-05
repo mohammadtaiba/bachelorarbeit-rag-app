@@ -9,6 +9,9 @@ pypandoc                                # für docx
 pypandoc-binary                         # für docx
 pywin32
 pymupdf4llm
+pandas
+openpyxl
+tabulate
 
 ## LangChain
 langchain>=0.3,<0.4                     # Kern-Framework
