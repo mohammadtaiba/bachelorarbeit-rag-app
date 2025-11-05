@@ -2,26 +2,22 @@ import os
 from pathlib import Path
 from shutil import rmtree
 import shutil
-
-db_path = Path("db/chromadb")
-md_path = Path("temp/markdown")
-raw_path = Path("temp/raw")
-upload_path = Path("temp/upload")
+from core.preprocess import DB_DIR, RAW_PATH, UPLOAD_PATH, FINAL_MD_PATH 
 
 """
  löscht direkt: db/ und data/markdown
 """
 def auto_delete_db_markdown():
     # --- db/chroma löschen ---
-    if db_path.exists():
-        rmtree(db_path)
+    if DB_DIR.exists():
+        rmtree(DB_DIR)
         print("DB-Daten wurden gelöscht.")
     else:
         print("Es existiert keine DB-Daten!")
 
     # --- data/markdown/* löschen ---
-    if md_path.exists() and any(md_path.glob("*")):
-        for file in md_path.glob("*"):
+    if FINAL_MD_PATH.exists() and any(FINAL_MD_PATH.glob("*")):
+        for file in FINAL_MD_PATH.glob("*"):
             file.unlink()
         print("Markdown-Ordner wurden geleert.")
     else:
@@ -32,10 +28,10 @@ def auto_delete_db_markdown():
 """
 def auto_raw():
     # --- data/raw/* löschen/ verschieben? ---
-    if raw_path.exists() and any(raw_path.glob("*")):
+    if RAW_PATH.exists() and any(RAW_PATH.glob("*")):
         input_raw = input(" 0) Löschen \n 1) Behalten \n 2) nach upload verschieben \n → Gebe eine Zahl ein: ").strip()
         if input_raw== "0":
-            for file in raw_path.glob("*"):
+            for file in RAW_PATH.glob("*"):
                 file.unlink()
             print("Raw-Ordner wurden geleert.")
 
@@ -43,8 +39,8 @@ def auto_raw():
             print("Raw-Dateien wurden behalten")
 
         elif input_raw == "2":
-            for file in raw_path.glob("*"):
-                shutil.move(str(file), upload_path / file.name)
+            for file in RAW_PATH.glob("*"):
+                shutil.move(str(file), UPLOAD_PATH / file.name)
             print("Dateien wurden nach 'upload/' verschoben.")
     else:
         print("raw-Ordner ist leer!")
