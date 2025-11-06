@@ -1,4 +1,18 @@
-# TO DO
+# TODO
+
+* [x] "utils/handle_meta_questions.py" anpassen & korrigieren
+* [ ] **Benutzeroberfläche anpassen:**
+  * sidebar entweder entfernen oder anderes besser tun
+  * Das Fragefeld sollte immer unten fest angepinnt werden.
+  * Fragefelder leeren nach jeder frage
+  * Bei der Generation einer Antwort sollte es automatisch nach unter gescrollt werden
+  
+* [ ] Konvertierung von html zu md
+* [ ] alle PDF-Dokumente laden
+
+
+---
+**Overview:**
 - [x] Thema präzisieren und Forschungsfragen formulieren
 - [x] Zielsetzung und Abgrenzung schriftlich festhalten
 - [ ] Umfassende Literatur- und Technologie-Recherche
