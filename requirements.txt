@@ -12,6 +12,7 @@ pymupdf4llm
 pandas
 openpyxl
 tabulate
+watchdog
 
 ## LangChain
 langchain>=0.3,<0.4                     # Kern-Framework
