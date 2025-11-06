@@ -33,7 +33,6 @@ Integration eines GPT-basierten Chatbots zur Beantwortung domänenspezifischer F
 ## Abgrenzung
 #### Nicht Teil der Arbeit sind:
 * Die Entwicklung eigener Sprachmodelle; es wird bestehende GPT-Modelle genutzt.
-* Es wird nicht geprüft, ob der Inhalt der Dokumente korrekt, aktuell, relevant oder qualitativ hochwertig ist.
 * Eine tiefgehende Auseinandersetzung mit rechtlichen, ethischen oder sicherheitstechnischen Aspekten im Zusammenhang mit dem Einsatz generativer KI.
 
 ---
