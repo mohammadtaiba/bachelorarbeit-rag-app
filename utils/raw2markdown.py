@@ -2,7 +2,7 @@
 import pandas as pd
 import pymupdf4llm as pml
 from streamlit import header
-from core.config import UPLOAD_DIR, MARKDOWN_TEMP_DIR
+from core.preprocess import UPLOAD_PATH, TEMP_MD_PATH
 import pypandoc
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -12,14 +12,14 @@ def convert_all_to_markdown():
     # ---- pdf2md ----
     print("Starte Konvertierung der Rohdaten zu Markdown ...")
 
-    pdf_files = sorted(UPLOAD_DIR.glob("*.pdf"))
+    pdf_files = sorted(UPLOAD_PATH.glob("*.pdf"))
     if not pdf_files:
-        print(f"Keine PDFs in {UPLOAD_DIR.resolve()} gefunden.")
+        print(f"Keine PDFs in {UPLOAD_PATH.resolve()} gefunden.")
     else:
         for pdf in pdf_files:
             try:
                 md = pml.to_markdown(str(pdf), write_images=False)
-                (MARKDOWN_TEMP_DIR / (pdf.stem + ".md")).write_text(md, encoding="utf-8")
+                (TEMP_MD_PATH / (pdf.stem + ".md")).write_text(md, encoding="utf-8")
                 print("    - konvertiert:", pdf.name)
             except Exception as e:
                 print(f"⚠️ Fehler bei {pdf.name}: {e}")
@@ -28,9 +28,9 @@ def convert_all_to_markdown():
 
     # -----------------------------------------------------------------------------------------------------------------
     # ---- docx2gfm ----
-    docx_files = sorted(UPLOAD_DIR.glob("*.docx"))
+    docx_files = sorted(UPLOAD_PATH.glob("*.docx"))
     if not docx_files:
-        print(f"Keine DOCX in {UPLOAD_DIR.resolve()} gefunden.")
+        print(f"Keine DOCX in {UPLOAD_PATH.resolve()} gefunden.")
     else:
         for docx in docx_files:
             try:
@@ -44,7 +44,7 @@ def convert_all_to_markdown():
                         "--reference-links"
                     ],
                 )
-                (MARKDOWN_TEMP_DIR / (docx.stem + ".md")).write_text(md, encoding="utf-8")
+                (TEMP_MD_PATH / (docx.stem + ".md")).write_text(md, encoding="utf-8")
                 print("    - konvertiert:", docx.name)
             except Exception as e:
                 print(f"⚠️ Fehler bei {docx.name}: {e}")
@@ -52,9 +52,9 @@ def convert_all_to_markdown():
 
     # -----------------------------------------------------------------------------------------------------------------
     # ---- xlsx2md ----
-    xlsx_files = sorted(UPLOAD_DIR.glob("*.xlsx")) + sorted(UPLOAD_DIR.glob("*.xls"))
+    xlsx_files = sorted(UPLOAD_PATH.glob("*.xlsx")) + sorted(UPLOAD_PATH.glob("*.xls"))
     if not xlsx_files:
-        print(f"Keine Excel-Dateien in {UPLOAD_DIR.resolve()} gefunden.")
+        print(f"Keine Excel-Dateien in {UPLOAD_PATH.resolve()} gefunden.")
     else:
         # openpyxl-Header/Footer-Warnung einmalig ausblenden
         import warnings
@@ -84,7 +84,7 @@ def convert_all_to_markdown():
                     continue
 
                 # Zusammenführen zu einer Datei pro Excel
-                (MARKDOWN_TEMP_DIR / f"{xlsx.stem}.md").write_text("\n\n".join(md_parts), encoding="utf-8")
+                (TEMP_MD_PATH / f"{xlsx.stem}.md").write_text("\n\n".join(md_parts), encoding="utf-8")
                 print(f"    - konvertiert: {xlsx.name}")
 
             except Exception as e:
