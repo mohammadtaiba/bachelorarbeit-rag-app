@@ -96,9 +96,9 @@ def move_upload2raw():
 
 
 # -----------------------------------------------------------------------------------------------------------------
-# Verschiebt alle Dateien aus FINAL_MD_PATH → TEMP_MD_PATH.
+# Verschiebt alle Dateien aus TEMP_MD_PATH → FINAL_MD_PATH.
 def move_temp2markdown():
-    files = list(FINAL_MD_PATH.glob("*.md"))
+    files = list(TEMP_MD_PATH.glob("*.md"))
     if not files:
         print("Keine Markdown-Dateien in \"markdown_temp\" gefunden.")
         return
@@ -107,7 +107,7 @@ def move_temp2markdown():
 
     for f in files:
         try:
-            target = TEMP_MD_PATH / f.name
+            target = FINAL_MD_PATH / f.name
             f.replace(target)  # schneller als shutil.move für gleiche Partition
             print(f"    - {f.name} → nach markdown/ verschoben")
         except Exception as e:
