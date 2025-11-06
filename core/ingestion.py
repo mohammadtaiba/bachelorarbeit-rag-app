@@ -34,6 +34,9 @@ def ingestion():
             # 2) Bereinigung
             cleanup_md()
 
+            # Vorbereiten für nächste Ingestion (verschieben)
+            move_upload2raw()
+
             # 3) Laden
             docs = load_docs()
 
@@ -69,9 +72,8 @@ def ingestion():
                 print(f"  -> gespeichert: {i + len(part)}/{total_chunks}")
             print("Speicherung abgeschlossen.")
 
-            # 7) Vorbereiten für nächste Ingestion (verschieben)
+            # Vorbereiten für nächste Ingestion (verschieben)
             move_temp2markdown()
-            move_upload2raw()
 
             print("✅  Ingestion vollständig abgeschlossen.")
 
