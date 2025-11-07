@@ -4,10 +4,9 @@ from core.retrieval import answer
 from utils.handle_meta_questions import handle_meta_questions
 import threading, time
 from pathlib import Path
-from watchdog.observers import Observer
-from watchdog.events import FileSystemEventHandler
-from core.preprocess import UPLOAD_PATH 
+from core.preprocess import UPLOAD_PATH
 from core.ingestion import ingestion
+from utils.watchdog import start_upload_watcher
 
 # -------------------------------------------------------------------------------------------------------
 # Style
@@ -18,58 +17,17 @@ st.sidebar.subheader("Chat-Verlauf")
 
 # -------------------------------------------------------------------------------------------------------
 # Auto-Index: Watchdog (neue Dateien in /upload automatisch indexieren – ohne Typ-Filter)
-_DEBOUNCE_SEC = 1.0             # Entprellung/Bündelung mehrerer Events
-_kick_timer = None
-_kick_lock = threading.Lock()
-
-def _count_upload_files():
-    p = Path(UPLOAD_PATH)
-    count = sum(1 for f in p.glob("*") if f.is_file())
-    print(f"[INFO] Aktuell {count} Datei(en) im Upload-Ordner erkannt.")
-    return count
-
-def _maybe_run():
-    count = _count_upload_files()
-    if count > 0:
-        print(f"[WATCHDOG] {count} neue Datei(en) gefunden → Ingestion wird gestartet ...")
+def _trigger_ingestion():
+    if sum(1 for f in Path(UPLOAD_PATH).glob("*") if f.is_file()) > 0:
         threading.Thread(target=ingestion, daemon=True).start()
-    else:
-        print("[WATCHDOG] Keine neuen Dateien – Ingestion übersprungen.")
 
-def _kick_coalesced():
-    global _kick_timer
-    with _kick_lock:
-        if _kick_timer and _kick_timer.is_alive():
-            print("[WATCHDOG] Event erkannt – Timer wird zurückgesetzt (Entprellung aktiv).")
-            _kick_timer.cancel()
-        else:
-            print("[WATCHDOG] Neuer Event erkannt – Timer gestartet.")
-        _kick_timer = threading.Timer(_DEBOUNCE_SEC, _maybe_run)
-        _kick_timer.daemon = True
-        _kick_timer.start()
-
-class _Handler(FileSystemEventHandler):
-    def on_any_event(self, event):
-        if event.is_directory:
-            return
-        if event.event_type in ("deleted", "moved"):
-            print(f"[WATCHDOG] Datei gelöscht/verschoben: {event.src_path} – keine Aktion.")
-            return
-        print(f"[WATCHDOG] Änderung erkannt: {event.src_path} ({event.event_type})")
-        _kick_coalesced()
-
-def _start_watcher():
-    obs = Observer()
-    obs.schedule(_Handler(), str(Path(UPLOAD_PATH)), recursive=False)
-    obs.daemon = True
-    obs.start()
-    return obs
-
-# Watchdog immer aktiv
 if "watchdog_started" not in st.session_state:
-    print("[INIT] Watchdog war nicht aktiv – wird jetzt gestartet ...")
-    _start_watcher()
-    st.session_state["watchdog_started"] = True
+    try:
+        start_upload_watcher(UPLOAD_PATH, _trigger_ingestion)
+        st.session_state["watchdog_started"] = True
+        print("[INIT] Watchdog gestartet.")
+    except Exception as e:
+        print(f"[INIT] Watchdog-Start fehlgeschlagen: {e}")
 else:
     print("[INIT] Watchdog läuft bereits.")
 
