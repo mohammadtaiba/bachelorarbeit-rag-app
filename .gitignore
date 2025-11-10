@@ -15,3 +15,6 @@ db/
 
 # Evaluation outputs
 core/evaluation/results/**
+
+data/upload
+data/temp_markdown
