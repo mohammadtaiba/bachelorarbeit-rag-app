@@ -8,7 +8,8 @@
 .env
 
 # DB
-db/
+db/chromadb
+!db/chromadb_zip
 
 # Streamlit cache
 .streamlit/
@@ -17,4 +18,3 @@ db/
 core/evaluation/results/**
 
 data/upload
-data/temp_markdown
