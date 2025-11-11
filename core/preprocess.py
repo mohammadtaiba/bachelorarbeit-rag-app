@@ -23,10 +23,10 @@ RAW_PATH      = _as_path("DATA_RAW")
 UPLOAD_PATH   = _as_path("DATA_UPLOAD")
 TEMP_MD_PATH  = _as_path("DATA_TEMP_MD")
 FINAL_MD_PATH = _as_path("DATA_MARKDOWN")
-DB_DIR        = _as_path("DB_DIR")
+DB_PATH       = _as_path("DB_PATH")
 
 # Verzeichnisse EINMALIG sicherstellen
-for p in (RAW_PATH, UPLOAD_PATH, TEMP_MD_PATH, FINAL_MD_PATH, DB_DIR):
+for p in (RAW_PATH, UPLOAD_PATH, TEMP_MD_PATH, FINAL_MD_PATH, DB_PATH):
     p.mkdir(parents=True, exist_ok=True)
 
 # --- Chunking (gemäß Pipelineplan: 512 / 75) ---

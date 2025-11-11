@@ -20,7 +20,7 @@ def get_chain():
     # 2) Vektor-DB verbinden
     vectordb = Chroma(
         collection_name=COLLECTION,
-        persist_directory=DB_DIR,
+        persist_directory=DB_PATH,
         embedding_function=embeddings,
         client_settings=Settings(anonymized_telemetry=False),
     )

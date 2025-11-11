@@ -1,4 +1,5 @@
 # core/ingestion.py
+import time
 from pathlib import Path
 
 from langchain_chroma import Chroma
@@ -15,6 +16,8 @@ from utils.file_operation import( convert_doc_to_docx,
 from core.preprocess import *
 from threading import Lock
 _ING_LOCK = Lock()
+
+time.perf_counter(); tmp_time = time.perf_counter()
 
 def ingestion():
 
@@ -50,7 +53,7 @@ def ingestion():
             # 6.1) Chroma initialisieren
             vectordb = Chroma(
                 collection_name=COLLECTION,
-                persist_directory=DB_DIR,
+                persist_directory=DB_PATH,
                 embedding_function=embeddings,
                 client_settings=Settings(anonymized_telemetry=False)
             )
@@ -81,6 +84,7 @@ def ingestion():
             print(" Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!")
     finally:
         _ING_LOCK.release() # gibt den Lock wieder frei
+    print(f"Ingestion-Laufzeit: {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
 
 if __name__ == "__main__":
     ingestion()

@@ -1,16 +1,15 @@
 import os
-from pathlib import Path
 from shutil import rmtree
 import shutil
-from core.preprocess import DB_DIR, RAW_PATH, UPLOAD_PATH, FINAL_MD_PATH 
+from core.preprocess import DB_PATH, RAW_PATH, UPLOAD_PATH, FINAL_MD_PATH
 
 """
  löscht direkt: db/ und data/markdown
 """
 def auto_delete_db_markdown():
     # --- db/chroma löschen ---
-    if DB_DIR.exists():
-        rmtree(DB_DIR)
+    if DB_PATH.exists():
+        rmtree(DB_PATH)
         print("DB-Daten wurden gelöscht.")
     else:
         print("Es existiert keine DB-Daten!")
@@ -62,7 +61,12 @@ def auto_manager():
             choice = input("→ Gib eine Zahl ein: ").strip()
 
             if choice == "1":
-                auto_delete_db_markdown()
+                print("⚠️ Bitte bestätige das Löschen mit 1: ")
+                ja = input()
+                if ja == "1":
+                    auto_delete_db_markdown()
+                else:
+                    print("Ungültige Eingabe, bitte erneut versuchen:")
             elif choice == "2":
                 auto_raw()
             elif choice == "3":

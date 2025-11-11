@@ -1,6 +1,6 @@
 from langchain_chroma import Chroma
 import sys
-from core.preprocess import COLLECTION, DB_DIR
+from core.preprocess import COLLECTION, DB_PATH
 from pathlib import Path
 
 # Log-Verzeichnis sicherstellen
@@ -14,7 +14,7 @@ with open(log_path, "w", encoding="utf-8") as f:
 
     db = Chroma(
         collection_name=COLLECTION,
-        persist_directory=DB_DIR
+        persist_directory=DB_PATH
     )
 
     print("ChromaDB Übersicht\n")
