@@ -7,10 +7,6 @@
 
 .env
 
-# DB
-db/chromadb
-!db/chromadb_zip
-
 # Streamlit cache
 .streamlit/
 
