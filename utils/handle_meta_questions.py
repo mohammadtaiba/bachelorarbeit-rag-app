@@ -26,21 +26,19 @@ def handle_meta_questions(q: str) -> bool:
     q_norm = _normalize(q)
 
     # ===== Identität / Fähigkeiten =====
-    if any(p in q_norm for p in ["wer bist du", "wie heisst du", "wie heißt du", "was bist du"]):
-        reply_plain("Ich bin ein KI-Assistent für die RAG. Ich helfe bei Fachfragen, Bedienung, Fehlermeldungen, "
-                    "Auswertungen, Datenpflege und zeige passende Hilfeseiten oder Schritte an.")
-        return True
-
-    if re.fullmatch(r"(hallo|hi|hey|moin|servus|guten (tag|morgen|abend))\s*", q_norm) \
-       or re.match(r"^(hallo|hi|hey|moin|servus)\b", q_norm):
+    if re.fullmatch(r"(hallo|hi|hey|moin|servus|guten (tag|morgen|abend))\s*", q_norm) or \
+            any(p in q_norm for p in ["wer bist du", "wie heisst du", "wie heißt du",
+                                      "wer sind Sie", "Wie heissen Sie", "wie heißen Sie"]):
         reply_plain(
-            "Hallo! 😊 Ich bin dein RAG-Bot und unterstütze dich gerne bei verschiedenen Themen:\n"
-            "- Fragen zur RAG-Fachlogik beantworten\n"
-            "- Schritt-für-Schritt-Anleitungen in der Anwendung\n"
-            "- Relevante Hilfeseiten oder Dokumente finden (RAG)\n"
-            "- Fehlermeldungen einordnen & Lösungsvorschläge geben\n"
-            "- Formulare/Listen erklären, Felder beschreiben\n"
-            "- Zusammenfassungen aus Richtlinien oder Dokus erstellen\n\n"
+            "Hallo! 😊 Ich bin dein Nachhaltigkeits-Assistent. "
+            "Ich unterstütze dich bei der Analyse von Nachhaltigkeitsberichten und bei der Entwicklung von Ideen "
+            "zur Verbesserung der Nachhaltigkeitsstrategie deines Unternehmens.\n\n"
+            "Ich kann:\n"
+            "- Maßnahmen zur Verbesserung von Umwelt-, Sozial- und Governance-Leistung (ESG) vorschlagen\n"
+            "- branchenspezifische Best Practices aufzeigen\n"
+            "- Stärken und Schwächen in Berichten erkennen\n"
+            "- konkrete Handlungsempfehlungen entwickeln\n"
+            "- die Qualität und Struktur der Nachhaltigkeitsberichterstattung bewerten\n\n"
             "Womit möchtest du starten?"
         )
         return True
@@ -48,20 +46,19 @@ def handle_meta_questions(q: str) -> bool:
     if any(p in q_norm for p in ["wie kannst du mir helfen","was kannst du mir hilfreich sein",
                                  "wobei kannst du helfen", "was kannst du tun", "was machst du"]):
         reply_plain(
-            "Ich kann dir bei verschiedenen Themen helfen — je nachdem, was du brauchst. 😊\n"
-            "- Fragen zur RAG-Fachlogik beantworten\n"
-            "- Schritt-für-Schritt-Anleitungen in der Anwendung\n"
-            "- Relevante Hilfeseiten/Dokumente finden (RAG)\n"
-            "- Fehlermeldungen einordnen & Lösungsvorschläge\n"
-            "- Formulare/Listen erklären, Felder validieren (beschreibend)\n"
-            "- Zusammenfassungen aus Richtlinien/Dokus\n"
-            "\nWenn du magst, sag mir einfach **wobei du gerade Hilfe brauchst**, und ich zeige dir konkret, was ich tun kann."
-        )
+            "Ich helfe dir, Nachhaltigkeitsstrategien und -berichte gezielt zu verbessern. 🌱\n"
+            "- Ich analysiere Inhalte von Nachhaltigkeitsberichten\n"
+            "- Ich identifiziere Verbesserungspotenziale bei Strategie, Maßnahmen und KPIs\n"
+            "- Ich liefere Ideen und Beispiele aus deiner Branche\n"
+            "- Ich unterstütze bei Struktur, Transparenz und Glaubwürdigkeit der Berichterstattung\n"
+            "- Ich gebe Feedback zu Sprache, Aufbau und Themenabdeckung\n\n"
+            "Sag mir einfach, **ob du eine Analyse, Ideen oder Empfehlungen brauchst** – dann legen wir los."
+   )
         return True
 
     # ===== Letzte / vorletzte Nutzer-Frage/Eingabe/Nachricht =====
     # Beispiele, die gematcht werden:
-    # "was war meine letzte frage", "zeige meine vorletzte eingabe", "was war die letzte nachricht?"
+    # "was war meine letzte Frage", "zeige meine vorletzte eingabe", "was war die letzte nachricht?"
     if re.search(r"\bvorletzte(r|n|s)?\b.*\b(frage|eingabe|nachricht)\b", q_norm):
         prev = _get_last_n("user", 2)
         if prev:
