@@ -1,6 +1,7 @@
 # utils/cleanup_md.py
 import re
 from core.preprocess import TEMP_MD_PATH
+from utils.logger import logger
 
 # --- Regex-Definitionen ---
 # HTML-Elemente entfernen
@@ -22,37 +23,47 @@ TOC_TAG_RE = re.compile(r"#?_Toc\d+", re.IGNORECASE) # Anker für Tabellen
 REFERENCE_LINE_RE = re.compile(r"^\s*\[\d+\]:\s*$", re.MULTILINE) # Pandoc-Referenzlinks
 
 def cleanup_md():
-    print("Bereinige der Markdown-Dateien ...")
+    logger.info("Bereinige der Markdown-Dateien ...")
     for ext in ("*.md", "*.gfm"):
         for md_file in TEMP_MD_PATH.glob(ext):
-            text = md_file.read_text(encoding="utf-8")
+            try:
+                text = md_file.read_text(encoding="utf-8")
 
-            # HTML-Elemente entfernen
-            text = FIGURE_RE.sub("", text)
-            text = IMG_RE.sub("", text)
-            text = FIGCAP_RE.sub("", text)
-            text = EMPTY_TD_RE.sub("", text)
-            text = ESCAPED_DASH_LINE_RE.sub("", text)
-            text = EMPTY_TABLE_LINE_RE.sub("", text)
-            text = SINGLE_PIPE_RE.sub("", text)
-            text = DASH_LINE_RE.sub("---", text)
-            text = EQUAL_LINE_RE.sub("===", text)
-            text = TOC_TAG_RE.sub("", text)
-            text = REFERENCE_LINE_RE.sub("", text)
+                # HTML-Elemente entfernen
+                text = FIGURE_RE.sub("", text)
+                text = IMG_RE.sub("", text)
+                text = FIGCAP_RE.sub("", text)
+                text = EMPTY_TD_RE.sub("", text)
+                text = ESCAPED_DASH_LINE_RE.sub("", text)
+                text = EMPTY_TABLE_LINE_RE.sub("", text)
+                text = SINGLE_PIPE_RE.sub("", text)
+                text = DASH_LINE_RE.sub("---", text)
+                text = EQUAL_LINE_RE.sub("===", text)
+                text = TOC_TAG_RE.sub("", text)
+                text = REFERENCE_LINE_RE.sub("", text)
 
-            # Überflüssige Leerzeichen am Anfang/Ende
-            text = text.strip()
+                # Überflüssige Leerzeichen am Anfang/Ende
+                text = text.strip()
 
-            # Mehrfache Leerzeichen → ein Leerzeichen
-            text = re.sub(r"[ \t]+", " ", text)
+                # Mehrfache Leerzeichen → ein Leerzeichen
+                text = re.sub(r"[ \t]+", " ", text)
 
-            # entfernt alle komplett leeren Zeilen (auch wenn sie nur aus Leerzeichen bestehen)
-            text = re.sub(r"^\s*\n", "", text, flags=re.MULTILINE)
+                # Markdown-Escapes für Sonderzeichen entfernen (z.B. \> \- \* \#)
+                text = re.sub(r"\\([>\-\*\#\[\]\(\)_`])", r"\1", text)
 
-            md_file.write_text(text, encoding="utf-8")
-            print(f"   - Bereinigt → {md_file.name}")
+                # Typografische Aufzählungspunkte vereinheitlichen
+                text = re.sub(r"^\s*[•·]\s+", "- ", text, flags=re.MULTILINE)
 
-    print("Bereinigung abgeschlossen.")
+                # entfernt alle komplett leeren Zeilen (auch wenn sie nur aus Leerzeichen bestehen)
+                text = re.sub(r"^\s*\n", "", text, flags=re.MULTILINE)
+
+                md_file.write_text(text, encoding="utf-8")
+                logger.info(f"   - Bereinigt → {md_file.name}")
+
+            except Exception:
+                logger.exception(f"⚠️ Fehler bei der Bereinigung der MD-Datei:  {md_file.name}")
+
+    logger.info("Bereinigung abgeschlossen.")
 
 if __name__ == "__main__":
     cleanup_md()

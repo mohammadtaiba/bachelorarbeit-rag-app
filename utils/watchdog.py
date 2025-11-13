@@ -3,6 +3,7 @@ from pathlib import Path
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import threading
+from utils.logger import logger
 
 # -------------------------------------------------------------------------------------------------------
 # Einstellungen
@@ -14,7 +15,7 @@ _kick_lock  = threading.Lock()   # Sperre zur Synchronisation
 # Hauptfunktion: Beobachtet den Upload-Ordner auf Dateiänderungen und ruft on_change() mit Entprellung auf.
 def start_upload_watcher(upload_dir: str, on_change: callable) -> Observer:
     def _maybe_run():
-        print("[WATCHDOG] Entprellzeit abgelaufen → Callback wird ausgeführt.")
+        logger.info("WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.")
         on_change()
 
     def _kick():
@@ -23,7 +24,7 @@ def start_upload_watcher(upload_dir: str, on_change: callable) -> Observer:
             if _kick_timer and _kick_timer.is_alive():
                 _kick_timer.cancel()
             else:
-                print("[WATCHDOG] Neuer Event erkannt – Timer gestartet.")
+                logger.info("WATCHDOG: Neuer Event erkannt – Timer gestartet.")
             _kick_timer = threading.Timer(_DEBOUNCE_SEC, _maybe_run)
             _kick_timer.daemon = True
             _kick_timer.start()
@@ -33,7 +34,7 @@ def start_upload_watcher(upload_dir: str, on_change: callable) -> Observer:
             if event.is_directory:
                 return
             if event.event_type in ("deleted", "moved"):
-                print(f"[WATCHDOG] Datei gelöscht/verschoben: `{event.src_path}` – keine Aktion.")
+                logger.info(f"WATCHDOG: Datei gelöscht/verschoben: `{event.src_path}` – keine Aktion.")
                 return
             _kick()
 
@@ -41,5 +42,4 @@ def start_upload_watcher(upload_dir: str, on_change: callable) -> Observer:
     obs.schedule(_Handler(), str(Path(upload_dir)), recursive=False)
     obs.daemon = True
     obs.start()
-    print(f"[INIT] Watchdog gestartet und überwacht: `{upload_dir}`")
     return obs

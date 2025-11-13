@@ -1,18 +1,25 @@
 # core/retrieval.py
 import time
+from chromadb.config import Settings
+
 from langchain_chroma import Chroma
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
-from chromadb.config import Settings
 from langchain_openai import ChatOpenAI
-from utils.ollama_embed import OllamaEmbeddings
-from core.preprocess import * # Alle globale Variablen & .env-Variablen stecken hier
-from utils.next_neighbor_retriever import NextNeighborRetriever
 from langchain.chains import ConversationalRetrievalChain
 
+from core.preprocess import * # Alle globale Variablen & .env-Variablen stecken hier
+
+from utils.next_neighbor_retriever import NextNeighborRetriever
+from utils.ollama_embed import OllamaEmbeddings
+from utils.logger import logger
+
+logger.info("------------------------------------------------------------ START retrieval.py")
 
 # --- Kette bauen ---
 def get_chain():
+
+    logger.info("Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).")
 
     # 1) Embeddingvorberieten
     embeddings = OllamaEmbeddings(model=EMBED_MODEL, base_url=OLLAMA_URL)
@@ -58,6 +65,8 @@ def get_chain():
         combine_docs_chain_kwargs={"prompt": prompt},
         return_source_documents=True,
     )
+
+    logger.info("Retrieval-Kette erfolgreich erstellt.")
     return chain
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -65,9 +74,10 @@ def get_chain():
 def answer(q: str, chat_history: list[tuple[str, str]]):
     try:
         chat_history = chat_history [-5:] # nur die letzten 5 Runden behalten
+        logger.info(f"Neue Frage: \"{q}\", Chat-History-Länge: {len(chat_history)}")
         time.perf_counter(); tmp_time = time.perf_counter()
         out = get_chain().invoke({"question": q, "chat_history": chat_history})
-        print(f"Chain-Laufzeit: {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
+        logger.info(f"Antwort erzeugt in  {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
 
         # Quelle(n) anzeigen
         print("\n--- Gefundene Chunks ---")
@@ -79,9 +89,10 @@ def answer(q: str, chat_history: list[tuple[str, str]]):
 
         return out["answer"]
 
-    except Exception as e:
-        print(f"⚠️ Fehler bei \"answer-methode\": {e}")
-        return (f"⚠️ Fehler bei \"answer-methode\": {e}")
+    except Exception:
+        logger.exception(f"⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: \"{q}\"")
+        return ("⚠️ Fehler: Anfrage konnte nicht verarbeitet werden. "
+            "Bitte versuche es erneut oder kontaktiere das TopDev-Team.")
 
 if __name__ == "__main__":
     print()
@@ -90,5 +101,5 @@ if __name__ == "__main__":
 frage = " zusätzliche Instanzen"
 while True:
     result = answer(frage)
-    # print(result)
+    # print(result)  
 """

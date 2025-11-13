@@ -4,33 +4,34 @@ import pymupdf4llm as pml
 from streamlit import header
 from core.preprocess import UPLOAD_PATH, TEMP_MD_PATH
 import pypandoc
+from utils.logger import logger
 
 # ---------------------------------------------------------------------------------------------------------------------
 def convert_all_to_markdown():
 
     # -----------------------------------------------------------------------------------------------------------------
     # ---- pdf2md ----
-    print("Starte Konvertierung der Rohdaten zu Markdown ...")
+    logger.info("Starte Konvertierung der Rohdaten zu Markdown ...")
 
     pdf_files = sorted(UPLOAD_PATH.glob("*.pdf"))
     if not pdf_files:
-        print(f"Keine PDFs in {UPLOAD_PATH.resolve()} gefunden.")
+        logger.info(f"Keine PDFs in {UPLOAD_PATH.resolve()} gefunden.")
     else:
         for pdf in pdf_files:
             try:
                 md = pml.to_markdown(str(pdf), write_images=False)
                 (TEMP_MD_PATH / (pdf.stem + ".md")).write_text(md, encoding="utf-8")
-                print("    - konvertiert:", pdf.name)
+                logger.info("    - konvertiert:", pdf.name)
             except Exception as e:
-                print(f"⚠️ Fehler bei {pdf.name}: {e}")
+                logger.exception(f"⚠️ Fehler bei der Konvertierung der PDF-Datei: {pdf.name}: {e}")
 
-        print(f"Anzahl der konvertierten PDFs {len(pdf_files)}.")
+        logger.info(f"Anzahl der konvertierten PDFs {len(pdf_files)}.")
 
     # -----------------------------------------------------------------------------------------------------------------
     # ---- docx2gfm ----
     docx_files = sorted(UPLOAD_PATH.glob("*.docx"))
     if not docx_files:
-        print(f"Keine DOCX in {UPLOAD_PATH.resolve()} gefunden.")
+        logger.info(f"Keine DOCX in {UPLOAD_PATH.resolve()} gefunden.")
     else:
         for docx in docx_files:
             try:
@@ -45,16 +46,16 @@ def convert_all_to_markdown():
                     ],
                 )
                 (TEMP_MD_PATH / (docx.stem + ".md")).write_text(md, encoding="utf-8")
-                print("    - konvertiert:", docx.name)
+                logger.info("    - konvertiert:", docx.name)
             except Exception as e:
-                print(f"⚠️ Fehler bei {docx.name}: {e}")
-        print(f"Anzahl der konvertierten DOCX {len(docx_files)}.")
+                logger.exception(f"⚠️ Fehler bei der Konvertierung der Word-Datei: {docx.name}: {e}")
+        logger.info(f"Anzahl der konvertierten DOCX {len(docx_files)}.")
 
     # -----------------------------------------------------------------------------------------------------------------
     # ---- xlsx2md ----
     xlsx_files = sorted(UPLOAD_PATH.glob("*.xlsx")) + sorted(UPLOAD_PATH.glob("*.xls"))
     if not xlsx_files:
-        print(f"Keine Excel-Dateien in {UPLOAD_PATH.resolve()} gefunden.")
+        logger.info(f"Keine Excel-Dateien in {UPLOAD_PATH.resolve()} gefunden.")
     else:
         # openpyxl-Header/Footer-Warnung einmalig ausblenden
         import warnings
@@ -73,24 +74,24 @@ def convert_all_to_markdown():
                         df = df.fillna("")
 
                         if df.empty:
-                            print(f"    (übersprungen - leeres Sheet): {xlsx.name} → {sheet_name}")
+                            logger.info(f"    (übersprungen - leeres Sheet): {xlsx.name} → {sheet_name}")
                             continue
 
                         sheet_md = df.to_markdown(index=False, tablefmt="pipe")
                         md_parts.append(f"## {sheet_name}\n\n{sheet_md}\n")
 
                 if not md_parts:
-                    print(f"    (keine verwertbaren Sheets): {xlsx.name}")
+                    logger.info(f"    (keine verwertbaren Sheets): {xlsx.name}")
                     continue
 
                 # Zusammenführen zu einer Datei pro Excel
                 (TEMP_MD_PATH / f"{xlsx.stem}.md").write_text("\n\n".join(md_parts), encoding="utf-8")
-                print(f"    - konvertiert: {xlsx.name}")
+                logger.info(f"    - konvertiert: {xlsx.name}")
 
             except Exception as e:
-                print(f"⚠️ Fehler bei {xlsx.name}: {e}")
+                logger.exception(f"⚠️ Fehler bei der Konvertierung der Excel-Datei: {xlsx.name}: {e}")
 
-        print(f"Anzahl der konvertierten Excel-Dateien {len(xlsx_files)}.")
+        logger.info(f"Anzahl der konvertierten Excel-Dateien {len(xlsx_files)}.")
 
     # -----------------------------------------------------------------------------------------------------------------
-    print("Konvertierung abgeschlossen.")
+    logger.info("Konvertierung abgeschlossen.")

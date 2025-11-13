@@ -1,9 +1,9 @@
 # core/ingestion.py
 import time
-from pathlib import Path
-
 from langchain_chroma import Chroma
 from chromadb.config import Settings
+
+from utils.logger import logger
 from utils.ollama_embed import OllamaEmbeddings
 from utils.chunking import chunk_documents
 from utils.loaders import load_docs
@@ -15,19 +15,21 @@ from utils.file_operation import( convert_doc_to_docx,
                                   move_temp2markdown)
 from core.preprocess import *
 from threading import Lock
+
 _ING_LOCK = Lock()
 
 time.perf_counter(); tmp_time = time.perf_counter()
 
 def ingestion():
+    logger.info("------------------------------------------------------------ START ingestion.py")
 
     # Damit läuft immer nur eine Ingestion
     if not _ING_LOCK.acquire(blocking=False):
-        print("Ingestion läuft bereits - Even ignoriert.")
+        logger.warning("Ingestion läuft bereits - Even ignoriert.")
         return
     try:
         if any(Path(UPLOAD_PATH).glob("*")):
-            print("Rohdateien gefunden, starte Ingestion ...")
+            logger.info("Rohdateien gefunden, starte Ingestion ...")
 
             # 1) Konvertierung
             convert_doc_to_docx()
@@ -62,29 +64,34 @@ def ingestion():
             affected_docs  = sorted({c.metadata["document_id"] for c in chunks})
             for doc_id in affected_docs:
                 vectordb.delete(where={"document_id": doc_id})
-            print(f"Alte Einträge gelöscht für: {', '.join(affected_docs) or '-'}")
+            logger.info(f"Alte Einträge gelöscht für: {', '.join(affected_docs) or '-'}")
 
 
             # 6.3) in Batches speichern (max-batch-size == 5461) ----
-            print("Speichere Chunks in ChromaDB ...")
+            logger.info("Speichere Chunks in ChromaDB ...")
             BATCH = 2000
             total_chunks = len(chunks)
             for i in range(0, total_chunks, BATCH):
                 part = chunks[i:i + BATCH]
                 vectordb.add_documents(part)
-                print(f"  -> gespeichert: {i + len(part)}/{total_chunks}")
-            print("Speicherung abgeschlossen.")
+                logger.info(f"  -> gespeichert: {i + len(part)}/{total_chunks}")
+            logger.info("Speicherung abgeschlossen.")
 
             # Vorbereiten für nächste Ingestion (verschieben)
             move_temp2markdown()
 
-            print("✅  Ingestion vollständig abgeschlossen.")
+            logger.info("✅  Ingestion vollständig abgeschlossen.")
 
         else:
-            print(" Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!")
+            logger.info(" Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!")
+
+    except Exception:
+        logger.exception("⚠️ Fehler bei der Ingestion.")
+
     finally:
         _ING_LOCK.release() # gibt den Lock wieder frei
-    print(f"Ingestion-Laufzeit: {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
+
+    logger.info(f"Ingestion-Laufzeit: {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
 
 if __name__ == "__main__":
     ingestion()

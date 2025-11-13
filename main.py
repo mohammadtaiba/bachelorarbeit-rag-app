@@ -1,12 +1,17 @@
 # main.py
 import streamlit as st
-from core.retrieval import answer
-from utils.handle_meta_questions import handle_meta_questions
 import threading, time
 from pathlib import Path
+
 from core.preprocess import UPLOAD_PATH
 from core.ingestion import ingestion
+from core.retrieval import answer
+
 from utils.watchdog import start_upload_watcher
+from utils.handle_meta_questions import handle_meta_questions
+from utils.logger import logger
+
+logger.debug("------------------------------------------------------------ START main.py")  # level=logging.debug?
 
 # -------------------------------------------------------------------------------------------------------
 # Style
@@ -25,21 +30,20 @@ if "watchdog_started" not in st.session_state:
     try:
         start_upload_watcher(UPLOAD_PATH, _trigger_ingestion)
         st.session_state["watchdog_started"] = True
-        print("[INIT] Watchdog gestartet.")
+        logger.info("Watchdog erfolgreich  gestartet.")
     except Exception as e:
-        print(f"[INIT] Watchdog-Start fehlgeschlagen: {e}")
+        logger.exception("⚠️ Watchdog konnte nicht gestartet werden.")
 else:
-    print("[INIT] Watchdog läuft bereits.")
+    logger.debug("Watchdog läuft bereits.")
 
 # -------------------------------------------------------------------------------------------------------
 # Beim Start prüfen, ob Dateien vorhanden sind
 initial_count = sum(1 for f in Path(UPLOAD_PATH).glob("*") if f.is_file())
 if initial_count > 0:
-    print(f"❗ Beim Start {initial_count} Datei(en) im Upload-Ordner gefunden → Ingestion wird gestartet ...")
+    logger.info(f"Beim Start {initial_count} Datei(en) gefunden → Initiale Ingestion ausgelöst.")
     threading.Thread(target=ingestion, daemon=True).start()
-    print("✅ Initiale Ingestion ausgelöst.")
 else:
-    print("[INIT] Upload-Ordner ist leer – keine Ingestion nötig.\n\n\n")
+    logger.debug("Upload-Ordner ist leer – keine Ingestion nötig.")
 
 # -------------------------------------------------------------------------------------------------------
 # Chat-Verlauf im Session State halten

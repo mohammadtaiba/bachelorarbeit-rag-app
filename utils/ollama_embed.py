@@ -1,9 +1,9 @@
 # utils/lmstudio_embed.py
+import requests
 from langchain_core.embeddings import Embeddings
+from utils.logger import logger
 
 # Verbindungsschicht zwischen LangChain und LM-Studio für Embedding.
-import requests
-
 class OllamaEmbeddings(Embeddings):
     """LangChain-kompatibles Embedding-Wrapper für lokale Ollama-Instanz."""
 
@@ -28,4 +28,4 @@ class OllamaEmbeddings(Embeddings):
         response.raise_for_status()
         return response.json()["embedding"]
 
-    print("Das RAG-System ist jetzt mit LMStudio verbunden.")
+    logger.info("Das RAG-System ist jetzt mit LMStudio verbunden.")

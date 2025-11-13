@@ -1,5 +1,5 @@
 # utils/file_operations.py
-import os
+from utils.logger import logger
 from pathlib import Path
 from core.preprocess import UPLOAD_PATH, RAW_PATH, TEMP_MD_PATH, FINAL_MD_PATH
 import shutil
@@ -20,10 +20,10 @@ def _to_longpath(p: Path) -> str:
 def convert_doc_to_docx():
     doc_files = sorted(UPLOAD_PATH.glob("*.doc"))
     if not doc_files:
-        print("Keine DOC-Dateien in \"upload\" zum Konvertieren gefunden.")
+        logger.info("Keine DOC-Dateien in \"upload\" zum Konvertieren gefunden.")
         return
 
-    print("Konvertiere von doc zu docx ...")
+    logger.info("Konvertiere von doc zu docx ...")
     # COM-Initialisierung (notwendig für win32)
     pythoncom.CoInitialize()
 
@@ -49,50 +49,50 @@ def convert_doc_to_docx():
                 # Als DOCX speichern (FileFormat=16 "neues XML-basiertes Format")
                 wdoc.SaveAs2(dst, FileFormat=16)
                 wdoc.Close(False)
-                print(f"→ {doc.name} → {doc.with_suffix('.docx').name} konvertiert")
+                logger.info(f"→ {doc.name} → {doc.with_suffix('.docx').name} konvertiert")
 
             except Exception as e:
-                print(f"⚠️ Fehler bei {doc.name}: {e}")
+                logger.exception(f"⚠️ Fehler bei der Konvertierung von doc-2-docx {doc.name}: {e}")
 
     finally:
         # Word-Anwendung immer beenden, egal ob Fehler oder Erfolg
         word.Quit()
-    print("Konvertierung von doc zu docx abgeschlossen.")
+    logger.info("Konvertierung von doc zu docx abgeschlossen.")
 
 # -----------------------------------------------------------------------------------------------------------------
 # löscht die doc-Dateien (nach der Bearbeitung)
 def delete_doc_files():
     doc_files = list(UPLOAD_PATH.glob("*.doc"))
     if not doc_files:
-        print("Keine DOC-Dateien in \"upload\" zum Löschen gefunden.")
+        logger.info("Keine DOC-Dateien in \"upload\" zum Löschen gefunden.")
         return
 
-    print("Lösche doc-Dateien ...")
+    logger.info("Lösche doc-Dateien ...")
     for f in doc_files:
         try:
             f.unlink()  # Datei löschen
-            print(f"Gelöscht Doc-Name: {f.name}")
+            logger.info(f"Gelöscht Doc-Name: {f.name}")
         except Exception as e:
-            print(f"⚠️ Fehler beim Löschen von {f.name}: {e}")
-    print("Löschen vom doc-Dateien in \"upload\" beendet.")
+            logger.exception(f"⚠️ Fehler beim Löschen von {f.name}: {e}")
+    logger.info("Löschen vom doc-Dateien in \"upload\" beendet.")
 
 # -----------------------------------------------------------------------------------------------------------------
 # Verschiebt alle Dateien aus UPLOAD_PATH → RAW_PATH.
 def move_upload2raw():
     files = list(UPLOAD_PATH.glob("*"))
     if not files:
-        print("Keine Dateien in \"upload\" gefunden.")
+        logger.info("Keine Dateien in \"upload\" gefunden.")
         return
 
-    print("Verschiebe aus \"upload\" zu \"raw\"  ...")
+    logger.info("Verschiebe aus \"upload\" zu \"raw\"  ...")
     for f in files:
         try:
             target = RAW_PATH / f.name   # baut einfach den Zielpfad zusammen
             shutil.move(str(f), target) # verschiebt die Datei f an den neuen Ort target
-            print(f"    - {f.name} → nach raw/ verschoben")
+            logger.info(f"    - {f.name} → nach raw/ verschoben")
         except Exception as e:
-            print(f"⚠️ Fehler beim Verschieben von {f.name}: {e}")
-    print("Verschiebung aus \"upload\" zu \"raw\"  abgeschlossen.")
+            logger.exception(f"⚠️ Fehler beim Verschieben von {f.name}: {e}")
+    logger.info("Verschiebung aus \"upload\" zu \"raw\"  abgeschlossen.")
 
 
 # -----------------------------------------------------------------------------------------------------------------
@@ -100,16 +100,16 @@ def move_upload2raw():
 def move_temp2markdown():
     files = list(TEMP_MD_PATH.glob("*.md"))
     if not files:
-        print("Keine Markdown-Dateien in \"markdown_temp\" gefunden.")
+        logger.info("Keine Markdown-Dateien in \"markdown_temp\" gefunden.")
         return
 
-    print("Verschiebe aus \"markdown_temp\" zu \"markdown\"  ...")
+    logger.info("Verschiebe aus \"markdown_temp\" zu \"markdown\"  ...")
 
     for f in files:
         try:
             target = FINAL_MD_PATH / f.name
             f.replace(target)  # schneller als shutil.move für gleiche Partition
-            print(f"    - {f.name} → nach markdown/ verschoben")
+            logger.info(f"    - {f.name} → nach markdown/ verschoben")
         except Exception as e:
-            print(f"⚠️ Fehler beim Verschieben von {f.name}: {e}")
-    print("Verschiebung aus \"markdown_temp\" zu \"markdown\"  abgeschlossen.")
+            logger.exception(f"⚠️ Fehler beim Verschieben von {f.name}: {e}")
+    logger.info("Verschiebung aus \"markdown_temp\" zu \"markdown\"  abgeschlossen.")

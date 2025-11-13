@@ -2,6 +2,7 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pathlib import Path
 import re
+from utils.logger import logger
 
 # --- helper: Umlaute normalisieren ---
 def normalize_german(text: str) -> str:
@@ -34,8 +35,8 @@ def add_metadata(chunks):
 
 # --- Chunking + Metadaten ---
 def chunk_documents(docs, chunk_size: int, chunk_overlap: int):
-    print("Chunking beginnt ...")
+    logger.info("Chunking beginnt ...")
     splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
     chunks = splitter.split_documents(docs)
-    print("Chunking abgeschlossen.")
+    logger.info("Chunking abgeschlossen.")
     return add_metadata(chunks)
