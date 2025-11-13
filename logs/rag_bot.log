@@ -1,0 +1,6 @@
+13-Nov-25 14:42:21 - INFO - ------------------------------------------------------------ START retrieval.py
+13-Nov-25 14:42:21 - INFO - Watchdog erfolgreich  gestartet.
+13-Nov-25 14:42:47 - INFO - Neue Frage, "was ist rag?" Chat-History-Länge: 1
+13-Nov-25 14:42:47 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+13-Nov-25 14:42:48 - INFO - Retrieval-Kette erfolgreich erstellt.
+13-Nov-25 14:45:49 - INFO - Antwort erzeugt in  182.7 s
