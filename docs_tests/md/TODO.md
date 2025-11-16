@@ -1,15 +1,18 @@
 # TODO
 
 * [x] "utils/handle_meta_questions.py" anpassen & korrigieren
-* [ ] **Benutzeroberfläche anpassen:**
+* [x] **Benutzeroberfläche anpassen:**
 
 > * sidebar entweder entfernen oder anderes besser tun
 > * Das Fragefeld sollte immer unten fest angepinnt werden.
 > * Fragefelder leeren nach jeder frage
 > * Bei der Generation einer Antwort sollte es automatisch nach unter gescrollt werden
 
+* [x] alle PDF-Dokumente laden
+* [ ] Retrieval verbessern
+* [ ] Fine-tuning
+* [ ] mehrere Modelle zur Auswahl
 * [ ] Konvertierung von html zu md
-* [ ] alle PDF-Dokumente laden
 * [ ] Antwortqualität messen
 
 

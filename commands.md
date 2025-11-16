@@ -1,5 +1,6 @@
 ## Models:
 ### Modelle laden:
+- installiere zuerst dem Modell auf dem Rechner: https://ollama.com/download
 - ollama pull llama3 
 - ollama pull nomic-embed-text
 
