@@ -43,7 +43,7 @@ def get_chain():
         api_key="ollama")
 
     # 5) Prompt
-    prompt = PromptTemplate.from_templateprompt = PromptTemplate.from_template("""
+    prompt = PromptTemplate.from_template("""
         Du bist ein Support-Chatbot, der Unternehmen bei der Analyse und Verbesserung ihrer Nachhaltigkeitsberichte unterstützt.
         Deine Aufgabe ist es, auf deutsch, faktenbasiert und präzise auf Fragen zu antworten. Dabei darfst du nur den bereitgestellten Kontext und den letzten Chatverlauf nutzen.        Wenn der Chatverlauf für die Frage nicht relevant ist, ignoriere ihn und befolge ausschließlich die oben genannten Regeln.
         Wenn kein Kontext vorhanden ist, antworte: 'Information nicht gefunden. Bitte versuche es mit einer anderen Frage.'
@@ -91,8 +91,7 @@ def answer(q: str, chat_history: list[tuple[str, str]]):
 
     except Exception:
         logger.exception(f"⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: \"{q}\"")
-        return ("⚠️ Fehler: Anfrage konnte nicht verarbeitet werden. "
-            "Bitte versuche es erneut oder kontaktiere das TopDev-Team.")
+        return "⚠️ Fehler: Anfrage konnte nicht verarbeitet werden."
 
 if __name__ == "__main__":
     print()
