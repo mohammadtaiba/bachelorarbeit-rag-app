@@ -3,7 +3,11 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+# Projektroot = Ordner, der core/ enthält → eine Ebene höher
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+# .env im Projektroot explizit laden
+load_dotenv(PROJECT_ROOT / ".env")
 
 # --- Modelle / API ---
 OLLAMA_URL  = os.getenv("OLLAMA_URL")
