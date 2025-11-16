@@ -13,6 +13,10 @@ pandas
 openpyxl
 tabulate
 watchdog
+langchain_core
+pydantic
+requests
+chromadb
 
 ## LangChain
 langchain>=0.3,<0.4                     # Kern-Framework
