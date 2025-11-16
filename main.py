@@ -94,7 +94,7 @@ def render_sidebar(logo_b64: str) -> None:
     """
     with st.sidebar:
         # ------------------------------------------------------------------------------------------------
-        # Clickable logo (links to the same page / reload)
+        # Clickable logo (links to the same page)
         if logo_b64:
             st.markdown(
                 f"""
