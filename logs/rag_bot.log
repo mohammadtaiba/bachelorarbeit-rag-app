@@ -249,3 +249,1418 @@
 14-Nov-25 11:37:53 - INFO - Upload watchdog successfully started.
 14-Nov-25 11:38:04 - INFO - Upload watchdog successfully started.
 14-Nov-25 11:38:16 - INFO - Upload watchdog successfully started.
+14-Nov-25 20:32:54 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+14-Nov-25 20:32:54 - INFO - ------------------------------------------------------------ START retrieval.py
+14-Nov-25 20:32:56 - INFO - Upload watchdog successfully started.
+15-Nov-25 13:50:27 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+15-Nov-25 13:50:27 - INFO - ------------------------------------------------------------ START retrieval.py
+15-Nov-25 13:50:28 - INFO - Upload watchdog successfully started.
+15-Nov-25 13:51:06 - INFO - Upload watchdog successfully started.
+15-Nov-25 14:09:44 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+15-Nov-25 14:09:44 - INFO - ------------------------------------------------------------ START retrieval.py
+15-Nov-25 17:20:51 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+15-Nov-25 17:20:51 - INFO - ------------------------------------------------------------ START retrieval.py
+15-Nov-25 17:20:52 - INFO - Upload watchdog successfully started.
+15-Nov-25 17:31:01 - INFO - Neue Frage: "Welcher Strandard kann ich benutzen?", Chat-History-Länge: 0
+15-Nov-25 17:31:01 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+15-Nov-25 17:31:02 - INFO - Retrieval-Kette erfolgreich erstellt.
+15-Nov-25 17:31:06 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Welcher Strandard kann ich benutzen?"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F9B7C1B9D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F9B7C1B9D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 159, in _call
+    docs = self._get_docs(new_question, inputs, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 396, in _get_docs
+    docs = self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\next_neighbor_retriever.py", line 88, in _get_relevant_documents
+    hits = self.base.invoke(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 1067, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 698, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 798, in similarity_search_with_score
+    query_embedding = self._embedding_function.embed_query(query)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\ollama_embed.py", line 20, in embed_query
+    return self._embed_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\ollama_embed.py", line 24, in _embed_text
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F9B7C1B9D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+15-Nov-25 18:47:36 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+15-Nov-25 18:47:36 - INFO - ------------------------------------------------------------ START retrieval.py
+15-Nov-25 18:47:37 - INFO - Upload watchdog successfully started.
+15-Nov-25 19:04:25 - INFO - Neue Frage: "Welcher Strandard kann ich benutzen?
+
+", Chat-History-Länge: 0
+15-Nov-25 19:04:25 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+15-Nov-25 19:04:26 - INFO - Retrieval-Kette erfolgreich erstellt.
+15-Nov-25 19:04:52 - INFO - Antwort erzeugt in  26.7 s
+15-Nov-25 19:09:48 - INFO - Neue Frage: "Welche Maßnahmen kann ein mittelständisches Unternehmen ergreifen, um seine CO₂-Emissionen im Scope 1 und 2 zu reduzieren?", Chat-History-Länge: 0
+15-Nov-25 19:09:48 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+15-Nov-25 19:09:48 - INFO - Retrieval-Kette erfolgreich erstellt.
+15-Nov-25 19:10:14 - INFO - Antwort erzeugt in  25.6 s
+15-Nov-25 19:21:16 - INFO - Neue Frage: "Welche Maßnahmen kann ein mittelständisches Unternehmen ergreifen, um seine CO₂-Emissionen zu reduzieren?
+
+", Chat-History-Länge: 0
+15-Nov-25 19:21:16 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+15-Nov-25 19:21:16 - INFO - Retrieval-Kette erfolgreich erstellt.
+15-Nov-25 19:21:50 - INFO - Antwort erzeugt in  34.5 s
+15-Nov-25 19:29:06 - INFO - Neue Frage: "was meinst du mit Sustainable Procurement?", Chat-History-Länge: 1
+15-Nov-25 19:29:06 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+15-Nov-25 19:29:06 - INFO - Retrieval-Kette erfolgreich erstellt.
+15-Nov-25 19:29:26 - INFO - Antwort erzeugt in  19.6 s
+15-Nov-25 20:03:55 - INFO - Neue Frage: "und was heißt das "Sustainable Procurement" auf deutsch?", Chat-History-Länge: 2
+15-Nov-25 20:03:55 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+15-Nov-25 20:03:55 - INFO - Retrieval-Kette erfolgreich erstellt.
+15-Nov-25 20:07:37 - INFO - Antwort erzeugt in  221.7 s
+16-Nov-25 09:14:52 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 09:14:52 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 09:14:54 - INFO - Upload watchdog successfully started.
+16-Nov-25 09:14:58 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?", Chat-History-Länge: 0
+16-Nov-25 09:14:58 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:15:00 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:15:53 - INFO - Antwort erzeugt in  55.2 s
+16-Nov-25 09:17:08 - INFO - Neue Frage: "Von welchen dieser Maßnahmen weißt Du, dass sie von Unternehmen im Stadtquartier bereits erfolgreich umgesetzt wurden?", Chat-History-Länge: 1
+16-Nov-25 09:17:08 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:17:08 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:17:23 - INFO - Antwort erzeugt in  14.9 s
+16-Nov-25 09:18:26 - INFO - Neue Frage: "Kannst Du mir zeigen, in welchen Nachhaltigkeitsberichten dies steht?", Chat-History-Länge: 2
+16-Nov-25 09:18:26 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:18:26 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:18:44 - INFO - Antwort erzeugt in  18.2 s
+16-Nov-25 09:20:06 - INFO - Neue Frage: " ich möchte interessante und innovative Maßnahmen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen!", Chat-History-Länge: 3
+16-Nov-25 09:20:06 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:20:06 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:20:29 - INFO - Antwort erzeugt in  22.5 s
+16-Nov-25 09:21:07 - INFO - Neue Frage: "dann gib mir diese themen!", Chat-History-Länge: 4
+16-Nov-25 09:21:07 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:21:07 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:21:24 - INFO - Antwort erzeugt in  16.8 s
+16-Nov-25 09:21:41 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?
+
+", Chat-History-Länge: 0
+16-Nov-25 09:21:41 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:21:41 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:22:09 - INFO - Antwort erzeugt in  27.8 s
+16-Nov-25 09:32:19 - INFO - Neue Frage: "Von welchen dieser Maßnahmen weißt Du, dass sie von Unternehmen im Stadtquartier bereits erfolgreich umgesetzt wurden?", Chat-History-Länge: 1
+16-Nov-25 09:32:19 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:32:19 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:32:34 - INFO - Antwort erzeugt in  15.4 s
+16-Nov-25 09:33:26 - INFO - Neue Frage: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern) ", Chat-History-Länge: 0
+16-Nov-25 09:33:26 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:33:26 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:33:54 - INFO - Antwort erzeugt in  28.6 s
+16-Nov-25 09:34:03 - INFO - Neue Frage: "Wie weit textbaustein entstehen können für solche Nachhaltigkeitsberichten.", Chat-History-Länge: 1
+16-Nov-25 09:34:03 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 09:34:03 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 09:34:17 - INFO - Antwort erzeugt in  13.1 s
+16-Nov-25 10:29:43 - INFO - Upload watchdog successfully started.
+16-Nov-25 10:55:32 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 10:55:32 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 10:55:35 - INFO - Neue Frage: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)
+
+", Chat-History-Länge: 0
+16-Nov-25 10:55:35 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 10:55:35 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 99, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 28, in get_chain
+    vectordb = Chroma(
+               ^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 413, in __init__
+    self.__ensure_collection()
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 420, in __ensure_collection
+    self._chroma_collection = self._client.get_or_create_collection(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\chromadb\api\client.py", line 249, in get_or_create_collection
+    model = self._server.get_or_create_collection(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\chromadb\api\rust.py", line 292, in get_or_create_collection
+    return self.create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\chromadb\api\rust.py", line 242, in create_collection
+    collection = self.bindings.create_collection(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InternalError: Could not fetch collections: Database error: error returned from database: (code: 1) no such column: collections.schema_str
+16-Nov-25 11:06:10 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:06:10 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:06:10 - INFO - Upload watchdog successfully started.
+16-Nov-25 11:06:20 - INFO - Neue Frage: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)", Chat-History-Länge: 0
+16-Nov-25 11:06:20 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:06:21 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:06:52 - INFO - Antwort erzeugt in  32.0 s
+16-Nov-25 11:07:55 - INFO - Neue Frage: "Wie weit textbaustein entstehen können für solche Nachhaltigkeitsberichten.", Chat-History-Länge: 1
+16-Nov-25 11:07:55 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:07:55 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:08:26 - INFO - Antwort erzeugt in  31.4 s
+16-Nov-25 11:32:24 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:32:24 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:32:27 - INFO - Neue Frage: "Wie weit textbaustein entstehen können für solche Nachhaltigkeitsberichten.
+
+", Chat-History-Länge: 0
+16-Nov-25 11:32:27 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:32:27 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:32:44 - INFO - Antwort erzeugt in 17.2 s
+16-Nov-25 11:32:44 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:33:15 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:33:15 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:33:17 - INFO - Neue Frage: "Wie weit textbaustein entstehen können für solche Nachhaltigkeitsberichten.
+
+", Chat-History-Länge: 0
+16-Nov-25 11:33:17 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:33:17 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:33:28 - INFO - Antwort erzeugt in 11.0 s
+16-Nov-25 11:33:28 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:33:54 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?", Chat-History-Länge: 0
+16-Nov-25 11:33:54 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:33:54 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:34:13 - INFO - Antwort erzeugt in 19.7 s
+16-Nov-25 11:34:13 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:34:34 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:34:34 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:34:36 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?
+
+", Chat-History-Länge: 0
+16-Nov-25 11:34:36 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:34:37 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:34:51 - INFO - Antwort erzeugt in 14.9 s
+16-Nov-25 11:34:51 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:35:17 - INFO - Neue Frage: "nenne mir innovative Maßnahmen", Chat-History-Länge: 0
+16-Nov-25 11:35:17 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:35:17 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:35:32 - INFO - Antwort erzeugt in 14.8 s
+16-Nov-25 11:35:32 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:38:52 - INFO - Neue Frage: "nenne mir interessante oder innovative Maßnahmen, die im Autohaus verwendet werden können", Chat-History-Länge: 0
+16-Nov-25 11:38:52 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:38:52 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:39:10 - INFO - Antwort erzeugt in 18.4 s
+16-Nov-25 11:39:10 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:39:50 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:39:50 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:39:52 - INFO - Neue Frage: "nenne mir interessante oder innovative Maßnahmen, die im Autohaus verwendet werden können
+
+", Chat-History-Länge: 0
+16-Nov-25 11:39:52 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:39:52 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:40:08 - INFO - Antwort erzeugt in 15.9 s
+16-Nov-25 11:40:08 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:41:44 - INFO - Neue Frage: "ist das richtig? Im Rahmen die nachhaltige Unternehmensentwicklung hat das Autohaus Kreisser klare Werte für unsere Arbeitsweise und den Umgang miteinander festgelegt.", Chat-History-Länge: 0
+16-Nov-25 11:41:44 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:41:44 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:41:52 - INFO - Antwort erzeugt in 8.2 s
+16-Nov-25 11:41:52 - INFO - Kein Kontext im Vektorindex gefunden – inhaltlicher Fallback.
+16-Nov-25 11:42:22 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:42:22 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:42:23 - INFO - Neue Frage: "ist das richtig? Im Rahmen die nachhaltige Unternehmensentwicklung hat das Autohaus Kreisser klare Werte für unsere Arbeitsweise und den Umgang miteinander festgelegt.
+", Chat-History-Länge: 0
+16-Nov-25 11:42:23 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:42:23 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:42:25 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "ist das richtig? Im Rahmen die nachhaltige Unternehmensentwicklung hat das Autohaus Kreisser klare Werte für unsere Arbeitsweise und den Umgang miteinander festgelegt.
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 106, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 159, in _call
+    docs = self._get_docs(new_question, inputs, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 396, in _get_docs
+    docs = self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\next_neighbor_retriever.py", line 88, in _get_relevant_documents
+    hits = self.base.invoke(query)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 1067, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 698, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 799, in similarity_search_with_score
+    results = self.__query_collection(
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\utils\utils.py", line 51, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 473, in __query_collection
+    return self._collection.query(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Collection.query() got an unexpected keyword argument 'score_threshold'
+16-Nov-25 11:42:50 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:42:50 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:42:51 - INFO - Neue Frage: "ist das richtig? Im Rahmen die nachhaltige Unternehmensentwicklung hat das Autohaus Kreisser klare Werte für unsere Arbeitsweise und den Umgang miteinander festgelegt.
+
+", Chat-History-Länge: 0
+16-Nov-25 11:42:51 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:42:51 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:43:03 - INFO - Antwort erzeugt in 11.5 s
+16-Nov-25 11:44:03 - INFO - Neue Frage: "und was hat noch Autohaus Kreisser gemacht?", Chat-History-Länge: 1
+16-Nov-25 11:44:03 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:44:03 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:44:27 - INFO - Antwort erzeugt in 24.0 s
+16-Nov-25 11:48:55 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 11:48:55 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 11:49:04 - INFO - Neue Frage: "ist das richtig? dass im Rahmen die nachhaltige Unternehmensentwicklung hat das Autohaus Kreisser klare Werte für unsere Arbeitsweise und den Umgang miteinander festgelegt.
+
+", Chat-History-Länge: 0
+16-Nov-25 11:49:04 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 11:49:05 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 11:49:18 - INFO - Antwort erzeugt in  13.2 s
+16-Nov-25 12:16:08 - INFO - Neue Frage: "ist das richtig? dass im Rahmen die nachhaltige Unternehmensentwicklung hat das Autohaus Kreisser klare Werte für unsere Arbeitsweise und den Umgang miteinander festgelegt.
+
+", Chat-History-Länge: 1
+16-Nov-25 12:16:08 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 12:16:08 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 12:16:26 - INFO - Antwort erzeugt in  18.5 s
+16-Nov-25 12:16:57 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?", Chat-History-Länge: 0
+16-Nov-25 12:16:57 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 12:16:57 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 12:17:20 - INFO - Antwort erzeugt in  23.0 s
+16-Nov-25 12:18:18 - INFO - Neue Frage: "Von welchen dieser Maßnahmen weißt Du, dass sie von Unternehmen im Stadtquartier bereits erfolgreich umgesetzt wurden?", Chat-History-Länge: 1
+16-Nov-25 12:18:18 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 12:18:18 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 12:18:41 - INFO - Antwort erzeugt in  23.2 s
+16-Nov-25 12:20:06 - INFO - Neue Frage: "Kannst Du mir zeigen, in welchen Nachhaltigkeitsberichten dies steht oder einfach die Antwort zitieren?", Chat-History-Länge: 2
+16-Nov-25 12:20:06 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 12:20:06 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 12:20:19 - INFO - Antwort erzeugt in  12.9 s
+16-Nov-25 15:14:21 - INFO - Neue Frage: "6. Welche typischen Risiken bestehen für die Bauwirtschaft bezüglich Umwelt-Compliance?", Chat-History-Länge: 0
+16-Nov-25 15:14:21 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:14:21 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:15:06 - INFO - Antwort erzeugt in  45.6 s
+16-Nov-25 15:46:21 - INFO - Neue Frage: "Welche typischen Risiken bestehen für die Bauwirtschaft bezüglich Umwelt-Compliance?", Chat-History-Länge: 0
+16-Nov-25 15:46:21 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:46:21 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:47:23 - INFO - Antwort erzeugt in  61.7 s
+16-Nov-25 15:48:13 - INFO - Upload watchdog successfully started.
+16-Nov-25 15:48:42 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?", Chat-History-Länge: 0
+16-Nov-25 15:48:42 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:48:42 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:49:09 - INFO - Antwort erzeugt in  26.3 s
+16-Nov-25 15:49:55 - INFO - Neue Frage: "Von welchen dieser Maßnahmen weißt Du, dass sie von Unternehmen im Stadtquartier bereits erfolgreich umgesetzt wurden?", Chat-History-Länge: 1
+16-Nov-25 15:49:55 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:49:55 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:50:07 - INFO - Antwort erzeugt in  11.8 s
+16-Nov-25 15:50:42 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?
+
+", Chat-History-Länge: 0
+16-Nov-25 15:50:42 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:50:42 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:51:06 - INFO - Antwort erzeugt in  24.1 s
+16-Nov-25 15:51:12 - INFO - Neue Frage: "Kannst Du mir zeigen, in welchen Nachhaltigkeitsberichten dies steht?", Chat-History-Länge: 1
+16-Nov-25 15:51:12 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:51:12 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:51:27 - INFO - Antwort erzeugt in  14.8 s
+16-Nov-25 15:52:16 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)", Chat-History-Länge: 0
+16-Nov-25 15:52:16 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 15:52:16 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 15:52:40 - INFO - Antwort erzeugt in  24.3 s
+16-Nov-25 16:20:23 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 16:20:23 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:20:23 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:20:28 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'llama3' not found", 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:20:40 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+", Chat-History-Länge: 0
+16-Nov-25 16:20:40 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:20:40 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:20:44 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'llama3' not found", 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:21:20 - INFO - Upload watchdog successfully started.
+16-Nov-25 16:21:24 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 16:21:24 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:21:24 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:21:28 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'llama3' not found", 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:24:28 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 16:24:28 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 16:24:29 - INFO - Upload watchdog successfully started.
+16-Nov-25 16:24:31 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 16:24:31 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:24:32 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:24:41 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (20.4 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:38:09 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 16:38:09 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 16:39:58 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 16:39:58 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 16:39:58 - INFO - Upload watchdog successfully started.
+16-Nov-25 16:40:11 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 16:40:11 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:40:11 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:40:20 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (24.5 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:43:55 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 16:43:55 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 16:43:55 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 1
+16-Nov-25 16:43:55 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:43:55 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:44:01 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 150, in _call
+    new_question = self.question_generator.run(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (23.4 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:50:12 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 16:50:12 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 16:50:13 - INFO - Upload watchdog successfully started.
+16-Nov-25 16:50:20 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 16:50:20 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:50:21 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:50:30 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Project-Coursera RAG with Langchain\.venv\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (19.9 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 16:58:49 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 16:58:49 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 16:58:50 - INFO - Upload watchdog successfully started.
+16-Nov-25 16:58:54 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 16:58:54 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 16:58:54 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 16:59:04 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (23.6 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 17:10:06 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 17:10:06 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 17:10:09 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 17:10:09 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:10:09 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:10:18 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (20.2 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 17:19:02 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 17:19:02 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:19:02 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:19:12 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (18.2 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 17:19:53 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 17:19:53 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:19:53 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:20:02 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (31.7 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 17:20:25 - INFO - Upload watchdog successfully started.
+16-Nov-25 17:28:38 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 17:28:38 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:28:38 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:28:47 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requires more system memory (33.4 GiB) than is available (23.7 GiB)', 'type': 'api_error', 'param': None, 'code': None}}
+16-Nov-25 17:29:05 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+16-Nov-25 17:29:05 - INFO - ------------------------------------------------------------ START retrieval.py
+16-Nov-25 17:29:06 - INFO - Upload watchdog successfully started.
+16-Nov-25 17:29:44 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 17:29:44 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:29:44 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:30:13 - INFO - Antwort erzeugt in  29.1 s
+16-Nov-25 17:37:12 - INFO - Neue Frage: "Kannst Du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere deine Antwort mit der quellen!)
+
+", Chat-History-Länge: 0
+16-Nov-25 17:37:12 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:37:12 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:37:41 - INFO - Antwort erzeugt in  28.6 s
+16-Nov-25 17:38:52 - INFO - Neue Frage: "ist diese antwort aus dem kontext ?", Chat-History-Länge: 1
+16-Nov-25 17:38:52 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+16-Nov-25 17:38:52 - INFO - Retrieval-Kette erfolgreich erstellt.
+16-Nov-25 17:39:06 - INFO - Antwort erzeugt in  13.6 s
