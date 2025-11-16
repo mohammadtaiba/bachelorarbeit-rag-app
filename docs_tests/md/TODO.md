@@ -9,7 +9,9 @@
 > * Bei der Generation einer Antwort sollte es automatisch nach unter gescrollt werden
 
 * [x] alle PDF-Dokumente laden
-* [ ] Retrieval verbessern
+* **Retrieval verbessern**
+  * [ ] Problem: LLM antwortet von seinem Allgemeinem wissen
+  * [ ] Data-Input automatisieren 
 * [ ] Fine-tuning
 * [ ] mehrere Modelle zur Auswahl
 * [ ] Konvertierung von html zu md
