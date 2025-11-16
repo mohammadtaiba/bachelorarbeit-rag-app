@@ -1,11 +1,10 @@
-## Models:
-### Modelle laden:
-- installiere zuerst dem Modell auf dem Rechner: https://ollama.com/download
-- ollama pull llama3 
+## Modelle:
+- "installiere zuerst dem Modell auf dem Rechner": https://ollama.com/download
+- ollama pull llama3
+- - ollama pull llama3:70b
 - ollama pull nomic-embed-text
-
-### prüfen ob sie verfügbar sind:
-ollama ps
+- "Alle Modellen anzeigen": ollama list
+- "Modell löschen": ollama rm <MODEL-NAME>
 
 ### Test Embedding, führe das im terminal:
 Invoke-RestMethod `
