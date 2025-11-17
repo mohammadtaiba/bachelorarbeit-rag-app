@@ -14,11 +14,11 @@ LLM_MODEL   = os.getenv("LLM_MODEL")
 COLLECTION  = os.getenv("COLLECTION")
 
 # --- Datenpfade (zentrales Single-Source-of-Truth) ---
-RAW_PATH      = os.getenv("DATA_RAW")
-UPLOAD_PATH   = os.getenv("DATA_UPLOAD")
-TEMP_MD_PATH  = os.getenv("DATA_TEMP_MD")
-FINAL_MD_PATH = os.getenv("DATA_MARKDOWN")
-DB_PATH       = os.getenv("DB_PATH")
+RAW_PATH      = Path(os.getenv("DATA_RAW"))
+UPLOAD_PATH   = Path(os.getenv("DATA_UPLOAD"))
+TEMP_MD_PATH  = Path(os.getenv("DATA_TEMP_MD"))
+FINAL_MD_PATH = Path(os.getenv("DATA_MARKDOWN"))
+DB_PATH       = Path(os.getenv("DB_PATH"))
 
 # Verzeichnisse EINMALIG sicherstellen
 for p in (RAW_PATH, UPLOAD_PATH, TEMP_MD_PATH, FINAL_MD_PATH, DB_PATH):
