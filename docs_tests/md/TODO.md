@@ -10,10 +10,11 @@
 
 * [x] alle PDF-Dokumente laden
 * **Retrieval verbessern**
-  * [ ] Problem: LLM antwortet von seinem Allgemeinem wissen
+  * [x] Problem: LLM antwortet von seinem Allgemeinem wissen
+    * Problem gelöst, durch Verwendung bessere und größere Modell
   * [ ] Data-Input automatisieren 
 * [ ] Fine-tuning
-* [ ] mehrere Modelle zur Auswahl
+* [ ] mehrere Modelle zur Auswahl?
 * [ ] Konvertierung von html zu md
 * [ ] Antwortqualität messen
 
