@@ -1664,3 +1664,27 @@ openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requi
 16-Nov-25 17:38:52 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
 16-Nov-25 17:38:52 - INFO - Retrieval-Kette erfolgreich erstellt.
 16-Nov-25 17:39:06 - INFO - Antwort erzeugt in  13.6 s
+17-Nov-25 07:08:56 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+17-Nov-25 07:08:56 - INFO - ------------------------------------------------------------ START retrieval.py
+17-Nov-25 07:08:59 - INFO - Upload watchdog successfully started.
+17-Nov-25 07:37:29 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+17-Nov-25 07:37:29 - INFO - ------------------------------------------------------------ START retrieval.py
+17-Nov-25 07:37:31 - INFO - Upload watchdog successfully started.
+17-Nov-25 07:42:17 - INFO - Neue Frage: "Kannst du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?", Chat-History-Länge: 0
+17-Nov-25 07:42:17 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+17-Nov-25 07:42:18 - INFO - Retrieval-Kette erfolgreich erstellt.
+17-Nov-25 07:43:02 - INFO - Antwort erzeugt in  45.6 s
+17-Nov-25 07:48:17 - INFO - Neue Frage: "Von welchen dieser Maßnahmen weißt Du, dass sie von Unternehmen im Stadtquartier bereits erfolgreich umgesetzt wurden?", Chat-History-Länge: 1
+17-Nov-25 07:48:17 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+17-Nov-25 07:48:17 - INFO - Retrieval-Kette erfolgreich erstellt.
+17-Nov-25 07:48:26 - INFO - Antwort erzeugt in  8.9 s
+17-Nov-25 07:50:18 - INFO - Neue Frage: "Kannst du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (zitiere die quellen!)", Chat-History-Länge: 0
+17-Nov-25 07:50:18 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+17-Nov-25 07:50:19 - INFO - Retrieval-Kette erfolgreich erstellt.
+17-Nov-25 07:50:54 - INFO - Antwort erzeugt in  35.8 s
+17-Nov-25 07:52:21 - INFO - Neue Frage: "Von welchen dieser Maßnahmen weißt Du, dass sie von Unternehmen bereits erfolgreich umgesetzt wurden?", Chat-History-Länge: 1
+17-Nov-25 07:52:21 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+17-Nov-25 07:52:22 - INFO - Retrieval-Kette erfolgreich erstellt.
+17-Nov-25 07:53:06 - INFO - Antwort erzeugt in  44.1 s
+17-Nov-25 09:57:56 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+17-Nov-25 09:57:56 - INFO - ------------------------------------------------------------ START retrieval.py
