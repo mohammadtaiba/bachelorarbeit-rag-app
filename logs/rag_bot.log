@@ -1688,3 +1688,18 @@ openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requi
 17-Nov-25 07:53:06 - INFO - Antwort erzeugt in  44.1 s
 17-Nov-25 09:57:56 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
 17-Nov-25 09:57:56 - INFO - ------------------------------------------------------------ START retrieval.py
+19-Nov-25 13:19:25 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+19-Nov-25 13:19:25 - INFO - ------------------------------------------------------------ START retrieval.py
+19-Nov-25 13:19:28 - INFO - Upload watchdog successfully started.
+19-Nov-25 13:19:42 - INFO - Upload watchdog successfully started.
+19-Nov-25 13:20:01 - INFO - Neue Frage: "warum Nachhaltigkeitsstrategie ist wichtig?", Chat-History-Länge: 0
+19-Nov-25 13:20:01 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+19-Nov-25 13:20:03 - INFO - Retrieval-Kette erfolgreich erstellt.
+19-Nov-25 13:20:14 - INFO - Antwort erzeugt in  13.0 s
+19-Nov-25 13:28:06 - INFO - Neue Frage: "was meinst du mit Transparenz und Governance
+", Chat-History-Länge: 1
+19-Nov-25 13:28:06 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+19-Nov-25 13:28:06 - INFO - Retrieval-Kette erfolgreich erstellt.
+19-Nov-25 13:28:18 - INFO - Antwort erzeugt in  11.7 s
+19-Nov-25 14:37:32 - INFO - Starting DNK scraping from ID 12000 to 19000...
+19-Nov-25 14:43:11 - INFO - 7000 URLs geprüft, 220 gültige URLs gefunden in 339.23s
