@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.8 Chrome/140.0.7339.240 Electron/38.4.0 Safari/537.36" version="28.2.8">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
   <diagram name="Seite-1" id="Bzmq8vI_scQP_HTdQC11">
-    <mxGraphModel dx="2993" dy="914" grid="1" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2754" dy="914" grid="1" gridSize="9" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -173,6 +173,9 @@
         </mxCell>
         <mxCell id="ojAF9OAQHbiHy8uxPhVL-2" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Cloud-Modell:&amp;nbsp;gpt-oss:120b-cloud&lt;/font&gt;&lt;/span&gt;" style="shape=note;strokeWidth=2;fontSize=10;size=12;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#000000, #6d5100);fontColor=#666600;align=left;fontStyle=2" parent="1" vertex="1">
           <mxGeometry x="549" y="600.75" width="328" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="WiMQg9sfAHIt1TN27WbX-1" value="&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:9,8pt;&quot;&gt;&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:9,8pt;&quot;&gt;&lt;b&gt;Online hosten&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;(Fly.io `kostenlos`)&lt;/font&gt;&lt;/pre&gt;&lt;/pre&gt;" style="whiteSpace=wrap;html=1;fontSize=10;rounded=1;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#8D8D8D;fontColor=default;spacing=2;labelBorderColor=none;textShadow=0;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="-226.5" y="181" width="184" height="34.5" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
