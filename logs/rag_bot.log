@@ -1703,3 +1703,804 @@ openai.InternalServerError: Error code: 500 - {'error': {'message': 'model requi
 19-Nov-25 13:28:18 - INFO - Antwort erzeugt in  11.7 s
 19-Nov-25 14:37:32 - INFO - Starting DNK scraping from ID 12000 to 19000...
 19-Nov-25 14:43:11 - INFO - 7000 URLs geprüft, 220 gültige URLs gefunden in 339.23s
+20-Nov-25 20:13:03 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+20-Nov-25 20:13:03 - INFO - ------------------------------------------------------------ START retrieval.py
+20-Nov-25 20:13:07 - INFO - Upload watchdog successfully started.
+20-Nov-25 20:15:09 - INFO - Neue Frage: "was ist s", Chat-History-Länge: 0
+20-Nov-25 20:15:09 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 20:15:10 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 20:15:22 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "was ist s"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'gpt-oss:120b-cloud' not found", 'type': 'api_error', 'param': None, 'code': None}}
+20-Nov-25 20:17:02 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+20-Nov-25 20:17:02 - INFO - ------------------------------------------------------------ START retrieval.py
+20-Nov-25 20:17:02 - INFO - Upload watchdog successfully started.
+20-Nov-25 20:17:07 - INFO - Neue Frage: "s", Chat-History-Länge: 0
+20-Nov-25 20:17:07 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 20:17:08 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 20:17:13 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "s"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'gpt-oss:120b-cloud' not found", 'type': 'api_error', 'param': None, 'code': None}}
+20-Nov-25 20:17:40 - INFO - Neue Frage: "who are you", Chat-History-Länge: 2
+20-Nov-25 20:17:40 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 20:17:40 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 20:17:42 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "who are you"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 150, in _call
+    new_question = self.question_generator.run(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'gpt-oss:120b-cloud' not found", 'type': 'api_error', 'param': None, 'code': None}}
+20-Nov-25 20:22:25 - INFO - Upload watchdog successfully started.
+20-Nov-25 20:22:33 - INFO - Neue Frage: "holla", Chat-History-Länge: 0
+20-Nov-25 20:22:33 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 20:22:33 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 20:22:38 - ERROR - ⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: "holla"
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\retrieval.py", line 79, in answer
+    out = get_chain().invoke({"question": q, "chat_history": chat_history})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 170, in _call
+    answer = self.combine_docs_chain.run(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 611, in run
+    return self(kwargs, callbacks=callbacks, tags=tags, metadata=metadata)[
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\base.py", line 138, in _call
+    output, extra_return_dict = self.combine_docs(
+                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\combine_documents\stuff.py", line 259, in combine_docs
+    return self.llm_chain.predict(callbacks=callbacks, **inputs), {}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 316, in predict
+    return self(kwargs, callbacks=callbacks)[self.output_key]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\_api\deprecation.py", line 193, in warning_emitting_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 389, in __call__
+    return self.invoke(
+           ^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 170, in invoke
+    raise e
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 160, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 126, in _call
+    response = self.generate([inputs], run_manager=run_manager)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\llm.py", line 138, in generate
+    return self.llm.generate_prompt(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1025, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 842, in generate
+    self._generate_with_cache(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1091, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_openai\chat_models\base.py", line 670, in _generate
+    response = self.client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_utils\_utils.py", line 286, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1147, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.NotFoundError: Error code: 404 - {'error': {'message': "model 'gpt-oss:120b-cloud' not found", 'type': 'api_error', 'param': None, 'code': None}}
+20-Nov-25 20:35:48 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+20-Nov-25 20:35:48 - INFO - ------------------------------------------------------------ START retrieval.py
+20-Nov-25 20:35:49 - INFO - Upload watchdog successfully started.
+20-Nov-25 20:36:02 - INFO - Neue Frage: "was ist nachhaltigkeit", Chat-History-Länge: 0
+20-Nov-25 20:36:02 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 20:36:02 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 20:36:08 - INFO - Antwort erzeugt in  6.7 s
+20-Nov-25 20:40:01 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 20:40:02 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 20:40:02 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 20:40:02 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 20:40:02 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 20:40:02 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 20:40:02 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 20:40:26 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 20:40:26 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:40:26 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:40:26 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 20:40:26 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 20:40:26 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 20:40:26 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 20:40:26 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 20:40:26 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 20:40:26 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 20:40:26 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 20:40:26 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 20:40:26 - INFO - Chunking beginnt ...
+20-Nov-25 20:40:26 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 39, in chunk_documents
+    splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 73, in __init__
+    super().__init__(keep_separator=keep_separator, **kwargs)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 55, in __init__
+    raise ValueError(
+ValueError: Got a larger chunk overlap (75) than chunk size (512), should be smaller.
+20-Nov-25 20:40:26 - INFO - Ingestion-Laufzeit: 278.2 s
+20-Nov-25 20:43:38 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 20:43:39 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 20:43:39 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 20:43:39 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 20:43:39 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 20:43:39 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 20:43:39 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 20:44:03 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 20:44:03 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:44:03 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:44:03 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 20:44:03 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 20:44:03 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 20:44:03 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 20:44:03 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 20:44:03 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 20:44:03 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 20:44:03 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 20:44:03 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 20:44:03 - INFO - Chunking beginnt ...
+20-Nov-25 20:44:03 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 39, in chunk_documents
+    splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 73, in __init__
+    super().__init__(keep_separator=keep_separator, **kwargs)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 55, in __init__
+    raise ValueError(
+ValueError: Got a larger chunk overlap (75) than chunk size (512), should be smaller.
+20-Nov-25 20:44:03 - INFO - Ingestion-Laufzeit: 495.2 s
+20-Nov-25 20:45:55 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+20-Nov-25 20:45:55 - INFO - ------------------------------------------------------------ START retrieval.py
+20-Nov-25 20:45:56 - INFO - Upload watchdog successfully started.
+20-Nov-25 20:46:04 - INFO - Neue Frage: "was ist o2", Chat-History-Länge: 0
+20-Nov-25 20:46:04 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 20:46:05 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 20:46:11 - INFO - Antwort erzeugt in  6.3 s
+20-Nov-25 20:46:27 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 20:46:28 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 20:46:28 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 20:46:28 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 20:46:28 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 20:46:28 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 20:46:28 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 20:46:52 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 20:46:52 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:46:52 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:46:52 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 20:46:52 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 20:46:52 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 20:46:52 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 20:46:52 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 20:46:52 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 20:46:52 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 20:46:52 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 20:46:52 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 20:46:52 - INFO - Chunking beginnt ...
+20-Nov-25 20:46:52 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 40, in chunk_documents
+    chunks = splitter.split_documents(docs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 96, in split_documents
+    return self.create_documents(texts, metadatas=metadatas)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 79, in create_documents
+    for chunk in self.split_text(text):
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 100, in _split_text
+    if self._length_function(s) < self._chunk_size:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+20-Nov-25 20:46:52 - INFO - Ingestion-Laufzeit: 57.2 s
+20-Nov-25 20:55:22 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 20:55:23 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 20:55:23 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 20:55:23 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 20:55:23 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 20:55:23 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 20:55:23 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 20:55:47 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 20:55:47 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:55:47 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:55:47 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 20:55:47 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 20:55:47 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 20:55:47 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 20:55:47 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 20:55:47 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 20:55:47 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 20:55:47 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 20:55:47 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 20:55:47 - INFO - Chunking beginnt ...
+20-Nov-25 20:55:47 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 40, in chunk_documents
+    chunks = splitter.split_documents(docs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 96, in split_documents
+    return self.create_documents(texts, metadatas=metadatas)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 79, in create_documents
+    for chunk in self.split_text(text):
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 100, in _split_text
+    if self._length_function(s) < self._chunk_size:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+20-Nov-25 20:55:47 - INFO - Ingestion-Laufzeit: 592.0 s
+20-Nov-25 20:58:40 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 20:58:41 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 20:58:41 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 20:58:41 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 20:58:41 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 20:58:41 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 20:58:41 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 20:59:05 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 20:59:05 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:59:05 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 20:59:05 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 20:59:05 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 20:59:05 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 20:59:05 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 20:59:05 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 20:59:05 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 20:59:05 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 20:59:05 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 20:59:05 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 20:59:05 - INFO - Chunking beginnt ...
+20-Nov-25 20:59:05 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 40, in chunk_documents
+    chunks = splitter.split_documents(docs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 96, in split_documents
+    return self.create_documents(texts, metadatas=metadatas)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 79, in create_documents
+    for chunk in self.split_text(text):
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 100, in _split_text
+    if self._length_function(s) < self._chunk_size:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+20-Nov-25 20:59:05 - INFO - Ingestion-Laufzeit: 789.9 s
+20-Nov-25 21:03:47 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 21:03:48 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 21:03:48 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 21:03:48 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 21:03:48 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 21:03:48 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 21:03:48 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 21:04:13 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 21:04:13 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:04:13 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:04:13 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 21:04:13 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 21:04:13 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 21:04:13 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 21:04:13 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 21:04:13 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 21:04:13 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 21:04:13 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 21:04:13 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 21:04:13 - INFO - Chunking beginnt ...
+20-Nov-25 21:04:13 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 40, in chunk_documents
+    splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 96, in split_documents
+    return self.create_documents(texts, metadatas=metadatas)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 79, in create_documents
+    for chunk in self.split_text(text):
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 100, in _split_text
+    if self._length_function(s) < self._chunk_size:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+20-Nov-25 21:04:13 - INFO - Ingestion-Laufzeit: 1097.8 s
+20-Nov-25 21:07:33 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 21:07:34 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 21:07:34 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 21:07:34 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 21:07:34 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 21:07:34 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 21:07:34 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 21:07:58 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 21:07:58 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:07:58 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:07:58 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 21:07:58 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 21:07:59 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 21:07:59 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 21:07:59 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 21:07:59 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 21:07:59 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 21:07:59 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 21:07:59 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 21:07:59 - INFO - Chunking beginnt ...
+20-Nov-25 21:07:59 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    # 4) Chunking
+             ^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 40, in chunk_documents
+    chunks = splitter.split_documents(docs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 96, in split_documents
+    return self.create_documents(texts, metadatas=metadatas)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 79, in create_documents
+    for chunk in self.split_text(text):
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 100, in _split_text
+    if self._length_function(s) < self._chunk_size:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+20-Nov-25 21:07:59 - INFO - Ingestion-Laufzeit: 1323.3 s
+20-Nov-25 21:09:14 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 21:09:15 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 21:09:15 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 21:09:15 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 21:09:15 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 21:09:15 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 21:09:15 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 21:09:40 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 21:09:40 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:09:40 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:09:40 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 21:09:40 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 21:09:40 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 21:09:40 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 21:09:40 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 21:09:40 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 21:09:40 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 21:09:40 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 21:09:40 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 21:09:40 - INFO - Chunking beginnt ...
+20-Nov-25 21:09:40 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 49, in ingestion
+    # 4) Chunking
+             ^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\chunking.py", line 40, in chunk_documents
+    chunks = splitter.split_documents(docs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 96, in split_documents
+    return self.create_documents(texts, metadatas=metadatas)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\base.py", line 79, in create_documents
+    for chunk in self.split_text(text):
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_text_splitters\character.py", line 100, in _split_text
+    if self._length_function(s) < self._chunk_size:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'int' and 'str'
+20-Nov-25 21:09:40 - INFO - Ingestion-Laufzeit: 1424.8 s
+20-Nov-25 21:10:52 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+20-Nov-25 21:10:52 - INFO - ------------------------------------------------------------ START retrieval.py
+20-Nov-25 21:13:03 - INFO - Upload watchdog successfully started.
+20-Nov-25 21:13:11 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 21:13:12 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 21:13:12 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 21:13:12 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 21:13:12 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 21:13:12 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 21:13:12 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 21:13:36 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 21:13:36 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:13:36 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:13:36 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 21:13:36 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 21:13:36 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 21:13:36 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 21:13:36 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 21:13:36 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 21:13:36 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 21:13:36 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 21:13:36 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 21:13:36 - INFO - Chunking beginnt ...
+20-Nov-25 21:13:36 - INFO - Chunking abgeschlossen.
+20-Nov-25 21:13:36 - INFO - Alte Einträge gelöscht für: o2_Mobile_S_Flex_Online__2024_
+20-Nov-25 21:13:36 - INFO - Speichere Chunks in ChromaDB ...
+20-Nov-25 21:13:40 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002B76E394990>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B76E394990>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\core\ingestion.py", line 77, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\vectorstores\base.py", line 277, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\utils\ollama_embed.py", line 24, in _embed_text
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002B76E394990>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+20-Nov-25 21:13:40 - INFO - Ingestion-Laufzeit: 37.9 s
+20-Nov-25 21:16:19 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 21:16:20 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 21:16:20 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 21:16:20 - INFO - Rohdateien gefunden, starte Ingestion ...
+20-Nov-25 21:16:20 - INFO - Keine DOC-Dateien in "upload" zum Konvertieren gefunden.
+20-Nov-25 21:16:20 - INFO - Keine DOC-Dateien in "upload" zum Löschen gefunden.
+20-Nov-25 21:16:20 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+20-Nov-25 21:16:45 - INFO - Anzahl der konvertierten PDFs 1.
+20-Nov-25 21:16:45 - INFO - Keine DOCX in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:16:45 - INFO - Keine Excel-Dateien in C:\Users\moham\PycharmProjects\Bachelorarbeit-Project\rag2-app\data\upload gefunden.
+20-Nov-25 21:16:45 - INFO - Konvertierung abgeschlossen.
+20-Nov-25 21:16:45 - INFO - Bereinige der Markdown-Dateien ...
+20-Nov-25 21:16:45 - INFO -    - Bereinigt → o2 Mobile S Flex Online (2024).md
+20-Nov-25 21:16:45 - INFO - Bereinigung abgeschlossen.
+20-Nov-25 21:16:45 - INFO - Verschiebe aus "upload" zu "raw"  ...
+20-Nov-25 21:16:45 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 21:16:45 - INFO -     - o2 Mobile S Flex Online (2024).pdf → nach raw/ verschoben
+20-Nov-25 21:16:45 - INFO - Verschiebung aus "upload" zu "raw"  abgeschlossen.
+20-Nov-25 21:16:45 - INFO - Lade Markdown-Dokumente ...
+20-Nov-25 21:16:45 - INFO - Chunking beginnt ...
+20-Nov-25 21:16:45 - INFO - Chunking abgeschlossen.
+20-Nov-25 21:16:45 - INFO - Alte Einträge gelöscht für: o2_Mobile_S_Flex_Online__2024_
+20-Nov-25 21:16:45 - INFO - Speichere Chunks in ChromaDB ...
+20-Nov-25 21:27:48 - INFO - WATCHDOG: Neuer Event erkannt – Timer gestartet.
+20-Nov-25 21:27:49 - INFO - WATCHDOG: Entprellzeit abgelaufen → Callback wird ausgeführt.
+20-Nov-25 21:27:49 - INFO - ------------------------------------------------------------ START ingestion.py
+20-Nov-25 21:27:49 - WARNING - Ingestion läuft bereits - Even ignoriert.
+20-Nov-25 21:28:07 - INFO - WATCHDOG: Datei gelöscht/verschoben: `data\upload\o2 Mobile S Flex Online (2024).pdf` – keine Aktion.
+20-Nov-25 21:28:35 - INFO -   -> gespeichert: 343/343
+20-Nov-25 21:28:35 - INFO - Speicherung abgeschlossen.
+20-Nov-25 21:28:35 - INFO - Verschiebe aus "markdown_temp" zu "markdown"  ...
+20-Nov-25 21:28:35 - INFO -     - o2 Mobile S Flex Online (2024).md → nach markdown/ verschoben
+20-Nov-25 21:28:35 - INFO - Verschiebung aus "markdown_temp" zu "markdown"  abgeschlossen.
+20-Nov-25 21:28:35 - INFO - ✅  Ingestion vollständig abgeschlossen.
+20-Nov-25 21:28:35 - INFO - Ingestion-Laufzeit: 932.4 s
+20-Nov-25 21:30:30 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+20-Nov-25 21:30:30 - INFO - ------------------------------------------------------------ START retrieval.py
+20-Nov-25 21:30:30 - INFO - Neue Frage: "was enthält der vertrag", Chat-History-Länge: 0
+20-Nov-25 21:30:30 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 21:30:30 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 21:31:05 - INFO - Antwort erzeugt in  35.4 s
+20-Nov-25 21:33:09 - INFO - Neue Frage: "Wie viel muss ich monatlich bezahlen?", Chat-History-Länge: 1
+20-Nov-25 21:33:09 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 21:33:09 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 21:33:24 - INFO - Antwort erzeugt in  15.2 s
+20-Nov-25 21:33:54 - INFO - Neue Frage: "wie viel ist die Monatliche Entgelte ?", Chat-History-Länge: 2
+20-Nov-25 21:33:54 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 21:33:54 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 21:34:15 - INFO - Antwort erzeugt in  21.2 s
+20-Nov-25 21:34:51 - INFO - Neue Frage: "also nicht 14,99?", Chat-History-Länge: 3
+20-Nov-25 21:34:51 - INFO - Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).
+20-Nov-25 21:34:51 - INFO - Retrieval-Kette erfolgreich erstellt.
+20-Nov-25 21:35:26 - INFO - Antwort erzeugt in  35.1 s
