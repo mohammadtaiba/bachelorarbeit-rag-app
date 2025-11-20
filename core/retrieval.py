@@ -6,6 +6,8 @@ from langchain_chroma import Chroma
 from langchain.prompts import PromptTemplate
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
+
 from langchain.chains import ConversationalRetrievalChain
 
 from core.preprocess import * # Alle globale Variablen & .env-Variablen stecken hier
@@ -37,10 +39,7 @@ def get_chain():
     retriever = NextNeighborRetriever(base=base_retriever, vectordb=vectordb, cap=10)
 
     # 4) LLM
-    llm = ChatOpenAI(
-        model=LLM_MODEL,
-        base_url=f"{os.getenv('OLLAMA_URL')}/v1",
-        api_key="ollama")
+    llm = ChatOllama(model=LLM_MODEL, base_url=os.getenv("OLLAMA_URL"))
 
     # 5) Prompt
     prompt = PromptTemplate.from_template("""
