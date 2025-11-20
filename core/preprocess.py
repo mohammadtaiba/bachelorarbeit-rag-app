@@ -23,7 +23,3 @@ DB_PATH       = Path(os.getenv("DB_PATH"))
 # Verzeichnisse sicherstellen
 for folder in (RAW_PATH, UPLOAD_PATH, TEMP_MD_PATH, FINAL_MD_PATH, DB_PATH):
     folder.mkdir(parents=True, exist_ok=True)
-
-# Chunking
-CHUNK_SIZE    = os.getenv("CHUNK_SIZE")
-CHUNK_OVERLAP = os.getenv("CHUNK_OVERLAP")

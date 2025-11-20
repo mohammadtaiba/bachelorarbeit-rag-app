@@ -2,6 +2,7 @@
 import time
 from langchain_chroma import Chroma
 from chromadb.config import Settings
+from pathlib import Path
 
 from utils.logger import logger
 from utils.ollama_embed import OllamaEmbeddings
@@ -13,7 +14,7 @@ from utils.file_operation import( convert_doc_to_docx,
                                   delete_doc_files,
                                   move_upload2raw,
                                   move_temp2markdown)
-from core.preprocess import *
+from core.preprocess import UPLOAD_PATH, EMBED_MODEL, OLLAMA_URL, COLLECTION, DB_PATH
 from threading import Lock
 
 _ING_LOCK = Lock()
@@ -46,7 +47,7 @@ def ingestion():
             docs = load_docs()
 
             # 4) Chunking
-            chunks = chunk_documents(docs, CHUNK_SIZE, CHUNK_OVERLAP)
+            chunks = chunk_documents(docs, 1000, 100)
 
             # 5) Embeddings
             embeddings = OllamaEmbeddings(model=EMBED_MODEL,  base_url=OLLAMA_URL)
@@ -73,7 +74,12 @@ def ingestion():
             total_chunks = len(chunks)
             for i in range(0, total_chunks, BATCH):
                 part = chunks[i:i + BATCH]
-                vectordb.add_documents(part)
+                try:
+                    vectordb.add_documents(part)
+                except RuntimeError as embed_err:
+                    logger.error(f"Embedding-Fehler: {embed_err}")
+                    logger.error("🔌 Ingestion abgebrochen, da Ollama nicht erreichbar ist (in Terminal: `ollama serve` ausführen.")
+                    return
                 logger.info(f"  -> gespeichert: {i + len(part)}/{total_chunks}")
             logger.info("Speicherung abgeschlossen.")
 
