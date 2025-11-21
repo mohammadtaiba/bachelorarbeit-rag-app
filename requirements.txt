@@ -1,27 +1,32 @@
 # Requirements.txt
-## Basis
-streamlit                               # UI
-tiktoken                                # Tokenizer
-pymupdf                                 # PDF-Parsing
-openai
-python-dotenv
-pypandoc                                # für docx
-pypandoc-binary                         # für docx
-pywin32
-pymupdf4llm
-pandas
-openpyxl
-tabulate
-watchdog
-pydantic
-requests
-chromadb
 
-# LangChain ecosystem (stable aligned versions)
-langchain==0.3.7
-langchain-core==0.3.9
-langchain-community==0.3.7
-langchain-text-splitters==0.3.2
-langchain-chroma==0.2.6
-langchain-openai==0.2.3
-langchain-ollama==0.2.2
+# ======================================================================================================
+# Basis-Komponenten
+# ======================================================================================================
+streamlit                           # Web-UI für den Chatbot
+tiktoken                            # Tokenizer für OpenAI/LLM Modelle
+pymupdf                             # PDF-Parsing
+openai                              # OpenAI API-Client
+python-dotenv                       # Laden von .env-Variablen
+pypandoc                            # Konvertierung zu docx/markdown
+pypandoc-binary                     # Pandoc-Binary für Offline-Nutzung
+pywin32                             # Windows-spezifische Systemfunktionen
+pymupdf4llm                         # PDF-Extraktion optimiert für LLM-RAG
+pandas                              # Tabellenverarbeitung
+openpyxl                            # Excel-Unterstützung
+tabulate                            # Tabellenformatierung in Textform
+watchdog                            # Dateisystem-Events überwachen (für Upload)
+langchain_core                      # Basis-Funktionen von LangChain
+pydantic                            # Datenvalidierung / Modelle
+requests                            # HTTP-Anfragen
+chromadb                            # Vektor-Datenbank für Embeddings
+
+# ======================================================================================================
+# LangChain + Embeddings + RAG
+# ======================================================================================================
+langchain>=0.3,<0.4                 # LangChain Hauptbibliothek
+langchain-community>=0.3,<0.4       # Loader, Vectorstores, Ollama usw.
+langchain-text-splitters>=0.3,<0.4  # Offizielle Text-Splitter
+langchain-chroma>=0.2.6             # Schnittstelle zu ChromaDB
+langchain-openai>=0.2,<0.3          # OpenAI-Integration für LangChain
+langchain-ollama==0.2.2             # Ollama-Integration für lokale Modelle
