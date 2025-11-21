@@ -1,16 +1,14 @@
 # core/retrieval.py
 import time
+import os
 from chromadb.config import Settings
 
 from langchain_chroma import Chroma
-from langchain.prompts import PromptTemplate
-from langchain.chains import RetrievalQA
-from langchain_openai import ChatOpenAI
 from langchain_ollama import ChatOllama
-
+from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationalRetrievalChain
 
-from core.preprocess import * # Alle globale Variablen & .env-Variablen stecken hier
+from core.preprocess import EMBED_MODEL, OLLAMA_URL, COLLECTION, DB_PATH, LLM_MODEL
 
 from utils.next_neighbor_retriever import NextNeighborRetriever
 from utils.ollama_embed import OllamaEmbeddings
@@ -18,46 +16,84 @@ from utils.logger import logger
 
 logger.info("------------------------------------------------------------ START retrieval.py")
 
-# --- Kette bauen ---
-def get_chain():
 
-    logger.info("Erzeuge neue Retrieval-Kette (Embeddings + Chroma + LLM).")
+# ======================================================================
+# Build Conversational Retrieval Chain
+# ======================================================================
+def build_retrieval_chain():
+    """
+    Create a conversational retrieval chain consisting of:
+    1) Embeddings
+    2) Chroma vector database
+    3) Custom retriever (NextNeighborRetriever)
+    4) LLM (ChatOllama)
+    5) PromptTemplate
+    """
 
-    # 1) Embeddingvorberieten
-    embeddings = OllamaEmbeddings(model=EMBED_MODEL, base_url=OLLAMA_URL)
+    logger.info("Creating new retrieval chain (Embeddings + Chroma + LLM).")
 
-    # 2) Vektor-DB verbinden
-    vectordb = Chroma(
+    # ------------------------------------------------------------------
+    # Create embedding model
+    # ------------------------------------------------------------------
+    embeddings = OllamaEmbeddings(
+        model=EMBED_MODEL,
+        base_url=OLLAMA_URL
+    )
+
+    # ------------------------------------------------------------------
+    # Connect to vector database
+    # ------------------------------------------------------------------
+    vector_db = Chroma(
         collection_name=COLLECTION,
         persist_directory=DB_PATH,
         embedding_function=embeddings,
         client_settings=Settings(anonymized_telemetry=False),
     )
 
-    # 3) Retriever
-    base_retriever = vectordb.as_retriever(search_kwargs={"k": 5})
-    retriever = NextNeighborRetriever(base=base_retriever, vectordb=vectordb, cap=10)
+    # ------------------------------------------------------------------
+    # Create retriever
+    # Base retriever first, then wrap with NextNeighborRetriever
+    # ------------------------------------------------------------------
+    base_retriever = vector_db.as_retriever(search_kwargs={"k": 5})
+    retriever = NextNeighborRetriever(
+        base=base_retriever,
+        vectordb=vector_db,
+        cap=10
+    )
 
-    # 4) LLM
-    llm = ChatOllama(model=LLM_MODEL, base_url=os.getenv("OLLAMA_URL"))
+    # ------------------------------------------------------------------
+    # LLM configuration
+    # ------------------------------------------------------------------
+    llm = ChatOllama(
+        model=LLM_MODEL,
+        base_url=os.getenv("OLLAMA_URL")
+    )
 
-    # 5) Prompt
-    prompt = PromptTemplate.from_template("""
+    # ------------------------------------------------------------------
+    # Prompt template
+    # ------------------------------------------------------------------
+    prompt_text = """
         Du bist ein Support-Chatbot, der Unternehmen bei der Analyse und Verbesserung ihrer Nachhaltigkeitsberichte unterstützt.
-        Deine Aufgabe ist es, auf deutsch, faktenbasiert und präzise auf Fragen zu antworten. Dabei darfst du nur den bereitgestellten Kontext und den letzten Chatverlauf nutzen.        Wenn der Chatverlauf für die Frage nicht relevant ist, ignoriere ihn und befolge ausschließlich die oben genannten Regeln.
+        Deine Aufgabe ist es, auf deutsch, faktenbasiert und präzise auf Fragen zu antworten. 
+        Verwende ausschließlich den bereitgestellten Kontext und die letzten Chat-Beiträge.
+        Wenn der Chatverlauf nicht relevant ist, ignoriere ihn.
         Wenn kein Kontext vorhanden ist, antworte: 'Information nicht gefunden. Bitte versuche es mit einer anderen Frage.'
-            
+
         Chatverlauf (letzte Turns):
         {chat_history}
-    
+
         Kontext:
         {context}
-    
+
         Nutzerfrage:
         {question}
-    """)
+    """
 
-    # 6) Retrieval-QA-Kette
+    prompt = PromptTemplate.from_template(prompt_text)
+
+    # ------------------------------------------------------------------
+    # Build the conversational retrieval chain
+    # ------------------------------------------------------------------
     chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
         retriever=retriever,
@@ -65,39 +101,57 @@ def get_chain():
         return_source_documents=True,
     )
 
-    logger.info("Retrieval-Kette erfolgreich erstellt.")
+    logger.info("Retrieval chain successfully created.")
     return chain
 
-#--------------------------------------------------------------------------------------------------------------------
-# Antwort generieren
-def answer(q: str, chat_history: list[tuple[str, str]]):
+
+# ======================================================================
+# Generate Answer
+# ======================================================================
+def generate_answer(question: str, chat_history: list[tuple[str, str]]):
+    """
+    Generate an answer using the retrieval chain.
+
+    - Keeps last 5 conversation turns
+    - Logs question and timing
+    - Returns model answer
+    - Prints retrieved chunks for debugging
+    """
+
     try:
-        chat_history = chat_history [-5:] # nur die letzten 5 Runden behalten
-        logger.info(f"Neue Frage: \"{q}\", Chat-History-Länge: {len(chat_history)}")
-        time.perf_counter(); tmp_time = time.perf_counter()
-        out = get_chain().invoke({"question": q, "chat_history": chat_history})
-        logger.info(f"Antwort erzeugt in  {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
+        # Keep only last 5 chat pairs
+        chat_history = chat_history[-5:]
 
-        # Quelle(n) anzeigen
-        print("\n--- Gefundene Chunks ---")
-        for i, doc in enumerate(out["source_documents"], 1):
-            print(f"Chunk [{i}], Quelle: {doc.metadata.get('source')}, Länge: {len(doc.page_content)}")
-            print(doc.page_content, "\n")
+        logger.info(
+            f"New question received: \"{question}\" | Chat history length: {len(chat_history)}"
+        )
+
+        start_time = time.perf_counter()
+        output = build_retrieval_chain().invoke({
+            "question": question,
+            "chat_history": chat_history
+        })
+
+        elapsed = (time.perf_counter() - start_time)
+        logger.info(f"Answer generated in {elapsed:.2f} seconds")
+
+        # ------------------------------------------------------------------
+        # Print source documents for debugging
+        # ------------------------------------------------------------------
+        print("\n--- Retrieved Chunks ---")
+        for i, doc in enumerate(output["source_documents"], start=1):
+            print(f"Chunk [{i}] | Source: {doc.metadata.get('source')} | Length: {len(doc.page_content)}")
+            print(doc.page_content)
             print("\n---\n")
-        print("\n--- Ende der Chunks. ---")
+        print("--- End of Chunks ---\n")
 
-        return out["answer"]
+        return output["answer"]
 
     except Exception:
-        logger.exception(f"⚠️ Fehler in answer() -Methode in retrieval.py bei der Frage: \"{q}\"")
-        return "⚠️ Fehler: Anfrage konnte nicht verarbeitet werden."
+        logger.exception(f"⚠️ Error in generate_answer() for question: \"{question}\"")
+        return "⚠️ Error: Unable to process the request."
 
+
+# ======================================================================
 if __name__ == "__main__":
     print()
-
-""" # Endlose Schleife
-frage = " zusätzliche Instanzen"
-while True:
-    result = answer(frage)
-    # print(result)  
-"""

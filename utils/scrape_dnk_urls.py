@@ -64,7 +64,7 @@ def scrape_dnk_urls():
                         valid += 1
                         url = (f"https://datenbank2.deutscher-nachhaltigkeitskodex.de/"
                                f"Profile/MainMenuHandler/1_1?company={company_id}"
-                               f"&year=2024&lang=de&culture=de")
+                               f"&year=2024&lang=de&culture=de") # alle URL aus dem Jahr 2024 überprüfen
                         f_out.write(url + "\n")
 
     elapsed = time.perf_counter() - t0

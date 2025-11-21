@@ -9,7 +9,7 @@ from utils.handle_meta_questions import handle_meta_questions
 from utils.watchdog import start_upload_watcher
 from utils.logger import logger
 
-from core.retrieval import answer
+from core.retrieval import generate_answer
 from core.preprocess import UPLOAD_PATH
 from core.ingestion import ingestion
 
@@ -228,7 +228,7 @@ def handle_user_input() -> None:
     with st.spinner("Thinking …"):
         try:
             recent_turns = get_recent_chat_turn_pairs(limit=5)
-            response = answer(user_query, recent_turns)
+            response = generate_answer(user_query, recent_turns)
         except Exception as exc:
             logger.exception("Error while generating answer.")
             response = f"Fehler: {exc}"
