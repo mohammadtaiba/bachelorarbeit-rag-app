@@ -13,6 +13,7 @@
   * [x] Problem: LLM antwortet von seinem Allgemeinem wissen
     * Problem gelöst, durch Verwendung bessere und größere Modell
   * [ ] Data-Input automatisieren 
+* [ ] MarkdownHeaderTextSplitter verwenden (ohne Grenze von der Tokens oder Buchstaben)
 * [ ] Fine-tuning
 * [ ] mehrere Modelle zur Auswahl?
 * [ ] Konvertierung von html zu md
