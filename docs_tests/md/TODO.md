@@ -1,6 +1,6 @@
 # TODO
 
-* [x] "utils/handle_meta_questions.py" anpassen & korrigieren
+* [x] "utils/answer_meta_questions.py" anpassen & korrigieren
 * [x] **Benutzeroberfläche anpassen:**
 
 > * sidebar entweder entfernen oder anderes besser tun

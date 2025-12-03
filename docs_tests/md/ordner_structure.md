@@ -25,7 +25,7 @@ rag2-app/
 │   ├── lmstudio_embed.py           # Brückenmodul für lokale LM Studio Embeddings
 │   ├── cleanup_md.py               # Markdown-Bereinigung
 │   ├── file_operation.py           # Verschiebung & Bearbeitung von Dateien
-│   ├── handle_meta_questions.py    # Lokale Antworten auf triviale Fragen (ohne LLM)
+│   ├── answer_meta_questions.py    # Lokale Antworten auf triviale Fragen (ohne LLM)
 │   ├── next_neighbor_retriever.py  # Rückgabe benachbarter Chunks im Retrieval
 │   ├── loaders.py                  # Markdown-Dateien laden
 │   └── raw2markdown.py             # Konvertierung von Rohdaten zu Markdown

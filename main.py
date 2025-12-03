@@ -5,7 +5,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from utils.handle_meta_questions import handle_meta_questions
+from utils.handle_meta_questions import answer_meta_questions
 from utils.watchdog import start_upload_watcher
 from utils.logger import logger
 
@@ -221,7 +221,7 @@ def handle_user_input() -> None:
     st.session_state.history = st.session_state.history[-200:]  # limit history size
 
     # Handle meta questions separately
-    if handle_meta_questions(user_query):
+    if answer_meta_questions(user_query):
         return
 
     # Regular question answered via retrieval pipeline
