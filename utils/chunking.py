@@ -1,30 +1,22 @@
 # utils/chunking.py
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from pathlib import Path
-import re
+from slugify import slugify
 from utils.logger import logger
 
-# --- helper: Umlaute normalisieren ---
-def normalize_german(text: str) -> str:
-    replacements = {
-        "ä": "ae", "ö": "oe", "ü": "ue",
-        "Ä": "Ae", "Ö": "Oe", "Ü": "Ue",
-        "ß": "ss"
-    }
-    for k, v in replacements.items():
-        text = text.replace(k, v)
-    return text
-
-# --- helper: ID säubern ---
+# ======================================================================
+# Name normalisieren
+# ======================================================================
 def clean_name(name: str) -> str:
-    name = normalize_german(name)
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    return name
+    return slugify(name)
 
-# --- Metadaten auf Chunks anwenden (Zähler pro Datei) ---
+# ======================================================================
+# Metadaten auf Chunks anwenden (Zähler pro Datei)
+# ======================================================================
 def add_metadata(chunks):
-    counter = {}
+    counter = {}  # zählt pro Dokument die Nummer der Chunks hoch
     for chunk in chunks:
+        # Quelle herausfinden, egal wie sie im Metadata heißt
         src = chunk.metadata.get("source") or chunk.metadata.get("file_path") or chunk.metadata.get("path") or "unknown"
         doc_name = Path(src).stem
         doc_id = clean_name(doc_name)
@@ -33,7 +25,9 @@ def add_metadata(chunks):
         chunk.metadata["chunk_id"] = f"{doc_id}_{counter[doc_id]}"
     return chunks
 
-# --- Chunking + Metadaten ---
+# ======================================================================
+# Chunking + Metadaten
+# ======================================================================
 def chunk_documents(docs, chunk_size: int, chunk_overlap: int):
     logger.info("Chunking beginnt ...")
     splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
