@@ -52,7 +52,7 @@ def convert_doc_to_docx():
                 logger.info(f"→ {doc.name} → {doc.with_suffix('.docx').name} konvertiert")
 
             except Exception as e:
-                logger.exception(f"⚠️ Fehler bei der Konvertierung von doc-2-docx {doc.name}: {e}")
+                logger.exception("⚠️ Fehler bei der Konvertierung von doc-2-docx.")
 
     finally:
         # Word-Anwendung immer beenden, egal ob Fehler oder Erfolg
@@ -73,7 +73,7 @@ def delete_doc_files():
             f.unlink()  # Datei löschen
             logger.info(f"Gelöscht Doc-Name: {f.name}")
         except Exception as e:
-            logger.exception(f"⚠️ Fehler beim Löschen von {f.name}: {e}")
+            logger.exception("⚠️ Fehler beim Löschen der doc-Dateien.")
     logger.info("Löschen vom doc-Dateien in \"upload\" beendet.")
 
 # -----------------------------------------------------------------------------------------------------------------
@@ -91,7 +91,7 @@ def move_upload2raw():
             shutil.move(str(f), target) # verschiebt die Datei f an den neuen Ort target
             logger.info(f"    - {f.name} → nach raw/ verschoben")
         except Exception as e:
-            logger.exception(f"⚠️ Fehler beim Verschieben von {f.name}: {e}")
+            logger.exception("⚠️ Fehler beim Verschieben von upload zu raw")
     logger.info("Verschiebung aus \"upload\" zu \"raw\"  abgeschlossen.")
 
 
@@ -111,5 +111,5 @@ def move_temp2markdown():
             f.replace(target)  # schneller als shutil.move für gleiche Partition
             logger.info(f"    - {f.name} → nach markdown/ verschoben")
         except Exception as e:
-            logger.exception(f"⚠️ Fehler beim Verschieben von {f.name}: {e}")
+            logger.exception("⚠️ Fehler beim Verschieben vom TEMP_MD_Ordner zu FINAL_MD_Ordner.")
     logger.info("Verschiebung aus \"markdown_temp\" zu \"markdown\"  abgeschlossen.")

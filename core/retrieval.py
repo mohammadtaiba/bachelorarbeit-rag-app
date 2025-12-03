@@ -1,6 +1,5 @@
 # core/retrieval.py
-import time
-import os
+import time, os
 from chromadb.config import Settings
 
 from langchain_chroma import Chroma
@@ -66,26 +65,26 @@ def build_retrieval_chain():
     # ------------------------------------------------------------------
     llm = ChatOllama(
         model=LLM_MODEL,
-        base_url=os.getenv("OLLAMA_URL")
+        base_url=os.getenv("OLLAMA_URL"),
+        temperature=0.15,
     )
 
     # ------------------------------------------------------------------
     # Prompt template
     # ------------------------------------------------------------------
     prompt_text = """
-        Du bist ein Support-Chatbot, der Unternehmen bei der Analyse und Verbesserung ihrer Nachhaltigkeitsberichte unterstützt.
-        Deine Aufgabe ist es, auf deutsch, faktenbasiert und präzise auf Fragen zu antworten. 
+        Als hilfreicher KI-Assistent unterstützt du Unternehmen dabei, ihre Nachhaltigkeitsberichte zu analysieren und zu verbessern.
+        Deine Aufgabe ist es, Fragen nur aus dem bereitgestellten Kontext auf Deutsch, faktenbasiert und präzise zu beantworten.
+        Wenn kein Kontext vorhanden ist, antworte: „Information nicht gefunden.\nBitte versuche es mit einer anderen Frage zum Thema **Nachhaltigkeitsberichte**.”
         Verwende ausschließlich den bereitgestellten Kontext und die letzten Chat-Beiträge.
         Wenn der Chatverlauf nicht relevant ist, ignoriere ihn.
-        Wenn kein Kontext vorhanden ist, antworte: 'Information nicht gefunden. Bitte versuche es mit einer anderen Frage.'
-
-        Chatverlauf (letzte Turns):
+        Ich werde dir Fragen geben und möchte, dass du mir nur die Antwort gibst, ohne viel zu erklären!
+            - Schreibe das schön und nur die Antwort ohne Erklärung!
+ 
         {chat_history}
-
-        Kontext:
+ 
         {context}
-
-        Nutzerfrage:
+ 
         {question}
     """
 
@@ -105,29 +104,28 @@ def build_retrieval_chain():
     return chain
 
 
+BUILD_CHAIN_ONCE = build_retrieval_chain()
+
 # ======================================================================
 # Generate Answer
 # ======================================================================
 def generate_answer(question: str, chat_history: list[tuple[str, str]]):
     """
     Generate an answer using the retrieval chain.
-
-    - Keeps last 5 conversation turns
-    - Logs question and timing
-    - Returns model answer
-    - Prints retrieved chunks for debugging
+        - Keeps last 5 conversation turns
+        - Logs question and timing
+        - Returns model answer
+        - Prints retrieved chunks for debugging
     """
 
     try:
         # Keep only last 5 chat pairs
         chat_history = chat_history[-5:]
 
-        logger.info(
-            f"New question received: \"{question}\" | Chat history length: {len(chat_history)}"
-        )
+        logger.info(f"New question received: \"{question}\" | Chat history length: {len(chat_history)}")
 
         start_time = time.perf_counter()
-        output = build_retrieval_chain().invoke({
+        output = BUILD_CHAIN_ONCE.invoke({
             "question": question,
             "chat_history": chat_history
         })
@@ -148,7 +146,7 @@ def generate_answer(question: str, chat_history: list[tuple[str, str]]):
         return output["answer"]
 
     except Exception:
-        logger.exception(f"⚠️ Error in generate_answer() for question: \"{question}\"")
+        logger.exception("⚠️ Error in generate_answer() for question: \"{question}\".")
         return "⚠️ Error: Unable to process the request."
 
 

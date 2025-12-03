@@ -84,7 +84,7 @@ def load_logo_base64(logo_path: str = "utils/assets/logo.svg") -> str:
     except FileNotFoundError:
         logger.warning("Logo file not found at %s. Sidebar logo will not be displayed.", logo_path)
     except Exception:
-        logger.exception("Unexpected error while loading logo file.")
+        logger.exception("⚠️ Unexpected error while loading logo file.")
     return ""
 
 
@@ -146,7 +146,7 @@ def initialize_watchdog() -> None:
         st.session_state["watchdog_started"] = True
         logger.info("Upload watchdog successfully started.")
     except Exception:
-        logger.exception("Upload watchdog could not be started.")
+        logger.exception("⚠️ Upload watchdog could not be started.")
 
 
 def trigger_initial_ingestion_if_needed() -> None:
@@ -230,7 +230,7 @@ def handle_user_input() -> None:
             recent_turns = get_recent_chat_turn_pairs(limit=5)
             response = generate_answer(user_query, recent_turns)
         except Exception as exc:
-            logger.exception("Error while generating answer.")
+            logger.exception("⚠️ Error while generating answer.")
             response = f"Fehler: {exc}"
 
     # Store assistant response

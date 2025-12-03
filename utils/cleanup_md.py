@@ -61,7 +61,7 @@ def cleanup_md():
                 logger.info(f"   - Bereinigt → {md_file.name}")
 
             except Exception:
-                logger.exception(f"⚠️ Fehler bei der Bereinigung der MD-Datei:  {md_file.name}")
+                logger.exception("⚠️ Fehler bei der Bereinigung der MD-Datei.")
 
     logger.info("Bereinigung abgeschlossen.")
 

@@ -23,7 +23,7 @@ def convert_all_to_markdown():
                 (TEMP_MD_PATH / (pdf.stem + ".md")).write_text(md, encoding="utf-8")
                 logger.info("    - konvertiert:", pdf.name)
             except Exception as e:
-                logger.exception(f"⚠️ Fehler bei der Konvertierung der PDF-Datei: {pdf.name}: {e}")
+                logger.exception("⚠️ Fehler bei der Konvertierung der PDF-Datei.")
 
         logger.info(f"Anzahl der konvertierten PDFs {len(pdf_files)}.")
 
@@ -48,7 +48,7 @@ def convert_all_to_markdown():
                 (TEMP_MD_PATH / (docx.stem + ".md")).write_text(md, encoding="utf-8")
                 logger.info("    - konvertiert:", docx.name)
             except Exception as e:
-                logger.exception(f"⚠️ Fehler bei der Konvertierung der Word-Datei: {docx.name}: {e}")
+                logger.exception("⚠️ Fehler bei der Konvertierung der Word-Datei.")
         logger.info(f"Anzahl der konvertierten DOCX {len(docx_files)}.")
 
     # -----------------------------------------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ def convert_all_to_markdown():
                 logger.info(f"    - konvertiert: {xlsx.name}")
 
             except Exception as e:
-                logger.exception(f"⚠️ Fehler bei der Konvertierung der Excel-Datei: {xlsx.name}: {e}")
+                logger.exception("⚠️ Fehler bei der Konvertierung der Excel-Datei.")
 
         logger.info(f"Anzahl der konvertierten Excel-Dateien {len(xlsx_files)}.")
 
