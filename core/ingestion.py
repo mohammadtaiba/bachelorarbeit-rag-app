@@ -9,7 +9,6 @@ from utils.ollama_embed import OllamaEmbeddings
 from utils.chunking import chunk_documents
 from utils.loaders import load_docs
 from utils.raw2markdown import convert_all_to_markdown
-from utils.cleanup_md import cleanup_md
 from utils.file_operation import( convert_doc_to_docx,
                                   delete_doc_files,
                                   move_upload2raw,
@@ -36,9 +35,6 @@ def ingestion():
             convert_doc_to_docx()
             delete_doc_files()
             convert_all_to_markdown()
-
-            # 2) Bereinigung
-            cleanup_md()
 
             # Vorbereiten für nächste Ingestion (verschieben)
             move_upload2raw()
