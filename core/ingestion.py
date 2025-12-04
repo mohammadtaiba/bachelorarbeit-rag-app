@@ -43,7 +43,7 @@ def ingestion():
             docs = load_docs()
 
             # 4) Chunking
-            chunks = chunk_documents(docs, 1000, 100)
+            chunks = chunk_documents(docs)
 
             # 5) Embeddings
             embeddings = OllamaEmbeddings(model=EMBED_MODEL,  base_url=OLLAMA_URL)
