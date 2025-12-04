@@ -7,9 +7,8 @@ from langchain_ollama import ChatOllama
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationalRetrievalChain
 
-from core.preprocess import EMBED_MODEL, OLLAMA_URL, COLLECTION, DB_PATH, LLM_MODEL
+from core.preprocess import EMBED_MODEL, OLLAMA_URL, COLLECTION, PATH_DB, LLM_MODEL
 
-from utils.next_neighbor_retriever import NextNeighborRetriever
 from utils.ollama_embed import OllamaEmbeddings
 from utils.logger import logger
 
@@ -22,11 +21,10 @@ logger.info("------------------------------------------------------------ START 
 def build_retrieval_chain():
     """
     Create a conversational retrieval chain consisting of:
-    1) Embeddings
-    2) Chroma vector database
-    3) Custom retriever (NextNeighborRetriever)
-    4) LLM (ChatOllama)
-    5) PromptTemplate
+        - Embeddings
+        - Chroma vector database
+        - LLM (ChatOllama)
+        - PromptTemplate
     """
 
     logger.info("Creating new retrieval chain (Embeddings + Chroma + LLM).")
@@ -44,7 +42,7 @@ def build_retrieval_chain():
     # ------------------------------------------------------------------
     vector_db = Chroma(
         collection_name=COLLECTION,
-        persist_directory=DB_PATH,
+        persist_directory=PATH_DB,
         embedding_function=embeddings,
         client_settings=Settings(anonymized_telemetry=False),
     )
@@ -53,12 +51,7 @@ def build_retrieval_chain():
     # Create retriever
     # Base retriever first, then wrap with NextNeighborRetriever
     # ------------------------------------------------------------------
-    base_retriever = vector_db.as_retriever(search_kwargs={"k": 5})
-    retriever = NextNeighborRetriever(
-        base=base_retriever,
-        vectordb=vector_db,
-        cap=10
-    )
+    retriever = vector_db.as_retriever(search_kwargs={"k": 10})
 
     # ------------------------------------------------------------------
     # LLM configuration

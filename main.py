@@ -10,7 +10,7 @@ from utils.watchdog import start_upload_watcher
 from utils.logger import logger
 
 from core.retrieval import generate_answer
-from core.preprocess import UPLOAD_PATH
+from core.preprocess import PATH_UPLOAD
 from core.ingestion import ingestion
 
 logger.debug("------------------------------------------------------------ START main.py")
@@ -121,7 +121,7 @@ def upload_directory_contains_files() -> bool:
     """
     Check whether the upload directory currently contains at least one file.
     """
-    return any(file_path.is_file() for file_path in Path(UPLOAD_PATH).glob("*"))
+    return any(file_path.is_file() for file_path in Path(PATH_UPLOAD).glob("*"))
 
 
 def trigger_background_ingestion() -> None:
@@ -142,7 +142,7 @@ def initialize_watchdog() -> None:
         return
 
     try:
-        start_upload_watcher(UPLOAD_PATH, trigger_background_ingestion)
+        start_upload_watcher(PATH_UPLOAD, trigger_background_ingestion)
         st.session_state["watchdog_started"] = True
         logger.info("Upload watchdog successfully started.")
     except Exception:
@@ -154,7 +154,7 @@ def trigger_initial_ingestion_if_needed() -> None:
     On app start, check if the upload directory already contains files.
     If so, run an initial ingestion in a background thread.
     """
-    file_count = sum(1 for file_path in Path(UPLOAD_PATH).glob("*") if file_path.is_file())
+    file_count = sum(1 for file_path in Path(PATH_UPLOAD).glob("*") if file_path.is_file())
     if file_count > 0:
         logger.info(
             "On startup, %s file(s) found in upload directory -> triggering initial ingestion.",

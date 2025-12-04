@@ -1,20 +1,16 @@
 # core/ingestion.py
 import time
-from langchain_chroma import Chroma
-from chromadb.config import Settings
-from pathlib import Path
+from langchain_chroma       import Chroma
+from chromadb.config        import Settings
+from pathlib                import Path
+from threading              import Lock
 
-from utils.logger import logger
-from utils.ollama_embed import OllamaEmbeddings
-from utils.chunking import chunk_documents
-from utils.loaders import load_docs
-from utils.raw2markdown import convert_all_to_markdown
-from utils.file_operation import( convert_doc_to_docx,
-                                  delete_doc_files,
-                                  move_upload2raw,
-                                  move_temp2markdown)
-from core.preprocess import UPLOAD_PATH, EMBED_MODEL, OLLAMA_URL, COLLECTION, DB_PATH
-from threading import Lock
+from utils.logger           import logger
+from utils.ollama_embed     import OllamaEmbeddings
+from utils.chunking         import chunk_documents
+from utils.loaders          import load_docs
+from utils.manage_files     import move_processing2processed, convert_all_to_markdown, move_upload2raw
+from core.preprocess        import PATH_UPLOAD, EMBED_MODEL, OLLAMA_URL, COLLECTION, PATH_DB
 
 _ING_LOCK = Lock()
 
@@ -28,15 +24,13 @@ def ingestion():
         logger.warning("Ingestion läuft bereits - Even ignoriert.")
         return
     try:
-        if any(Path(UPLOAD_PATH).glob("*")):
+        if any(Path(PATH_UPLOAD).glob("*")):
             logger.info("Rohdateien gefunden, starte Ingestion ...")
 
             # 1) Konvertierung
-            convert_doc_to_docx()
-            delete_doc_files()
             convert_all_to_markdown()
 
-            # Vorbereiten für nächste Ingestion (verschieben)
+            # 2.1 Vorbereiten für nächste Ingestion (verschieben)
             move_upload2raw()
 
             # 3) Laden
@@ -52,15 +46,15 @@ def ingestion():
             # 6.1) Chroma initialisieren
             vectordb = Chroma(
                 collection_name=COLLECTION,
-                persist_directory=DB_PATH,
+                persist_directory=PATH_DB,
                 embedding_function=embeddings,
                 client_settings=Settings(anonymized_telemetry=False)
             )
 
             # 6.2) Alte Chunks der betroffenen Dokumente entfernen (Replace-Strategie)
-            affected_docs  = sorted({c.metadata["document_id"] for c in chunks})
+            affected_docs  = sorted({c.metadata["source"] for c in chunks})
             for doc_id in affected_docs:
-                vectordb.delete(where={"document_id": doc_id})
+                vectordb.delete(where={"source": doc_id})
             logger.info(f"Alte Einträge gelöscht für: {', '.join(affected_docs) or '-'}")
 
 
@@ -79,8 +73,8 @@ def ingestion():
                 logger.info(f"  -> gespeichert: {i + len(part)}/{total_chunks}")
             logger.info("Speicherung abgeschlossen.")
 
-            # Vorbereiten für nächste Ingestion (verschieben)
-            move_temp2markdown()
+            # 2.2 Vorbereiten für nächste Ingestion (verschieben)
+            move_processing2processed()
 
             logger.info("✅  Ingestion vollständig abgeschlossen.")
 
