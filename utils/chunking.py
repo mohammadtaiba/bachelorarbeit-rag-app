@@ -1,36 +1,55 @@
 # utils/chunking.py
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_text_splitters import MarkdownHeaderTextSplitter, RecursiveCharacterTextSplitter
 from pathlib import Path
 from slugify import slugify
 from utils.logger import logger
 
 # ======================================================================
-# Name normalisieren
+# Dateiname normalisieren
 # ======================================================================
-def clean_name(name: str) -> str:
-    return slugify(name)
-
-# ======================================================================
-# Metadaten auf Chunks anwenden (Zähler pro Datei)
-# ======================================================================
-def add_metadata(chunks):
-    counter = {}  # zählt pro Dokument die Nummer der Chunks hoch
-    for chunk in chunks:
-        # Quelle herausfinden, egal wie sie im Metadata heißt
-        src = chunk.metadata.get("source") or chunk.metadata.get("file_path") or chunk.metadata.get("path") or "unknown"
-        doc_name = Path(src).stem
-        doc_id = clean_name(doc_name)
-        counter[doc_id] = counter.get(doc_id, 0) + 1
-        chunk.metadata["document_id"] = doc_id
-        chunk.metadata["chunk_id"] = f"{doc_id}_{counter[doc_id]}"
-    return chunks
+def clean_name(file_name: str) -> str:
+    return slugify(file_name)
 
 # ======================================================================
 # Chunking + Metadaten
 # ======================================================================
-def chunk_documents(docs, chunk_size: int, chunk_overlap: int):
+def chunk_documents(docs):
     logger.info("Chunking beginnt ...")
-    splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-    chunks = splitter.split_documents(docs)
+
+    markdownHeaderTextSplitter = MarkdownHeaderTextSplitter(
+        headers_to_split_on=[("#", "H1"), ("##", "H2"), ("###", "H3")],
+        strip_headers=False
+    )
+
+    recursiveCharacterTextSplitter = RecursiveCharacterTextSplitter(
+        chunk_size=3500,
+        chunk_overlap=400
+    )
+
+    chunks = []
+
+    for doc in docs:
+        raw_src = doc.metadata.get("source", "")
+        src_clean = clean_name(Path(raw_src).stem)
+
+        # ---------------------------------------------------------
+        # MarkdownHeaderTextSplitter, wenn Dateiname mit "dnk_datei_" anfängt
+        # ---------------------------------------------------------
+        if Path(raw_src).stem.startswith("dnk_datei_"):
+            for chunk in markdownHeaderTextSplitter.split_text(doc.page_content):
+                chunk.metadata = {
+                    "source": src_clean,
+                    **chunk.metadata  # alle Headers (H1, H2, H3) aus dem Splitter übernehmen
+                }
+                chunks.append(chunk)
+
+        # ---------------------------------------------------------
+        # Sonst → RecursiveCharacterTextSplitter
+        # ---------------------------------------------------------
+        else:
+            for chunk in recursiveCharacterTextSplitter.split_documents([doc]):
+                chunk.metadata = {"source": src_clean }
+                chunks.append(chunk)
+
     logger.info("Chunking abgeschlossen.")
-    return add_metadata(chunks)
+    return chunks
