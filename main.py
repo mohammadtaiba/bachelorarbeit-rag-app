@@ -5,7 +5,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from utils.handle_meta_questions import answer_meta_questions
+from utils.answer_meta_questions import answer_meta_questions
 from utils.watchdog import start_upload_watcher
 from utils.logger import logger
 
