@@ -2,22 +2,16 @@ import requests
 import time
 import concurrent.futures
 from pathlib import Path
-
 from utils.logger import logger
 
-# DNK-URL
 BASE_URL = ("https://datenbank2.deutscher-nachhaltigkeitskodex.de/"
-            "Profile/MainMenuHandler/2_1?company={company}&year=2024&lang=de&culture=de")
-
-# Speicherort festlegen
-OUTPUT_FILE = Path("../data/url_sources/dnk_2024.txt")
-OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+            "Profile/MainMenuHandler/2_1?company={company}&year={year}&lang=de&culture=de")
 
 # ======================================================================================================
 # Helferfunktion: URLs überprüfen
 # ======================================================================================================
-def check_company(session: requests.Session, company_id: int) -> tuple[int, bool]:
-    url = BASE_URL.format(company=company_id)
+def check_company(session: requests.Session, company_id: int, year: int) -> tuple[int, bool]:
+    url = BASE_URL.format(company=company_id, year=year)
     try:
         resp = session.get(url, timeout=5)
     except requests.RequestException:
@@ -32,15 +26,15 @@ def check_company(session: requests.Session, company_id: int) -> tuple[int, bool
     return company_id, True
 
 # ======================================================================================================
-# Hauptfunktion: URLs überprüfen und in `dnk_2024.txt` sammeln
+# Hauptfunktion: URLs prüfen
 # ======================================================================================================
-def scrape_dnk_urls():
-    start_id    = 12000
-    end_id      = 19000
+def scrape_dnk_urls(_start_id: int, _end_id: int, year: int):
+    logger.info(f"Scrape DNK URLs für Jahr {year} ...")
+
+    OUTPUT_FILE = Path(f"../../data/url_sources/dnk_{year}_individually.txt")
+    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
+
     max_workers = 20
-
-    logger.info(f"Starting DNK scraping from ID {start_id} to {end_id}...")
-
     t0 = time.perf_counter()
 
     with requests.Session() as session:
@@ -49,12 +43,12 @@ def scrape_dnk_urls():
         with OUTPUT_FILE.open("w", encoding="utf-8") as f_out:
             with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
                 futures = [
-                    executor.submit(check_company, session, cid)
-                    for cid in range(start_id, end_id)
+                    executor.submit(check_company, session, cid, year)
+                    for cid in range(_start_id, _end_id)
                 ]
 
                 checked = 0
-                valid   = 0
+                valid = 0
 
                 for future in concurrent.futures.as_completed(futures):
                     company_id, exists = future.result()
@@ -62,15 +56,9 @@ def scrape_dnk_urls():
 
                     if exists:
                         valid += 1
-                        url = (f"https://datenbank2.deutscher-nachhaltigkeitskodex.de/"
-                               f"Profile/MainMenuHandler/1_1?company={company_id}"
-                               f"&year=2024&lang=de&culture=de") # alle URL aus dem Jahr 2024 überprüfen
+                        url = BASE_URL.format(company=company_id, year=year)
                         f_out.write(url + "\n")
 
     elapsed = time.perf_counter() - t0
-    logger.info(f"{checked} URLs geprüft, {valid} gültige URLs gefunden in {elapsed:.2f}s")
-
-
-
-if __name__ == "__main__":
-    scrape_dnk_urls()
+    logger.info(f"    - {checked} URLs geprüft, {valid} gültige URLs gefunden in {elapsed:.2f}s")
+    logger.info("Scraping abgeschlossen.")
