@@ -43,5 +43,7 @@ Invoke-RestMethod `
 > .venv\Scripts\activate
 
 ---
-## installiere requirements
+## installiere packeges:
 > pip install -r requirements.txt
+---
+> pip install -r requirements.txt --upgrade --force-reinstall
