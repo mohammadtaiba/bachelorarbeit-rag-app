@@ -10,7 +10,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 def dnk_urls_2_md(_year: int):
     logger.info("HTML laden und in Markdown konvertieren …")
 
-    URL_FILE = Path(f"../../data/url_sources/dnk_{_year}_individually.txt")
+    URL_FILE = Path(f"../../data/url_sources/dnk_{_year}_all.txt")
 
     # URLs aus Datei-(URL_FILE) lesen
     urls = [u.strip() for u in URL_FILE.read_text(encoding="utf-8").splitlines() if u.strip()]
