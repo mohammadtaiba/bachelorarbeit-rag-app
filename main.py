@@ -26,7 +26,7 @@ def configure_page() -> None:
     """
     st.set_page_config(
         page_title="RAG-BOT",
-        page_icon="utils/assets/logo.svg",
+        page_icon="core/assets/logo.svg",
         layout="centered"
     )
 
@@ -73,7 +73,7 @@ def apply_global_styles() -> None:
 # Sidebar
 # ======================================================================================================
 
-def load_logo_base64(logo_path: str = "utils/assets/logo.svg") -> str:
+def load_logo_base64(logo_path: str = "core/assets/logo.svg") -> str:
     """
     Load the logo file and return a base64-encoded string.
     If loading fails, an empty string is returned and a warning is logged.
