@@ -4,23 +4,36 @@ import shutil
 from core.preprocess import PATH_DB, PATH_RAW, PATH_UPLOAD, PATH_PROCESSED
 
 """
- löscht direkt: db/ und data/markdown
+ löscht db/ & data/Processed
 """
 def auto_delete_db_markdown():
-    # --- db/chroma löschen ---
+
+    # ------------------------- db/chroma löschen -------------------------
     if PATH_DB.exists():
         rmtree(PATH_DB)
-        print("DB-Daten wurden gelöscht.")
+        print("ChromaDB wurden geleert.")
     else:
-        print("Es existiert keine DB-Daten!")
+        print("ChromaDB ist schon leer!")
 
-    # --- data/markdown/* löschen ---
+    # ------------------------- data/markdown/* löschen -------------------------
     if PATH_PROCESSED.exists() and any(PATH_PROCESSED.glob("*")):
         for file in PATH_PROCESSED.glob("*"):
             file.unlink()
-        print("Markdown-Ordner wurden geleert.")
+        print("Processed-Ordner wurden geleert.")
     else:
-        print("Markdown-Ordner ist leer!")
+        print("Processed-Ordner ist schon leer!")
+
+"""
+ löscht data/upload
+"""
+def auto_delete_upload():
+    if PATH_UPLOAD.exists() and any(PATH_UPLOAD.glob("*")):
+        for file in PATH_UPLOAD.glob("*"):
+            file.unlink()
+        print("Upload-Ordner wurden geleert.")
+    else:
+        print("Upload-Ordner ist schon leer!")
+
 
 """
  Auswahl: löschen oder (schieben data/raw nach data/upload)
@@ -28,16 +41,16 @@ def auto_delete_db_markdown():
 def auto_raw():
     # --- data/raw/* löschen/ verschieben? ---
     if PATH_RAW.exists() and any(PATH_RAW.glob("*")):
-        input_raw = input(" 0) Löschen \n 1) Behalten \n 2) nach upload verschieben \n → Gebe eine Zahl ein: ").strip()
-        if input_raw== "0":
+        input_raw = input(" 1) Löschen \n 2) Behalten \n 3) nach upload verschieben \n → Gebe eine Zahl ein: ").strip()
+        if input_raw== "1":
             for file in PATH_RAW.glob("*"):
                 file.unlink()
             print("Raw-Ordner wurden geleert.")
 
-        elif input_raw == "1":
+        elif input_raw == "2":
             print("Raw-Dateien wurden behalten")
 
-        elif input_raw == "2":
+        elif input_raw == "3":
             for file in PATH_RAW.glob("*"):
                 shutil.move(str(file), PATH_UPLOAD / file.name)
             print("Dateien wurden nach 'upload/' verschoben.")
@@ -52,11 +65,15 @@ def auto_manager():
     while True:
             print(
     """Was möchtest du tun?
-        1) Datenbank & Markdown-Ordner löschen
+
+        1) ChromaDB & Processed-Ordner leeren
         2) Raw-Dateien löschen oder verschieben
-        3) Indizieren
-        4) ChatBot starten
-        5) Beenden""")
+        3) Ingestion starten
+        4) Chatbot starten
+        5) Upload-Dateien löschen
+        6) Beenden
+
+    """)
 
             choice = input("→ Gib eine Zahl ein: ").strip()
 
@@ -74,6 +91,8 @@ def auto_manager():
             elif choice == "4":
                 os.system("streamlit run main.py")
             elif choice == "5":
+                auto_delete_upload()
+            elif choice == "6":
                 print("Beendet.")
                 break
             else:
