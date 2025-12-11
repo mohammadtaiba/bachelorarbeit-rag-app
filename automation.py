@@ -1,7 +1,7 @@
 import os
 from shutil import rmtree
 import shutil
-from core.preprocess import PATH_DB, PATH_RAW, PATH_UPLOAD, PATH_PROCESSED
+from core.preprocess import PATH_DB, PATH_RAW, PATH_UPLOAD, PATH_PROCESSED, PATH_PROCESSING
 
 """
  löscht db/ & data/Processed
@@ -15,7 +15,7 @@ def auto_delete_db_markdown():
     else:
         print("ChromaDB ist schon leer!")
 
-    # ------------------------- data/markdown/* löschen -------------------------
+    # ------------------------- data/processed/* löschen -------------------------
     if PATH_PROCESSED.exists() and any(PATH_PROCESSED.glob("*")):
         for file in PATH_PROCESSED.glob("*"):
             file.unlink()
@@ -34,6 +34,27 @@ def auto_delete_upload():
     else:
         print("Upload-Ordner ist schon leer!")
 
+"""
+ löscht data/processed
+"""
+def auto_delete_processed():
+    if PATH_PROCESSED.exists() and any(PATH_PROCESSED.glob("*")):
+        for file in PATH_PROCESSED.glob("*"):
+            file.unlink()
+        print("Processed-Ordner wurden geleert.")
+    else:
+        print("Processed-Ordner ist schon leer!")
+
+"""
+ löscht data/processing
+"""
+def auto_delete_processing():
+    if PATH_PROCESSING.exists() and any(PATH_PROCESSING.glob("*")):
+        for file in PATH_PROCESSING.glob("*"):
+            file.unlink()
+        print("Processed-Ordner wurden geleert.")
+    else:
+        print("Processed-Ordner ist schon leer!")
 
 """
  Auswahl: löschen oder (schieben data/raw nach data/upload)
@@ -71,7 +92,9 @@ def auto_manager():
         3) Ingestion starten
         4) Chatbot starten
         5) Upload-Dateien löschen
-        6) Beenden
+        6) Processed-Dateien löschen
+        7) Processing-Dateien löschen
+        8) Beenden
 
     """)
 
@@ -93,6 +116,10 @@ def auto_manager():
             elif choice == "5":
                 auto_delete_upload()
             elif choice == "6":
+                auto_delete_processed()
+            elif choice == "7":
+                auto_delete_processing()
+            elif choice == "8":
                 print("Beendet.")
                 break
             else:
