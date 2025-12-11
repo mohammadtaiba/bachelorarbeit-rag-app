@@ -650,3 +650,488 @@ markitdown._exceptions.FileConversionException: File conversion failed after 1 a
 04-Dec-25 17:08:14 - INFO - Keine Markdown-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processing gefunden.
 04-Dec-25 17:08:14 - INFO - ✅  Ingestion vollständig abgeschlossen.
 04-Dec-25 17:08:14 - INFO - Ingestion-Laufzeit: 1164.0 s
+10-Dec-25 07:30:23 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 07:30:23 - INFO - ------------------------------------------------------------ START retrieval.py
+10-Dec-25 07:30:23 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+10-Dec-25 07:30:24 - INFO - Retrieval chain successfully created.
+10-Dec-25 07:30:30 - INFO - Upload watchdog successfully started.
+10-Dec-25 07:36:33 - INFO - New question received: "wie geht es dir?" | Chat history length: 0
+10-Dec-25 07:36:39 - INFO - Answer generated in 6.25 seconds
+10-Dec-25 08:52:04 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 08:55:51 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:02:27 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:06:10 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:25:22 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:34:26 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:37:12 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:38:46 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 09:59:02 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:04:32 - INFO - 7000 URLs geprüft, 246 gültige URLs gefunden in 329.44s
+10-Dec-25 10:09:21 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:09:35 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:09:41 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:10:52 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:11:10 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:14:08 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:14:09 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:14:10 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:14:25 - INFO - Starting DNK scraping from ID 12000 to 19000...
+10-Dec-25 10:19:53 - INFO - 7000 URLs geprüft, 238 gültige URLs gefunden in 328.65s
+10-Dec-25 10:38:34 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 10:38:34 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 10:38:34 - INFO - Extraktion abgeschlossen.
+10-Dec-25 11:00:03 - INFO - Scrape DNK URLs für Jahr 2023 ...
+10-Dec-25 11:00:37 - INFO - Scrape DNK URLs für Jahr 2023 ...
+10-Dec-25 11:02:03 - INFO - 2000 URLs geprüft, 129 gültige URLs gefunden in 85.80s
+10-Dec-25 11:12:51 - WARNING - Logo file not found at utils/assets/logo.svg. Sidebar logo will not be displayed.
+10-Dec-25 11:12:51 - INFO - Upload watchdog successfully started.
+10-Dec-25 11:13:50 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 11:13:50 - INFO - ------------------------------------------------------------ START retrieval.py
+10-Dec-25 11:13:50 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+10-Dec-25 11:17:22 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 11:17:22 - INFO - ------------------------------------------------------------ START retrieval.py
+10-Dec-25 11:17:22 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+10-Dec-25 11:17:23 - INFO - Retrieval chain successfully created.
+10-Dec-25 11:17:28 - INFO - Upload watchdog successfully started.
+10-Dec-25 11:17:45 - INFO - New question received: "wie geht es dir" | Chat history length: 1
+10-Dec-25 11:17:52 - INFO - Answer generated in 7.02 seconds
+10-Dec-25 11:20:56 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 11:20:56 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 11:20:56 - INFO - Extraktion abgeschlossen.
+10-Dec-25 11:34:09 - INFO - Upload watchdog successfully started.
+10-Dec-25 11:42:38 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 11:42:38 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 11:42:38 - INFO - Extraktion abgeschlossen.
+10-Dec-25 11:42:38 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 11:44:12 - INFO - HTML laden und in Markdown konvertierung ist abgeschlossen.
+10-Dec-25 11:52:13 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 11:52:13 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 11:52:13 - INFO - Extraktion abgeschlossen.
+10-Dec-25 11:52:13 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 11:53:49 - INFO - HTML laden und in Markdown konvertierung ist abgeschlossen.
+10-Dec-25 11:55:17 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 11:55:17 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 11:55:17 - INFO - Extraktion abgeschlossen.
+10-Dec-25 11:55:17 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 11:57:02 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 11:57:02 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 11:57:02 - INFO - Extraktion abgeschlossen.
+10-Dec-25 11:57:02 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 11:58:39 - INFO - HTML laden und in Markdown konvertierung ist abgeschlossen.
+10-Dec-25 12:00:00 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:00:04 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:00:04 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 12:00:04 - INFO - Ingestion-Laufzeit: 0.0 s
+10-Dec-25 12:41:15 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:41:19 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:41:19 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 12:41:19 - INFO - Ingestion-Laufzeit: 0.0 s
+10-Dec-25 12:48:23 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:48:23 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 12:48:23 - INFO - Ingestion-Laufzeit: 423.5 s
+10-Dec-25 12:48:54 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:50:40 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:50:44 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:50:44 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 12:50:44 - INFO - Ingestion-Laufzeit: 0.0 s
+10-Dec-25 12:53:20 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:53:20 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 12:53:20 - INFO - Ingestion-Laufzeit: 156.2 s
+10-Dec-25 12:53:38 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:53:40 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:53:40 - INFO - starte Ingestion ...
+10-Dec-25 12:53:40 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+10-Dec-25 12:53:40 - INFO - Keine PDFs in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:53:40 - INFO - Keine DOCX in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:53:40 - INFO - Keine Excel-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:53:40 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 12:53:40 - INFO - Keine Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:53:40 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 12:53:40 - INFO - Chunking beginnt ...
+10-Dec-25 12:53:40 - INFO - Chunking abgeschlossen.
+10-Dec-25 12:53:41 - INFO - Alte Einträge gelöscht für: -
+10-Dec-25 12:53:41 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 12:53:41 - INFO - Speicherung abgeschlossen.
+10-Dec-25 12:53:41 - INFO - Keine Markdown-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\processing gefunden.
+10-Dec-25 12:53:41 - INFO - ✅  Ingestion vollständig abgeschlossen.
+10-Dec-25 12:53:41 - INFO - Ingestion-Laufzeit: 0.4 s
+10-Dec-25 12:56:53 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:56:53 - INFO - starte Ingestion ...
+10-Dec-25 12:56:53 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+10-Dec-25 12:56:53 - INFO - Keine PDFs in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:56:53 - INFO - Keine DOCX in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:56:53 - INFO - Keine Excel-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:56:53 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 12:56:53 - INFO - Keine Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\upload gefunden.
+10-Dec-25 12:56:53 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 12:56:53 - INFO - Chunking beginnt ...
+10-Dec-25 12:56:53 - INFO - Chunking abgeschlossen.
+10-Dec-25 12:56:53 - INFO - Alte Einträge gelöscht für: -
+10-Dec-25 12:56:53 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 12:56:53 - INFO - Speicherung abgeschlossen.
+10-Dec-25 12:56:53 - INFO - Keine Markdown-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\dnk_urls_automation\data\processing gefunden.
+10-Dec-25 12:56:53 - INFO - ✅  Ingestion vollständig abgeschlossen.
+10-Dec-25 12:56:53 - INFO - Ingestion-Laufzeit: 192.9 s
+10-Dec-25 12:57:10 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:57:12 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:57:12 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 12:57:12 - INFO - Ingestion-Laufzeit: 0.0 s
+10-Dec-25 12:58:06 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 12:58:08 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 12:58:08 - INFO - Rohdateien gefunden, starte Ingestion ...
+10-Dec-25 12:58:08 - INFO - Starte Konvertierung der Rohdaten zu Markdown ...
+10-Dec-25 12:58:08 - INFO - Keine PDFs in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+10-Dec-25 12:58:08 - INFO - Keine DOCX in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+10-Dec-25 12:58:08 - INFO - Keine Excel-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+10-Dec-25 12:58:08 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 12:58:08 - INFO - Verschiebe aus C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload zu C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\raw ...
+10-Dec-25 12:58:08 - INFO - Verschiebung abgeschlossen.
+10-Dec-25 12:58:08 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 12:58:08 - INFO - Chunking beginnt ...
+10-Dec-25 12:58:08 - INFO - Chunking abgeschlossen.
+10-Dec-25 12:58:08 - INFO - Alte Einträge gelöscht für: -
+10-Dec-25 12:58:08 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 12:58:08 - INFO - Speicherung abgeschlossen.
+10-Dec-25 12:58:08 - INFO - Keine Markdown-Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processing gefunden.
+10-Dec-25 12:58:08 - INFO - ✅  Ingestion vollständig abgeschlossen.
+10-Dec-25 12:58:08 - INFO - Ingestion-Laufzeit: 0.4 s
+10-Dec-25 13:23:04 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 13:23:08 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 13:23:08 - INFO - Rohdateien gefunden, starte Ingestion ...
+10-Dec-25 13:23:08 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+10-Dec-25 13:23:08 - INFO -     - Es existiert keine PDFs.
+10-Dec-25 13:23:08 - INFO -     - Es existiert keine DOCX.
+10-Dec-25 13:23:08 - INFO -     - Es existiert keine XLSXs.
+10-Dec-25 13:23:08 - INFO -     - Anzahl der konvertierten TXT-Dateien: 1.
+10-Dec-25 13:23:08 - INFO -     - Es existiert keine MDs.
+10-Dec-25 13:23:08 - INFO -     - Anzahl der konvertierten (verschobenen) MD-Dateien: 0.
+10-Dec-25 13:23:08 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 13:23:08 - INFO - Keine Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+10-Dec-25 13:23:08 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 13:23:08 - INFO - Chunking beginnt ...
+10-Dec-25 13:23:08 - INFO - Chunking abgeschlossen.
+10-Dec-25 13:23:09 - INFO - Alte Einträge gelöscht für: server-neu-starten
+10-Dec-25 13:23:09 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 13:23:11 - INFO -   -> gespeichert: 1/1
+10-Dec-25 13:23:11 - INFO - Speicherung abgeschlossen.
+10-Dec-25 13:23:11 - INFO - Verschiebe aus C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processing → C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processed  ...
+10-Dec-25 13:23:11 - INFO - Verschiebung abgeschlossen.
+10-Dec-25 13:23:11 - INFO - ✅  Ingestion vollständig abgeschlossen.
+10-Dec-25 13:23:11 - INFO - Ingestion-Laufzeit: 3.5 s
+10-Dec-25 13:47:55 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 13:47:55 - INFO - ------------------------------------------------------------ START retrieval.py
+10-Dec-25 13:47:55 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+10-Dec-25 13:47:55 - INFO - Retrieval chain successfully created.
+10-Dec-25 13:47:59 - INFO - Upload watchdog successfully started.
+10-Dec-25 13:48:15 - INFO - New question received: "wie kann ich der server neustarten" | Chat history length: 0
+10-Dec-25 13:48:19 - ERROR - ⚠️ Error in generate_answer() for question: "{question}".
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002CEECB3DCD0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002CEECB3DCD0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\retrieval.py", line 121, in generate_answer
+    output = BUILD_CHAIN_ONCE.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 164, in _call
+    docs = self._get_docs(new_question, inputs, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 409, in _get_docs
+    docs = self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_core\vectorstores\base.py", line 1067, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_chroma\vectorstores.py", line 698, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_chroma\vectorstores.py", line 798, in similarity_search_with_score
+    query_embedding = self._embedding_function.embed_query(query)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 20, in embed_query
+    return self._embed_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 24, in _embed_text
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002CEECB3DCD0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+10-Dec-25 13:48:43 - INFO - New question received: "wie kann ich der server neustarten
+
+" | Chat history length: 0
+10-Dec-25 13:48:49 - INFO - Answer generated in 6.00 seconds
+10-Dec-25 13:49:07 - INFO - New question received: "was bedeutet nachhaltigkeit" | Chat history length: 1
+10-Dec-25 13:49:14 - INFO - Answer generated in 7.03 seconds
+10-Dec-25 14:09:09 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:09:09 - INFO - ------------------------------------------------------------ START retrieval.py
+10-Dec-25 14:09:09 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+10-Dec-25 14:09:09 - INFO - Retrieval chain successfully created.
+10-Dec-25 14:09:14 - INFO - Upload watchdog successfully started.
+10-Dec-25 14:09:23 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:09:23 - INFO - ------------------------------------------------------------ START retrieval.py
+10-Dec-25 14:09:23 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+10-Dec-25 14:09:23 - INFO - Retrieval chain successfully created.
+10-Dec-25 14:09:25 - INFO - New question received: "wie kann ich der server neustarten
+
+" | Chat history length: 0
+10-Dec-25 14:09:31 - INFO - Answer generated in 6.06 seconds
+10-Dec-25 14:11:17 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:11:19 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 14:11:19 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 14:11:19 - INFO - Ingestion-Laufzeit: 0.0 s
+10-Dec-25 14:17:16 - INFO - Upload watchdog successfully started.
+10-Dec-25 14:17:48 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:17:50 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 14:17:50 - INFO -  Achtung: Eine Ingestion findet nicht statt, da es keine neuen Daten zu indexieren gibt!
+10-Dec-25 14:17:50 - INFO - Ingestion-Laufzeit: 0.0 s
+10-Dec-25 14:18:56 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:18:58 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 14:18:58 - INFO - Rohdateien gefunden, starte Ingestion ...
+10-Dec-25 14:18:58 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+10-Dec-25 14:18:58 - INFO -     - Anzahl der konvertierten PDFs: 1.
+10-Dec-25 14:18:58 - INFO -     - Es existiert keine DOCX.
+10-Dec-25 14:18:58 - INFO -     - Es existiert keine XLSXs.
+10-Dec-25 14:18:58 - INFO -     - Es existiert keine TXTs.
+10-Dec-25 14:18:58 - INFO -     - Anzahl der konvertierten TXT-Dateien: 0.
+10-Dec-25 14:18:58 - INFO -     - Es existiert keine MDs.
+10-Dec-25 14:18:58 - INFO -     - Anzahl der konvertierten MD-Dateien: 0.
+10-Dec-25 14:18:58 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 14:18:58 - INFO - Verschiebe aus C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload zu C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\raw ...
+10-Dec-25 14:18:58 - INFO - Verschiebung abgeschlossen.
+10-Dec-25 14:18:58 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 14:18:58 - INFO - Chunking beginnt ...
+10-Dec-25 14:18:58 - INFO - Chunking abgeschlossen.
+10-Dec-25 14:18:59 - INFO - Alte Einträge gelöscht für: lusd-fragen
+10-Dec-25 14:18:59 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 14:19:03 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000217164183D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000217164183D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\ingestion.py", line 68, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 24, in _embed_text
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000217164183D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+10-Dec-25 14:19:03 - INFO - Ingestion-Laufzeit: 4.6 s
+10-Dec-25 14:22:06 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:22:08 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 14:22:08 - INFO - Rohdateien gefunden, starte Ingestion ...
+10-Dec-25 14:22:08 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+10-Dec-25 14:22:08 - INFO -     - Es existiert keine PDFs.
+10-Dec-25 14:22:08 - INFO -     - Es existiert keine DOCX.
+10-Dec-25 14:22:08 - INFO -     - Es existiert keine XLSXs.
+10-Dec-25 14:22:08 - INFO -     - Es existiert keine TXTs.
+10-Dec-25 14:22:08 - INFO -     - Anzahl der konvertierten TXT-Dateien: 0.
+10-Dec-25 14:22:08 - INFO -     - Anzahl der konvertierten MD-Dateien: 1.
+10-Dec-25 14:22:08 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 14:22:08 - INFO - Keine Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+10-Dec-25 14:22:08 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 14:22:08 - INFO - Chunking beginnt ...
+10-Dec-25 14:22:08 - INFO - Chunking abgeschlossen.
+10-Dec-25 14:22:08 - INFO - Alte Einträge gelöscht für: lusd-fragen
+10-Dec-25 14:22:08 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 14:22:11 - INFO -   -> gespeichert: 1/1
+10-Dec-25 14:22:11 - INFO - Speicherung abgeschlossen.
+10-Dec-25 14:22:11 - INFO - Verschiebe aus C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processing → C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processed  ...
+10-Dec-25 14:22:11 - INFO - Verschiebung abgeschlossen.
+10-Dec-25 14:22:11 - INFO - ✅  Ingestion vollständig abgeschlossen.
+10-Dec-25 14:22:11 - INFO - Ingestion-Laufzeit: 3.2 s
+10-Dec-25 14:23:57 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+10-Dec-25 14:23:59 - INFO - ------------------------------------------------------------ START ingestion.py
+10-Dec-25 14:23:59 - INFO - Rohdateien gefunden, starte Ingestion ...
+10-Dec-25 14:23:59 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+10-Dec-25 14:23:59 - INFO -     - Es existiert keine PDFs.
+10-Dec-25 14:23:59 - INFO -     - Es existiert keine DOCX.
+10-Dec-25 14:23:59 - INFO -     - Es existiert keine XLSXs.
+10-Dec-25 14:23:59 - INFO -     - Es existiert keine TXTs.
+10-Dec-25 14:23:59 - INFO -     - Anzahl der konvertierten MD-Dateien: 2.
+10-Dec-25 14:23:59 - INFO - Konvertierung abgeschlossen.
+10-Dec-25 14:23:59 - INFO - Keine Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+10-Dec-25 14:23:59 - INFO - Lade Markdown-Dokumente ...
+10-Dec-25 14:23:59 - INFO - Chunking beginnt ...
+10-Dec-25 14:23:59 - INFO - Chunking abgeschlossen.
+10-Dec-25 14:23:59 - INFO - Alte Einträge gelöscht für: lusd-fragen, server-neu-starten
+10-Dec-25 14:23:59 - INFO - Speichere Chunks in ChromaDB ...
+10-Dec-25 14:24:04 - INFO -   -> gespeichert: 2/2
+10-Dec-25 14:24:04 - INFO - Speicherung abgeschlossen.
+10-Dec-25 14:24:04 - INFO - Verschiebe aus C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processing → C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processed  ...
+10-Dec-25 14:24:04 - INFO - Verschiebung abgeschlossen.
+10-Dec-25 14:24:04 - INFO - ✅  Ingestion vollständig abgeschlossen.
+10-Dec-25 14:24:04 - INFO - Ingestion-Laufzeit: 4.9 s
+10-Dec-25 14:50:16 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 14:50:16 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 14:50:16 - INFO - Extraktion abgeschlossen.
+10-Dec-25 14:50:16 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 14:51:52 - INFO - HTML laden und in Markdown konvertierung ist abgeschlossen.
+10-Dec-25 14:55:11 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 14:55:11 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 14:55:11 - INFO - Extraktion abgeschlossen.
+10-Dec-25 14:55:11 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 14:55:40 - INFO - Extrahiere DNK URLs ...
+10-Dec-25 14:55:40 - INFO -     - Anzahl erzeugter URLs: 7616
+10-Dec-25 14:55:40 - INFO - Extraktion abgeschlossen.
+10-Dec-25 14:55:40 - INFO - HTML laden und in Markdown konvertieren …
+10-Dec-25 15:40:47 - INFO - HTML laden und in Markdown konvertierung ist abgeschlossen.
+11-Dec-25 08:12:39 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+11-Dec-25 08:12:44 - INFO - ------------------------------------------------------------ START ingestion.py
+11-Dec-25 08:12:44 - INFO - Rohdateien gefunden, starte Ingestion ...
+11-Dec-25 08:12:44 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+11-Dec-25 08:12:44 - INFO -     - Es existiert keine PDFs.
+11-Dec-25 08:12:44 - INFO -     - Es existiert keine DOCX.
+11-Dec-25 08:12:44 - INFO -     - Es existiert keine XLSXs.
+11-Dec-25 08:12:44 - INFO -     - Es existiert keine TXTs.
+11-Dec-25 08:12:45 - INFO -     - Anzahl der konvertierten MD-Dateien: 238.
+11-Dec-25 08:12:45 - INFO - Konvertierung abgeschlossen.
+11-Dec-25 08:12:45 - INFO - Keine Dateien in C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\upload gefunden.
+11-Dec-25 08:12:45 - INFO - Lade Markdown-Dokumente ...
+11-Dec-25 08:12:45 - INFO - Chunking beginnt ...
+11-Dec-25 08:12:46 - INFO - Chunking abgeschlossen.
+11-Dec-25 08:13:00 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+11-Dec-25 08:13:00 - INFO - Speichere Chunks in ChromaDB ...
+11-Dec-25 09:45:23 - INFO -   -> gespeichert: 2000/8044
+11-Dec-25 11:16:34 - INFO -   -> gespeichert: 4000/8044
+11-Dec-25 13:26:23 - INFO -   -> gespeichert: 6000/8044
+11-Dec-25 15:01:18 - INFO -   -> gespeichert: 8000/8044
+11-Dec-25 15:03:09 - INFO -   -> gespeichert: 8044/8044
+11-Dec-25 15:03:09 - INFO - Speicherung abgeschlossen.
+11-Dec-25 15:03:09 - INFO - Verschiebe aus C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processing → C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\data\processed  ...
+11-Dec-25 15:03:10 - INFO - Verschiebung abgeschlossen.
+11-Dec-25 15:03:10 - INFO - ✅  Ingestion vollständig abgeschlossen.
+11-Dec-25 15:03:10 - INFO - Ingestion-Laufzeit: 24625.7 s
