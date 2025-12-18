@@ -1,15 +1,19 @@
 ## Modelle:
-- installiere zuerst Ollama-App auf dem Rechner: 
+### 1. installiere zuerst Ollama-App auf dem Rechner: 
 > https://ollama.com/download
-- Um das `gpt-oss:120b-cloud` nutzen zu können, loge dich zuerst ein:
+### 2. Um das `gpt-oss:120b-cloud` nutzen zu können, loge dich zuerst ein:
 > ollama signin
-- Modell herunterladen:
+### 3. Modell herunterladen:
 > ollama pull gpt-oss:120b-cloud
-- Alle Modellen anzeigen:
-> ollama list
-- Modell löschen: 
-> ollama rm <MODEL-NAME>
 
+> ollama pull nomic-embed-text
+
+---
+### Alle Modellen anzeigen:
+> ollama list
+### Modell löschen: 
+> ollama rm <MODEL-NAME>
+---
 ### Test Embedding, führe das im terminal:
 Invoke-RestMethod `
   -Uri "http://localhost:11434/api/embeddings" `
