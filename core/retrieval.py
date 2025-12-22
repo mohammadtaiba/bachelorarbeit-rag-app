@@ -51,7 +51,7 @@ def build_retrieval_chain():
     # Create retriever
     # Base retriever first, then wrap with NextNeighborRetriever
     # ------------------------------------------------------------------
-    retriever = vector_db.as_retriever(search_kwargs={"k": 10})
+    retriever = vector_db.as_retriever(search_kwargs={"k": 40})
 
     # ------------------------------------------------------------------
     # LLM configuration
