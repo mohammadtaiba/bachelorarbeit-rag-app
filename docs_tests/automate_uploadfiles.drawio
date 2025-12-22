@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.2.7 Chrome/138.0.7204.251 Electron/37.7.1 Safari/537.36" version="28.2.7">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
   <diagram name="Seite-1" id="Bzmq8vI_scQP_HTdQC11">
-    <mxGraphModel dx="1237" dy="630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1074" dy="618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,7 +9,7 @@
             <mxPoint x="416.5" y="204.0000000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-22" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];shadow=1;" vertex="1" connectable="0" parent="th7Zlc1qkYqR9wxy-wNW-9">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-22" value="JA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];shadow=1;" parent="th7Zlc1qkYqR9wxy-wNW-9" vertex="1" connectable="0">
           <mxGeometry x="-0.5345" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -17,24 +17,24 @@
         <mxCell id="th7Zlc1qkYqR9wxy-wNW-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shadow=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="th7Zlc1qkYqR9wxy-wNW-7" target="th7Zlc1qkYqR9wxy-wNW-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-21" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];shadow=1;" vertex="1" connectable="0" parent="th7Zlc1qkYqR9wxy-wNW-13">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-21" value="NEIN" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];shadow=1;" parent="th7Zlc1qkYqR9wxy-wNW-13" vertex="1" connectable="0">
           <mxGeometry x="-0.4643" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="th7Zlc1qkYqR9wxy-wNW-7" value="existiert dateien in&amp;nbsp;&lt;b&gt;UPLOAD&lt;/b&gt;?" style="rhombus;whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
+        <mxCell id="th7Zlc1qkYqR9wxy-wNW-7" value="Existiert dateien in&amp;nbsp;&lt;b&gt;UPLOAD&lt;/b&gt;?" style="rhombus;whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
           <mxGeometry x="351.5" y="30" width="130" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ACCZmD-htaohdq-iRNGL-33" target="ACCZmD-htaohdq-iRNGL-32">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="ACCZmD-htaohdq-iRNGL-33" target="ACCZmD-htaohdq-iRNGL-32" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="416.5" y="260.0000000000001" as="sourcePoint" />
             <mxPoint x="416.5" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="th7Zlc1qkYqR9wxy-wNW-12" value="ingestion beenden." style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
+        <mxCell id="th7Zlc1qkYqR9wxy-wNW-12" value="Ingestion beenden." style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
           <mxGeometry x="575.5" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ACCZmD-htaohdq-iRNGL-32" target="ACCZmD-htaohdq-iRNGL-31">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="ACCZmD-htaohdq-iRNGL-32" target="ACCZmD-htaohdq-iRNGL-31" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="416.5" y="350" as="sourcePoint" />
             <mxPoint x="416.5" y="389" as="targetPoint" />
@@ -43,29 +43,22 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;shadow=1;" edge="1" parent="1" source="ACCZmD-htaohdq-iRNGL-25" target="ACCZmD-htaohdq-iRNGL-30">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="ACCZmD-htaohdq-iRNGL-31" target="ACCZmD-htaohdq-iRNGL-30" edge="1">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="416.0000000000002" y="580" as="targetPoint" />
+            <mxPoint x="418.5" y="439" as="sourcePoint" />
+            <mxPoint x="418.5" y="486" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-25" value="die dateien von&amp;nbsp;&lt;b&gt;MARKDOWN_temp &lt;/b&gt;löschen" style="whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
-          <mxGeometry x="300" y="486" width="233" height="50" as="geometry" />
+        <mxCell id="ACCZmD-htaohdq-iRNGL-30" value="Schiebe die Rohdateien von&amp;nbsp;&lt;b&gt;UPLOAD&amp;nbsp;&lt;/b&gt;zu&amp;nbsp;&lt;b&gt;RAW&lt;/b&gt;" style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="478" width="233" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ACCZmD-htaohdq-iRNGL-31" target="ACCZmD-htaohdq-iRNGL-25">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="416.5" y="439" as="sourcePoint" />
-          </mxGeometry>
+        <mxCell id="ACCZmD-htaohdq-iRNGL-31" value="Schiebe die Markdown-Dateien von&amp;nbsp;&lt;b&gt;PROCESSING&amp;nbsp;&lt;/b&gt;zu&amp;nbsp;&lt;b&gt;PROCESSED&lt;/b&gt;" style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
+          <mxGeometry x="302" y="391" width="230" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-30" value="&amp;nbsp;schiebe die roh-dateien von&amp;nbsp;&lt;b&gt;UPLOAD&amp;nbsp;&lt;/b&gt;zu&amp;nbsp;&lt;b&gt;RAW&lt;/b&gt;" style="whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
-          <mxGeometry x="300" y="579" width="233" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-31" value="schiebe die md-dateien aus&amp;nbsp;&lt;b&gt;MARKDOWN_temp &lt;/b&gt;nach&amp;nbsp;&lt;b&gt;MARKDOWN&lt;/b&gt;" style="whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
-          <mxGeometry x="291" y="391" width="250" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-32" value="die dateien&amp;nbsp; von&amp;nbsp;&lt;b&gt;MARKDOWN_temp&amp;nbsp;&lt;/b&gt;in&amp;nbsp;&lt;b&gt;DB-Chroma&amp;nbsp;&lt;/b&gt;indixieren" style="whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-32" value="Die Dateien&amp;nbsp; von&amp;nbsp;&lt;div&gt;&lt;b&gt;PROCESSING&amp;nbsp;&lt;/b&gt;in&amp;nbsp;&lt;b&gt;ChromaDB&amp;nbsp;&lt;/b&gt;indixieren&lt;/div&gt;" style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
           <mxGeometry x="300" y="300" width="233" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="ACCZmD-htaohdq-iRNGL-33" value="konvertiere die roh-dateien in md&amp;nbsp;und schiebe sie in&amp;nbsp;&lt;b&gt;MARKDOWN_temp&lt;/b&gt;" style="whiteSpace=wrap;html=1;shadow=1;" vertex="1" parent="1">
+        <mxCell id="ACCZmD-htaohdq-iRNGL-33" value="konvertiere die roh-dateien in md&amp;nbsp;und schiebe sie in &lt;b&gt;PROCESSING&lt;/b&gt;" style="whiteSpace=wrap;html=1;shadow=1;" parent="1" vertex="1">
           <mxGeometry x="300" y="210" width="233" height="50" as="geometry" />
         </mxCell>
       </root>
