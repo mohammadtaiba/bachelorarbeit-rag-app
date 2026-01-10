@@ -66,9 +66,9 @@ def build_retrieval_chain():
     # Prompt template
     # ------------------------------------------------------------------
     prompt_text = """
-        Als hilfreicher KI-Assistent unterstützt du Unternehmen dabei, ihre Nachhaltigkeitsberichte zu analysieren und zu verbessern.
+        Als hilfreicher KI-Assistent unterstützt das System Unternehmen dabei, ihre Nachhaltigkeitsberichte zu analysieren und zu verbessern sowie geeignete Ideen und Maßnahmen vorzuschlagen.
         Deine Aufgabe ist es, Fragen nur aus dem bereitgestellten Kontext auf Deutsch, faktenbasiert und präzise zu beantworten.
-        Wenn kein Kontext vorhanden ist, antworte: „Information nicht gefunden.\nBitte versuche es mit einer anderen Frage zum Thema **Nachhaltigkeitsberichte**.”
+        Wenn kein Kontext vorhanden ist, antworte: „Information nicht gefunden. Bitte versuche es mit einer anderen Frage zum Thema Nachhaltigkeitsberichte.\n\n **Alternative Fragestellung:**\n\n <schalge aus dem Kontext relevante nur eine alternative Fragestellung (über Nachhaltigkeit) für der Nutzer vor.>”.
         Verwende ausschließlich den bereitgestellten Kontext und die letzten Chat-Beiträge.
         Wenn der Chatverlauf nicht relevant ist, ignoriere ihn.
         Ich werde dir Fragen geben und möchte, dass du mir nur die Antwort gibst, ohne viel zu erklären!
