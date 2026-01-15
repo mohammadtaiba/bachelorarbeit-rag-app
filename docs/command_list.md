@@ -31,12 +31,13 @@ Invoke-RestMethod `
 ---
 
 ## Andere Befehlen
-> python docs_notes/Testing_Learning/test_chromaDB_overview.py
----
+* Ingestion starten:
 > python -m core.ingestion
 ---
+* ChromaDB löschen:
 > Remove-Item -Recurse -Force db/chromadb/*
 ---
+* Chatbot starten:
 > streamlit run main.py
 
 ---
