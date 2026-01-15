@@ -1,7 +1,7 @@
 # utils/loaders.py
 from langchain.schema import Document
 from typing import List
-from core.preprocess import PATH_PROCESSING
+from core.config import PATH_PROCESSING
 from langchain_community.document_loaders import TextLoader
 from utils.logger import logger
 

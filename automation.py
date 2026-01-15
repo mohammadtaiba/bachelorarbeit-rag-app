@@ -1,7 +1,7 @@
 import os
 from shutil import rmtree
 import shutil
-from core.preprocess import PATH_DB, PATH_RAW, PATH_UPLOAD, PATH_PROCESSED, PATH_PROCESSING
+from core.config import PATH_DB, PATH_RAW, PATH_UPLOAD, PATH_PROCESSED, PATH_PROCESSING
 
 """
  löscht db/ & data/Processed

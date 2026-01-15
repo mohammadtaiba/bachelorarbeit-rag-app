@@ -10,7 +10,7 @@ rag2-app/
 ├── core/ 
 │   ├── __init__        
 │   ├── ingestion.py              	# Dateien nach MD-Dateien konvertieren --> bereinigen --> in VektorDB indexieren
-│   ├── preprocess.py             	# Globale Variablen und Parameter
+│   ├── config.py             	# Globale Variablen und Parameter
 │   ├── retrieval.py              	  # Benutzeranfragen beantworten (RAG)
 │   └── dnk_urls_automation/  
 │          ├──  scrape_dnk_urls.py # Erster Schritt: Die gültige URL von „www.deutscher-nachhaltigkeitskodex.de” finden und in einer Datei speichern (Hauptmenüpunkt finden).

@@ -1,4 +1,4 @@
-# core/preprocess.py
+# core/config.py
 from pathlib import Path
 from dotenv import load_dotenv
 import os

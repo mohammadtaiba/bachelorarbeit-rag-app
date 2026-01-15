@@ -10,7 +10,7 @@ from utils.watchdog import start_upload_watcher
 from utils.logger import logger
 
 from core.retrieval import generate_answer
-from core.preprocess import PATH_UPLOAD
+from core.config import PATH_UPLOAD
 from core.ingestion import ingestion
 
 logger.debug("------------------------------------------------------------ START main.py")

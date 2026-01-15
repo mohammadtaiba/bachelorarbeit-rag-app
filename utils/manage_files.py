@@ -4,7 +4,7 @@ import shutil
 from markitdown import MarkItDown
 
 from utils.logger import logger
-from core.preprocess import PATH_PROCESSING, PATH_PROCESSED, PATH_UPLOAD, PATH_RAW
+from core.config import PATH_PROCESSING, PATH_PROCESSED, PATH_UPLOAD, PATH_RAW
 
 # ======================================================================================================
 # Konvertiere alle Dateien in der UPLOAD zu MD-Dateien

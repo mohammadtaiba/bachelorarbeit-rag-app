@@ -7,7 +7,7 @@ from langchain_ollama import ChatOllama
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationalRetrievalChain
 
-from core.preprocess import EMBED_MODEL, OLLAMA_URL, COLLECTION, PATH_DB, LLM_MODEL
+from core.config import EMBED_MODEL, OLLAMA_URL, COLLECTION, PATH_DB, LLM_MODEL
 
 from utils.ollama_embed import OllamaEmbeddings
 from utils.logger import logger

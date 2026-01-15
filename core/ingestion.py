@@ -10,7 +10,7 @@ from utils.ollama_embed     import OllamaEmbeddings
 from utils.chunking         import chunk_documents
 from utils.loaders          import load_docs
 from utils.manage_files     import move_processing2processed, convert_all_to_markdown, move_upload2raw
-from core.preprocess        import PATH_UPLOAD, EMBED_MODEL, OLLAMA_URL, COLLECTION, PATH_DB
+from core.config        import PATH_UPLOAD, EMBED_MODEL, OLLAMA_URL, COLLECTION, PATH_DB
 
 _ING_LOCK = Lock()
 

@@ -1,6 +1,6 @@
 from langchain_chroma import Chroma
 import sys
-from core.preprocess import COLLECTION, PATH_DB
+from core.config import COLLECTION, PATH_DB
 from pathlib import Path
 
 # Log-Verzeichnis sicherstellen
