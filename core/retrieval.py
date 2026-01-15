@@ -66,18 +66,31 @@ def build_retrieval_chain():
     # Prompt template
     # ------------------------------------------------------------------
     prompt_text = """
+        # SYSTEM-PROMPT
+        
+        ## Rolle:
+        Du bist ein hilfreicher KI-Assistent.
         Als hilfreicher KI-Assistent unterstützt das System Unternehmen dabei, ihre Nachhaltigkeitsberichte zu analysieren und zu verbessern sowie geeignete Ideen und Maßnahmen vorzuschlagen.
-        Deine Aufgabe ist es, Fragen nur aus dem bereitgestellten Kontext auf Deutsch, faktenbasiert und präzise zu beantworten.
-        Wenn kein Kontext vorhanden ist, antworte: „Information nicht gefunden. Bitte versuche es mit einer anderen Frage zum Thema Nachhaltigkeitsberichte.\n\n **Alternative Fragestellung:**\n\n <schalge aus dem Kontext relevante nur eine alternative Fragestellung (über Nachhaltigkeit) für der Nutzer vor.>”.
-        Verwende ausschließlich den bereitgestellten Kontext und die letzten Chat-Beiträge.
-        Wenn der Chatverlauf nicht relevant ist, ignoriere ihn.
-        Ich werde dir Fragen geben und möchte, dass du mir nur die Antwort gibst, ohne viel zu erklären!
-            - Schreibe das schön und nur die Antwort ohne Erklärung!
- 
+
+        
+        ## Antwortstil:
+        * Antworte entweder so: Wenn relevante Kontext für die Frage vorhanden ist, gib dem Nutzer ausschließlich eine direkte Antwort und verwende Markdown-Stil. Füge am Ende **nach einer horizontalen Linie** eine **weitere, ähnliche, kontextbezogene Fragestellung** als Vorschlag hinzu (**Ähnliche Frage**: <leere Zeile> <die Fragestellung>).
+        * oder so: Wenn keine Informationen zur Frage aus dem bereitgestellten Kontext vorhanden sind, antworte: „Information nicht gefunden. Bitte versuche es mit einer anderen Frage zum Thema Nachhaltigkeitsberichte.”.
+        * oder so: **Referenzbeschränkung**: Antworte nur, wenn sich die Frage eindeutig auf Ökologie, Ökonomie, Soziales, Politik/Governance und globale Verantwortung bezieht. Sonst antworte so: „Information nicht gefunden. Bitte versuche es mit einer anderen Frage zum Thema Nachhaltigkeitsberichte.”.
+        
+        ------------------------------------------------
+
+        # Chatverlauf:
         {chat_history}
- 
+        
+        ------------------------------------------------
+        
+        # Bereitgestellte Kontext:
         {context}
- 
+        
+        ------------------------------------------------
+
+        # Benutzer-Frage:
         {question}
     """
 
@@ -129,12 +142,12 @@ def generate_answer(question: str, chat_history: list[tuple[str, str]]):
         # ------------------------------------------------------------------
         # Print source documents for debugging
         # ------------------------------------------------------------------
-        print("\n--- Retrieved Chunks ---")
-        for i, doc in enumerate(output["source_documents"], start=1):
-            print(f"Chunk [{i}] | Source: {doc.metadata.get('source')} | Length: {len(doc.page_content)}")
-            print(doc.page_content)
-            print("\n---\n")
-        print("--- End of Chunks ---\n")
+        # print("\n--- Retrieved Chunks ---")
+        # for i, doc in enumerate(output["source_documents"], start=1):
+        #     print(f"Chunk [{i}] | Source: {doc.metadata.get('source')} | Length: {len(doc.page_content)}")
+        #     print(doc.page_content)
+        #     print("\n---\n")
+        # print("--- End of Chunks ---\n")
 
         return output["answer"]
 
