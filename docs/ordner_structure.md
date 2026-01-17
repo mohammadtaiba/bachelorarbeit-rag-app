@@ -28,7 +28,7 @@ rag2-app/
 │          ├──  dnk_2024_individually.txt   # Die gefundene URLs aus `scrape_dnk_urls`
 │          └──  dnk_2024_all.txt            # Die extrahierte URLs aus `extract_dnk_urls.py`
 │
-├── units/
+├── utils/
 │   ├── __init__
 │   ├── chunking.py                 # Chunking mit Metadaten-Erweiterung
 │   ├── ollama_embed.py             # Brückenmodul für lokale LM Studio Embeddings
