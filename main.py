@@ -204,36 +204,51 @@ def get_recent_chat_turn_pairs(limit: int = 5) -> list[tuple[str, str]]:
 # ======================================================================================================
 # Chat interaction
 # ======================================================================================================
-
 def handle_user_input() -> None:
     """
-    Read user input, call meta-handling if necessary, or forward the query to the retrieval backend.
-    The sequence of operations mirrors the original logic.
+    Read user input and render the new user message immediately.
+    Then render an assistant chat bubble with a spinner so it appears directly after the question.
     """
     user_query = st.chat_input("Frage eingeben …")
-    has_new_question = bool(user_query)
-
-    if not (has_new_question and user_query.strip()):
+    if not user_query or not user_query.strip():
         return
 
-    # Store user message
+    user_query = user_query.strip()
+
+    # 1) Persist user message
     st.session_state.history.append({"role": "user", "content": user_query})
-    st.session_state.history = st.session_state.history[-200:]  # limit history size
+    st.session_state.history = st.session_state.history[-200:]
 
-    # Handle meta questions separately
-    if answer_meta_questions(user_query):
+    # 2) Render user message immediately
+    with st.chat_message("user"):
+        st.markdown(user_query)
+
+    # 3) Meta questions: support both bool and "response string" returns
+    meta_result = answer_meta_questions(user_query)
+    if isinstance(meta_result, str) and meta_result.strip():
+        response = meta_result
+        with st.chat_message("assistant"):
+            st.markdown(response)
+        st.session_state.history.append({"role": "assistant", "content": response})
+        st.session_state.history = st.session_state.history[-200:]
         return
 
-    # Regular question answered via retrieval pipeline
-    with st.spinner("Thinking …"):
-        try:
-            recent_turns = get_recent_chat_turn_pairs(limit=5)
-            response = generate_answer(user_query, recent_turns)
-        except Exception as exc:
-            logger.exception("⚠️ Error while generating answer.")
-            response = f"Fehler: {exc}"
+    if meta_result is True:
+        return
 
-    # Store assistant response
+    # 4) Regular retrieval answer: spinner INSIDE assistant bubble
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking …"):
+            try:
+                recent_turns = get_recent_chat_turn_pairs(limit=5)
+                response = generate_answer(user_query, recent_turns)
+            except Exception as exc:
+                logger.exception("⚠️ Error while generating answer.")
+                response = f"Fehler: {exc}"
+
+        st.markdown(response)
+
+    # 5) Persist assistant response
     st.session_state.history.append({"role": "assistant", "content": response})
     st.session_state.history = st.session_state.history[-200:]
 
@@ -252,10 +267,6 @@ def render_chat_history() -> None:
 # ======================================================================================================
 
 def main() -> None:
-    """
-    Main entry point for the RAG-BOT Streamlit application.
-    Sets up the UI, initializes background services, and manages the chat loop.
-    """
     configure_page()
     apply_global_styles()
 
@@ -266,8 +277,9 @@ def main() -> None:
     trigger_initial_ingestion_if_needed()
 
     ensure_chat_history_initialized()
-    handle_user_input()
+
     render_chat_history()
+    handle_user_input()
 
 
 if __name__ == "__main__":
