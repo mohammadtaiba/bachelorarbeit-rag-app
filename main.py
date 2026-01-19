@@ -225,6 +225,8 @@ def handle_user_input() -> None:
 
     # 3) Meta questions: support both bool and "response string" returns
     meta_result = answer_meta_questions(user_query)
+
+    # Fall A: Meta-Handler liefert direkt einen Text -> sofort anzeigen und in history persistieren
     if isinstance(meta_result, str) and meta_result.strip():
         response = meta_result
         with st.chat_message("assistant"):
@@ -233,8 +235,10 @@ def handle_user_input() -> None:
         st.session_state.history = st.session_state.history[-200:]
         return
 
+    # Fall B: Meta-Handler hat "handled" signalisiert und typischerweise selbst history/state aktualisiert
     if meta_result is True:
-        return
+        st.session_state.history = st.session_state.history[-200:]
+        st.rerun()
 
     # 4) Regular retrieval answer: spinner INSIDE assistant bubble
     with st.chat_message("assistant"):
