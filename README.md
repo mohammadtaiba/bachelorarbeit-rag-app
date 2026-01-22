@@ -18,8 +18,9 @@ Ein prototypischer, GPT-basierter Chatbot zur dokumentenbasierten Analyse von Na
 
 ## Installationshinweise:
 
-### 1) Systemvoraussetzungen
-* Python-Version == 3.11 
+### 1) Voraussetzungen
+* IDE (z.B. PyCharm)
+* Python-Version == 3.11 (als Python-Interpreter)
 * Betriebssystem: Windows
 * Ollama-App lokal installieren
 * Hinweis: Das Modell `gpt-oss:120b-cloud` wird über Ollama als Cloud-Variante ausgeführt.
