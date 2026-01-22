@@ -52,20 +52,12 @@ ollama serve
 
 * Embedding-Modell **testen**:
 ````shell
-Invoke-RestMethod `
-  -Uri "http://localhost:11434/api/embeddings" `
-  -Method POST `
-  -Body '{"model":"nomic-embed-text","prompt":"Dies ist ein Embedding-Test."}' `
-  -ContentType "application/json"
+Invoke-RestMethod -Uri "http://localhost:11434/api/embeddings" -Method Post -ContentType "application/json" -Body '{"model":"nomic-embed-text","prompt":"Dies ist ein Embedding-Test."}'
 ````
 
 * LLM-Modell **testen**:
 ````shell
-Invoke-RestMethod `
-  -Uri "http://localhost:11434/api/generate" `
-  -Method POST `
-  -Body '{"model":"gpt-oss:120b-cloud","prompt":"Sag Hallo auf Deutsch","stream":false}' `
-  -ContentType "application/json"
+Invoke-RestMethod -Uri "http://localhost:11434/api/generate" -Method Post -ContentType "application/json" -Body '{"model":"gpt-oss:120b-cloud","prompt":"Sag Hallo auf Deutsch","stream":false}'
 ````
 
 ---
