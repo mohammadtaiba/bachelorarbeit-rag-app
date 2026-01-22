@@ -133,7 +133,7 @@ def generate_answer(question: str, chat_history: list[tuple[str, str]]):
         # Keep only last 5 chat pairs
         chat_history = chat_history[-5:]
 
-        logger.info(f"New question received: \"{question}\" | Chat history length: {len(chat_history)}")
+        logger.info(f"New question: \"{question}\" | History-Length: {len(chat_history)}")
 
         start_time = time.perf_counter()
         output = BUILD_CHAIN_ONCE.invoke({
@@ -142,7 +142,7 @@ def generate_answer(question: str, chat_history: list[tuple[str, str]]):
         })
 
         elapsed = (time.perf_counter() - start_time)
-        logger.info(f"Answer generated in {elapsed:.2f} seconds")
+        logger.info(f"Time: {elapsed:.2f} s, Chunks: {len(output['source_documents'])}, LLM-Model: {LLM_MODEL}, Embedding-Model: {EMBED_MODEL}")
 
         # ------------------------------------------------------------------
         # Print source documents for debugging
