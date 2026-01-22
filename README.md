@@ -36,8 +36,7 @@ ollama signin
 
 * LLM- und Embedding-Modelle **herunterladen**:
 ````shell
-ollama pull gpt-oss:120b-cloud
-ollama pull nomic-embed-text
+ollama pull gpt-oss:120b-cloud; ollama pull nomic-embed-text
 ````
 
 * Alle Modelle **anzeigen** (überprüfe, ob beide Modellen installiert wurden):
@@ -64,8 +63,7 @@ Invoke-RestMethod -Uri "http://localhost:11434/api/generate" -Method Post -Conte
 
 ### 3) Virtuelle Umgebung erstellen und aktivieren
 ````shell
-python -m venv .venv
-.venv\Scripts\activate
+python -m venv .venv; .venv\Scripts\activate
 ````
 
 ### 4) Packages installieren:

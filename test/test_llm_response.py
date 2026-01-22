@@ -1,4 +1,4 @@
-# tests/integration/test_pii_llm.py
+# tests/test_pii_llm.py
 import pytest, re
 from core.retrieval import generate_answer
 
