@@ -14,10 +14,9 @@ from core.config        import PATH_UPLOAD, EMBED_MODEL, OLLAMA_URL, COLLECTION,
 
 _ING_LOCK = Lock()
 
-time.perf_counter(); tmp_time = time.perf_counter()
-
 def ingestion():
     logger.info("------------------------------------------------------------ START ingestion.py")
+    start = time.perf_counter()
 
     # Damit läuft immer nur eine Ingestion
     if not _ING_LOCK.acquire(blocking=False):
@@ -87,7 +86,9 @@ def ingestion():
     finally:
         _ING_LOCK.release() # gibt den Lock wieder frei
 
-    logger.info(f"Ingestion-Laufzeit: {((time.perf_counter() - tmp_time) * 1000)/1000:.1f} s")
+    elapsed = time.perf_counter() - start
+    logger.info(f"Ingestion-Laufzeit: {elapsed:.1f} s")
+
 
 if __name__ == "__main__":
     ingestion()
