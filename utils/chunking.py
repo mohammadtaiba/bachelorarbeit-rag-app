@@ -57,5 +57,15 @@ def chunk_documents(docs):
                 chunk.page_content = chunk.page_content.rstrip() + suffix
                 chunks.append(chunk)
 
-    logger.info("Chunking abgeschlossen.")
+    # ---------------------------------------------------------
+    # Chunking-Größe ausgeben
+    # ---------------------------------------------------------
+    if chunks:
+        sizes = [len(c.page_content or "") for c in chunks]
+        logger.info(
+            "Chunking abgeschlossen (Chunks: %d | Min: %d | Max: %d | Avg: %.1f).",
+            len(chunks), min(sizes), max(sizes), sum(sizes) / len(sizes)
+        )
+    else:
+        logger.info("Chunking abgeschlossen (Chunks: 0).")
     return chunks
