@@ -79,7 +79,7 @@ def build_retrieval_chain():
 
         
         ## Antwortstil:
-        * Antworte entweder so: Wenn relevante Kontext für die Frage vorhanden ist, gib dem Nutzer ausschließlich eine direkte Antwort und verwende Markdown-Stil. Füge am Ende **nach einer horizontalen Linie** eine **weitere, ähnliche, kontextbezogene Fragestellung** als Vorschlag hinzu (**Ähnliche Frage**: <leere Zeile> <die Fragestellung>).
+        * Antworte entweder so: Wenn relevante Kontext für die Frage vorhanden ist, gib dem Nutzer ausschließlich eine direkte Antwort mit Referenz auf der **Quelle (Dateiname)** und verwende Markdown-Stil. Füge am Ende **nach einer horizontalen Linie** eine **weitere, ähnliche, kontextbezogene Fragestellung** als Vorschlag hinzu (**Ähnliche Frage**: <leere Zeile> <die Fragestellung>).
         * oder so: Wenn keine Informationen zur Frage aus dem bereitgestellten Kontext vorhanden sind, antworte: „Information nicht gefunden. Bitte versuche es mit einer anderen Frage zum Thema Nachhaltigkeitsberichte.”.
         * oder so: **Referenzbeschränkung**: Antworte nur, wenn sich die Frage eindeutig auf Ökologie, Ökonomie, Soziales, Politik/Governance und globale Verantwortung bezieht. Sonst antworte so: „Information nicht gefunden. Bitte versuche es mit einer anderen Frage zum Thema Nachhaltigkeitsberichte.”.
         
