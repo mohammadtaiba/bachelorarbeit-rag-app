@@ -32,6 +32,10 @@ def chunk_documents(docs):
         raw_src = doc.metadata.get("source", "")
         src_clean = clean_name(Path(raw_src).stem)
 
+        filename = Path(raw_src).name
+        suffix = f"\n\n---\nQuelle: {filename}\n" # Am Ende indexieren
+
+
         # ---------------------------------------------------------
         # MarkdownHeaderTextSplitter, wenn Dateiname mit "dnk_datei_" anfängt
         # ---------------------------------------------------------
@@ -41,6 +45,7 @@ def chunk_documents(docs):
                     "source": src_clean,
                     **chunk.metadata  # alle Headers (H1, H2, H3) aus dem Splitter übernehmen
                 }
+                chunk.page_content = chunk.page_content.rstrip() + suffix
                 chunks.append(chunk)
 
         # ---------------------------------------------------------
@@ -49,6 +54,7 @@ def chunk_documents(docs):
         else:
             for chunk in recursiveCharacterTextSplitter.split_documents([doc]):
                 chunk.metadata = {"source": src_clean }
+                chunk.page_content = chunk.page_content.rstrip() + suffix
                 chunks.append(chunk)
 
     logger.info("Chunking abgeschlossen.")
