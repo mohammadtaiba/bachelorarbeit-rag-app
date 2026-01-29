@@ -22,8 +22,19 @@ def chunk_documents(docs):
     )
 
     recursiveCharacterTextSplitter = RecursiveCharacterTextSplitter(
-        chunk_size=3500,
-        chunk_overlap=400
+        chunk_size=2000,
+        chunk_overlap=200,
+        separators=[
+            "\n\n",                 # Absatz
+            "\n",                   # Zeile / Listen / Markdown
+            "\n- ", "\n* ",         # Bullet-Listen
+            "! ", "? ",             # Satzenden
+            ". ",                   # Satzende
+            "* ",                   # Bullet-Liste
+            "; ", "– ", ", ",       # Trennzeichen
+            " ",                    # Wort
+            "",                     # Fallback
+        ]
     )
 
     chunks = []
@@ -35,18 +46,21 @@ def chunk_documents(docs):
         filename = Path(raw_src).name
         suffix = f"\n\n---\nQuelle: {filename}\n" # Am Ende indexieren
 
-
         # ---------------------------------------------------------
         # MarkdownHeaderTextSplitter, wenn Dateiname mit "dnk_datei_" anfängt
+        # -> zusätzlich per RecursiveCharacterTextSplitter begrenzen
         # ---------------------------------------------------------
         if Path(raw_src).stem.startswith("dnk_datei_"):
-            for chunk in markdownHeaderTextSplitter.split_text(doc.page_content):
-                chunk.metadata = {
-                    "source": src_clean,
-                    **chunk.metadata  # alle Headers (H1, H2, H3) aus dem Splitter übernehmen
-                }
-                chunk.page_content = chunk.page_content.rstrip() + suffix
-                chunks.append(chunk)
+            parts = markdownHeaderTextSplitter.split_text(doc.page_content or "")
+            for part in parts:
+                # part ist ein Document mit page_content + Header-Metadaten
+                for chunk in recursiveCharacterTextSplitter.split_documents([part]):
+                    chunk.metadata = {
+                        "source": src_clean,
+                        **chunk.metadata,  # enthält die Header (H1/H2/H3) vom part
+                    }
+                    chunk.page_content = chunk.page_content.rstrip() + suffix
+                    chunks.append(chunk)
 
         # ---------------------------------------------------------
         # Sonst → RecursiveCharacterTextSplitter
