@@ -74,14 +74,18 @@ pip install -r requirements.txt
 
 ---
 
-### 5) Chatbot (UI) starten:
+### 5) Die DB-ZIP-Datei `db_qwen3-embedding-8b.zip` extrahieren und umbenennen als `db`.
+
+---
+
+### 6) Chatbot (UI) starten:
 ````shell
 streamlit run main.py
 ````
 
 ---
 
-### 6) Hilfsbefehle
+### 7) Hilfsbefehle
 * Ingestion starten:
 ````shell
 python -m core.ingestion
