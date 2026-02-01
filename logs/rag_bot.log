@@ -1665,3 +1665,524 @@ page_content
 29-Jan-26 14:05:20 - INFO - Time: 15.66 s, Chunks: 33, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: nomic-embed-text
 29-Jan-26 14:06:32 - INFO - New question: "Welche Arten von Energieverbrauch muss die Organisation nach GRI SRS-302-1 offenlegen?" | History-Length: 0
 29-Jan-26 14:06:48 - INFO - Time: 16.02 s, Chunks: 33, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: nomic-embed-text
+30-Jan-26 19:15:48 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+30-Jan-26 19:15:49 - INFO - ------------------------------------------------------------ START ingestion.py
+30-Jan-26 19:15:49 - INFO - Rohdateien gefunden, starte Ingestion ...
+30-Jan-26 19:15:49 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+30-Jan-26 19:15:49 - INFO -     - Es existiert keine PDFs.
+30-Jan-26 19:15:49 - INFO -     - Es existiert keine DOCX.
+30-Jan-26 19:15:49 - INFO -     - Es existiert keine XLSXs.
+30-Jan-26 19:15:49 - INFO -     - Es existiert keine TXTs.
+30-Jan-26 19:15:49 - INFO -     - Es existiert keine MDs.
+30-Jan-26 19:15:49 - INFO - Konvertierung abgeschlossen.
+30-Jan-26 19:15:49 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+30-Jan-26 19:15:49 - INFO - Lade Markdown-Dokumente ...
+30-Jan-26 19:15:49 - INFO - Chunking beginnt ...
+30-Jan-26 19:15:49 - INFO - Chunking abgeschlossen (Chunks: 155 | Min: 37 | Max: 2032 | Avg: 1400.0).
+30-Jan-26 19:15:49 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1
+30-Jan-26 19:15:49 - INFO - Speichere Chunks in ChromaDB ...
+30-Jan-26 19:21:17 - INFO -   -> gespeichert: 155/155
+30-Jan-26 19:21:17 - INFO - Speicherung abgeschlossen.
+30-Jan-26 19:21:17 - INFO - ✅  Ingestion vollständig abgeschlossen.
+30-Jan-26 19:21:17 - INFO - Ingestion-Laufzeit: 327.7 s
+30-Jan-26 19:37:28 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+30-Jan-26 19:37:29 - INFO - ------------------------------------------------------------ START ingestion.py
+30-Jan-26 19:37:29 - INFO - Rohdateien gefunden, starte Ingestion ...
+30-Jan-26 19:37:29 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+30-Jan-26 19:37:29 - INFO -     - Es existiert keine PDFs.
+30-Jan-26 19:37:29 - INFO -     - Es existiert keine DOCX.
+30-Jan-26 19:37:29 - INFO -     - Es existiert keine XLSXs.
+30-Jan-26 19:37:29 - INFO -     - Es existiert keine TXTs.
+30-Jan-26 19:37:29 - INFO -     - Es existiert keine MDs.
+30-Jan-26 19:37:29 - INFO - Konvertierung abgeschlossen.
+30-Jan-26 19:37:29 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+30-Jan-26 19:37:29 - INFO - Lade Markdown-Dokumente ...
+30-Jan-26 19:37:29 - INFO - Chunking beginnt ...
+30-Jan-26 19:37:29 - INFO - Chunking abgeschlossen (Chunks: 155 | Min: 37 | Max: 2032 | Avg: 1400.0).
+30-Jan-26 19:37:30 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1
+30-Jan-26 19:37:30 - INFO - Speichere Chunks in ChromaDB ...
+30-Jan-26 19:37:33 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 18, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 18, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 30, in _embed_text
+    response.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/embeddings
+30-Jan-26 19:37:33 - INFO - Ingestion-Laufzeit: 3.8 s
+30-Jan-26 19:49:32 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+30-Jan-26 19:49:34 - INFO - ------------------------------------------------------------ START ingestion.py
+30-Jan-26 19:49:34 - INFO - Rohdateien gefunden, starte Ingestion ...
+30-Jan-26 19:49:34 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+30-Jan-26 19:49:34 - INFO -     - Es existiert keine PDFs.
+30-Jan-26 19:49:34 - INFO -     - Es existiert keine DOCX.
+30-Jan-26 19:49:34 - INFO -     - Es existiert keine XLSXs.
+30-Jan-26 19:49:34 - INFO -     - Es existiert keine TXTs.
+30-Jan-26 19:49:34 - INFO -     - Es existiert keine MDs.
+30-Jan-26 19:49:34 - INFO - Konvertierung abgeschlossen.
+30-Jan-26 19:49:34 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+30-Jan-26 19:49:34 - INFO - Lade Markdown-Dokumente ...
+30-Jan-26 19:49:34 - INFO - Chunking beginnt ...
+30-Jan-26 19:49:34 - INFO - Chunking abgeschlossen (Chunks: 272 | Min: 37 | Max: 1132 | Avg: 843.6).
+30-Jan-26 19:49:34 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1
+30-Jan-26 19:49:34 - INFO - Speichere Chunks in ChromaDB ...
+30-Jan-26 19:59:15 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 647, in add_texts
+    self._collection.upsert(
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 460, in upsert
+    self._client._upsert(
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\chromadb\api\rust.py", line 498, in _upsert
+    return self.bindings.upsert(
+           ^^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InvalidArgumentError: Collection expecting embedding with dimension of 768, got 1024
+30-Jan-26 19:59:16 - INFO - Ingestion-Laufzeit: 582.0 s
+30-Jan-26 20:19:03 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+30-Jan-26 20:19:04 - INFO - ------------------------------------------------------------ START ingestion.py
+30-Jan-26 20:19:04 - INFO - Rohdateien gefunden, starte Ingestion ...
+30-Jan-26 20:19:04 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+30-Jan-26 20:19:04 - INFO -     - Es existiert keine PDFs.
+30-Jan-26 20:19:04 - INFO -     - Es existiert keine DOCX.
+30-Jan-26 20:19:04 - INFO -     - Es existiert keine XLSXs.
+30-Jan-26 20:19:04 - INFO -     - Es existiert keine TXTs.
+30-Jan-26 20:19:04 - INFO -     - Es existiert keine MDs.
+30-Jan-26 20:19:04 - INFO - Konvertierung abgeschlossen.
+30-Jan-26 20:19:04 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+30-Jan-26 20:19:04 - INFO - Lade Markdown-Dokumente ...
+30-Jan-26 20:19:04 - INFO - Chunking beginnt ...
+30-Jan-26 20:19:04 - INFO - Chunking abgeschlossen (Chunks: 157 | Min: 37 | Max: 2032 | Avg: 1419.1).
+30-Jan-26 20:19:04 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1
+30-Jan-26 20:19:04 - INFO - Speichere Chunks in ChromaDB ...
+30-Jan-26 20:27:36 - INFO -   -> gespeichert: 157/157
+30-Jan-26 20:27:36 - INFO - Speicherung abgeschlossen.
+30-Jan-26 20:27:36 - INFO - ✅  Ingestion vollständig abgeschlossen.
+30-Jan-26 20:27:36 - INFO - Ingestion-Laufzeit: 512.5 s
+30-Jan-26 20:31:10 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+30-Jan-26 20:31:10 - INFO - ------------------------------------------------------------ START retrieval.py
+30-Jan-26 20:31:10 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+30-Jan-26 20:31:10 - INFO - Retrieval chain successfully created.
+30-Jan-26 20:31:12 - INFO - Upload watchdog successfully started.
+30-Jan-26 20:35:57 - INFO - New question: "was ist das geschäftsmedell von Randstad Deutschland?" | History-Length: 0
+30-Jan-26 20:36:08 - INFO - Time: 11.23 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding
+30-Jan-26 20:37:15 - INFO - New question: "versteht sich Randstad Deutschland als „Partner for Talent“?" | History-Length: 0
+30-Jan-26 20:37:23 - INFO - Time: 7.42 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding
+31-Jan-26 07:24:13 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+31-Jan-26 07:24:14 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:24:14 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:24:14 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:24:15 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:24:15 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:24:15 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:24:15 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:24:15 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:24:15 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:24:15 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:24:15 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:24:15 - INFO - Chunking beginnt ...
+31-Jan-26 07:24:17 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:24:20 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:24:20 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:24:22 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 28, in _embed_text
+    response.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embeddings
+31-Jan-26 07:24:22 - INFO - Ingestion-Laufzeit: 7.5 s
+31-Jan-26 07:25:10 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+31-Jan-26 07:25:12 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:25:12 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:25:12 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:25:12 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:25:12 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:25:12 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:25:12 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:25:12 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:25:12 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:25:12 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:25:12 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:25:12 - INFO - Chunking beginnt ...
+31-Jan-26 07:25:14 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:25:16 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:25:16 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:25:18 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 28, in _embed_text
+    response.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embeddings
+31-Jan-26 07:25:18 - INFO - Ingestion-Laufzeit: 6.5 s
+31-Jan-26 07:27:44 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+31-Jan-26 07:27:45 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:27:45 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:27:45 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:27:45 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:27:45 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:27:45 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:27:45 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:27:45 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:27:45 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:27:45 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:27:45 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:27:45 - INFO - Chunking beginnt ...
+31-Jan-26 07:27:47 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:27:49 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:27:49 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:27:51 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 29, in _embed_text
+    resp.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embed
+31-Jan-26 07:27:51 - INFO - Ingestion-Laufzeit: 6.3 s
+31-Jan-26 07:30:13 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+31-Jan-26 07:30:14 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:30:14 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:30:14 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:30:14 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:30:14 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:30:14 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:30:14 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:30:14 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:30:14 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:30:14 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:30:14 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:30:14 - INFO - Chunking beginnt ...
+31-Jan-26 07:30:16 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:30:19 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:30:19 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:30:23 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 29, in _embed_text
+    resp.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embed
+31-Jan-26 07:30:23 - INFO - Ingestion-Laufzeit: 8.5 s
+31-Jan-26 07:30:30 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+31-Jan-26 07:30:31 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:30:31 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:30:31 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:30:31 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:30:31 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:30:31 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:30:31 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:30:31 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:30:31 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:30:31 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:30:31 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:30:31 - INFO - Chunking beginnt ...
+31-Jan-26 07:30:33 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:30:35 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:30:35 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:30:37 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 29, in _embed_text
+    resp.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embed
+31-Jan-26 07:30:37 - INFO - Ingestion-Laufzeit: 6.5 s
+31-Jan-26 07:30:51 - INFO - Das RAG-System ist jetzt mit LMStudio verbunden.
+31-Jan-26 07:30:53 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:30:53 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:30:53 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:30:53 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:30:53 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:30:53 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:30:53 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:30:53 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:30:53 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:30:53 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:30:53 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:30:53 - INFO - Chunking beginnt ...
+31-Jan-26 07:30:55 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:30:57 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:30:57 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:30:59 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 67, in ingestion
+    vectordb.add_documents(part)
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 279, in add_documents
+    return self.add_texts(texts, metadatas, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 623, in add_texts
+    embeddings = self._embedding_function.embed_documents(texts)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in embed_documents
+    return [self._embed_text(t) for t in texts]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 16, in <listcomp>
+    return [self._embed_text(t) for t in texts]
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 28, in _embed_text
+    response.raise_for_status()
+  File "C:\Users\moham\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embeddings
+31-Jan-26 07:30:59 - INFO - Ingestion-Laufzeit: 6.4 s
+31-Jan-26 07:34:13 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:34:13 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:34:13 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:34:13 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:34:13 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:34:13 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:34:13 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:34:13 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:34:13 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:34:13 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:34:13 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:34:13 - INFO - Chunking beginnt ...
+31-Jan-26 07:34:15 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:34:18 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:34:18 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:34:22 - ERROR - Embedding-Fehler: HTTP 404 Not Found for http://localhost:11434/api/embeddings
+Response body: {"error":"model \"qwen3-embedding\" not found, try pulling it first"}
+31-Jan-26 07:34:22 - ERROR - 🔌 Ingestion abgebrochen, da Ollama nicht erreichbar ist (in Terminal: `ollama serve` ausführen.
+31-Jan-26 07:35:35 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:35:35 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:35:35 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:35:35 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:35:35 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:35:35 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:35:35 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:35:35 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:35:35 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:35:35 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:35:35 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:35:35 - INFO - Chunking beginnt ...
+31-Jan-26 07:35:35 - INFO - Chunking abgeschlossen (Chunks: 157 | Min: 37 | Max: 2032 | Avg: 1419.1).
+31-Jan-26 07:35:35 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1
+31-Jan-26 07:35:35 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:35:39 - ERROR - Embedding-Fehler: HTTP 404 Not Found for http://localhost:11434/api/embeddings
+Response body: {"error":"model \"qwen3-embedding\" not found, try pulling it first"}
+31-Jan-26 07:35:39 - ERROR - 🔌 Ingestion abgebrochen, da Ollama nicht erreichbar ist (in Terminal: `ollama serve` ausführen.
+31-Jan-26 07:36:22 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:36:22 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:36:22 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:36:22 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:36:22 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:36:22 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:36:22 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:36:22 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:36:22 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:36:22 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:36:22 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:36:22 - INFO - Chunking beginnt ...
+31-Jan-26 07:36:22 - INFO - Chunking abgeschlossen (Chunks: 157 | Min: 37 | Max: 2032 | Avg: 1419.1).
+31-Jan-26 07:36:22 - ERROR - ⚠️ Fehler bei der Ingestion.
+Traceback (most recent call last):
+  File "C:\Users\moham\PycharmProjects\rag2-app\core\ingestion.py", line 42, in ingestion
+    embeddings = OllamaEmbeddings(model=EMBED_MODEL,  base_url=OLLAMA_URL)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\moham\PycharmProjects\rag2-app\utils\ollama_embed.py", line 8, in __init__
+    logger.info("OllamaEmbeddings init: model=%r base_url=%r", self.model, self.base_url)
+    ^^^^^^
+NameError: name 'logger' is not defined
+31-Jan-26 07:36:22 - INFO - Ingestion-Laufzeit: 0.0 s
+31-Jan-26 07:37:22 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:37:22 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:37:22 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:37:22 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:37:22 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:37:22 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:37:22 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:37:22 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:37:22 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:37:22 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:37:22 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:37:22 - INFO - Chunking beginnt ...
+31-Jan-26 07:37:22 - INFO - Chunking abgeschlossen (Chunks: 157 | Min: 37 | Max: 2032 | Avg: 1419.1).
+31-Jan-26 07:37:22 - INFO - OllamaEmbeddings init: model='qwen3-embedding' base_url='http://localhost:11434'
+31-Jan-26 07:37:22 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1
+31-Jan-26 07:37:22 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 07:37:26 - ERROR - Embedding-Fehler: HTTP 404 Not Found for http://localhost:11434/api/embeddings
+Response body: {"error":"model \"qwen3-embedding\" not found, try pulling it first"}
+31-Jan-26 07:37:26 - ERROR - 🔌 Ingestion abgebrochen, da Ollama nicht erreichbar ist (in Terminal: `ollama serve` ausführen.
+31-Jan-26 07:40:47 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 07:40:47 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 07:40:47 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 07:40:47 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 07:40:47 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 07:40:47 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 07:40:47 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 07:40:47 - INFO -     - Es existiert keine MDs.
+31-Jan-26 07:40:47 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 07:40:47 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 07:40:47 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 07:40:47 - INFO - Chunking beginnt ...
+31-Jan-26 07:40:49 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 07:40:52 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 07:40:52 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 08:20:19 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 08:20:19 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 08:20:19 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 08:20:19 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 08:20:19 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 08:20:19 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 08:20:19 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 08:20:19 - INFO -     - Es existiert keine MDs.
+31-Jan-26 08:20:19 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 08:20:19 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 08:20:19 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 08:20:19 - INFO - Chunking beginnt ...
+31-Jan-26 08:20:21 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 08:20:24 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 08:20:24 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 08:31:25 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 08:31:25 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 08:31:25 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 08:31:25 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 08:31:25 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 08:31:25 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 08:31:25 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 08:31:25 - INFO -     - Es existiert keine MDs.
+31-Jan-26 08:31:25 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 08:31:25 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 08:31:25 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 08:31:25 - INFO - Chunking beginnt ...
+31-Jan-26 08:31:27 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 08:31:30 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 08:31:30 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 08:36:08 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+31-Jan-26 08:36:09 - INFO - ------------------------------------------------------------ START ingestion.py
+31-Jan-26 08:36:09 - INFO - Rohdateien gefunden, starte Ingestion ...
+31-Jan-26 08:36:09 - INFO - Starte Konvertierung der Rohdaten aus dem Ordner (C:\Users\moham\PycharmProjects\rag2-app\data\upload) zu Markdown ...
+31-Jan-26 08:36:09 - INFO -     - Es existiert keine PDFs.
+31-Jan-26 08:36:09 - INFO -     - Es existiert keine DOCX.
+31-Jan-26 08:36:09 - INFO -     - Es existiert keine XLSXs.
+31-Jan-26 08:36:09 - INFO -     - Es existiert keine TXTs.
+31-Jan-26 08:36:09 - INFO -     - Es existiert keine MDs.
+31-Jan-26 08:36:09 - INFO - Konvertierung abgeschlossen.
+31-Jan-26 08:36:09 - INFO - Keine Dateien in C:\Users\moham\PycharmProjects\rag2-app\data\upload gefunden.
+31-Jan-26 08:36:09 - INFO - Lade Markdown-Dokumente ...
+31-Jan-26 08:36:09 - INFO - Chunking beginnt ...
+31-Jan-26 08:36:11 - INFO - Chunking abgeschlossen (Chunks: 20803 | Min: 37 | Max: 2036 | Avg: 1531.5).
+31-Jan-26 08:36:14 - INFO - Alte Einträge gelöscht für: dnk-datei-2024-1, dnk-datei-2024-10, dnk-datei-2024-100, dnk-datei-2024-101, dnk-datei-2024-102, dnk-datei-2024-103, dnk-datei-2024-104, dnk-datei-2024-105, dnk-datei-2024-106, dnk-datei-2024-107, dnk-datei-2024-108, dnk-datei-2024-109, dnk-datei-2024-11, dnk-datei-2024-110, dnk-datei-2024-111, dnk-datei-2024-112, dnk-datei-2024-113, dnk-datei-2024-114, dnk-datei-2024-115, dnk-datei-2024-116, dnk-datei-2024-117, dnk-datei-2024-118, dnk-datei-2024-119, dnk-datei-2024-12, dnk-datei-2024-120, dnk-datei-2024-121, dnk-datei-2024-122, dnk-datei-2024-123, dnk-datei-2024-124, dnk-datei-2024-125, dnk-datei-2024-126, dnk-datei-2024-127, dnk-datei-2024-128, dnk-datei-2024-129, dnk-datei-2024-13, dnk-datei-2024-130, dnk-datei-2024-131, dnk-datei-2024-132, dnk-datei-2024-133, dnk-datei-2024-134, dnk-datei-2024-135, dnk-datei-2024-136, dnk-datei-2024-137, dnk-datei-2024-138, dnk-datei-2024-139, dnk-datei-2024-14, dnk-datei-2024-140, dnk-datei-2024-141, dnk-datei-2024-142, dnk-datei-2024-143, dnk-datei-2024-144, dnk-datei-2024-145, dnk-datei-2024-146, dnk-datei-2024-147, dnk-datei-2024-148, dnk-datei-2024-149, dnk-datei-2024-15, dnk-datei-2024-150, dnk-datei-2024-151, dnk-datei-2024-152, dnk-datei-2024-153, dnk-datei-2024-154, dnk-datei-2024-155, dnk-datei-2024-156, dnk-datei-2024-157, dnk-datei-2024-158, dnk-datei-2024-159, dnk-datei-2024-16, dnk-datei-2024-160, dnk-datei-2024-161, dnk-datei-2024-162, dnk-datei-2024-163, dnk-datei-2024-164, dnk-datei-2024-165, dnk-datei-2024-166, dnk-datei-2024-167, dnk-datei-2024-168, dnk-datei-2024-169, dnk-datei-2024-17, dnk-datei-2024-170, dnk-datei-2024-171, dnk-datei-2024-172, dnk-datei-2024-173, dnk-datei-2024-174, dnk-datei-2024-175, dnk-datei-2024-176, dnk-datei-2024-177, dnk-datei-2024-178, dnk-datei-2024-179, dnk-datei-2024-18, dnk-datei-2024-180, dnk-datei-2024-181, dnk-datei-2024-182, dnk-datei-2024-183, dnk-datei-2024-184, dnk-datei-2024-185, dnk-datei-2024-186, dnk-datei-2024-187, dnk-datei-2024-188, dnk-datei-2024-189, dnk-datei-2024-19, dnk-datei-2024-190, dnk-datei-2024-191, dnk-datei-2024-192, dnk-datei-2024-193, dnk-datei-2024-194, dnk-datei-2024-195, dnk-datei-2024-196, dnk-datei-2024-197, dnk-datei-2024-198, dnk-datei-2024-199, dnk-datei-2024-2, dnk-datei-2024-20, dnk-datei-2024-200, dnk-datei-2024-201, dnk-datei-2024-202, dnk-datei-2024-203, dnk-datei-2024-204, dnk-datei-2024-205, dnk-datei-2024-206, dnk-datei-2024-207, dnk-datei-2024-208, dnk-datei-2024-209, dnk-datei-2024-21, dnk-datei-2024-210, dnk-datei-2024-211, dnk-datei-2024-212, dnk-datei-2024-213, dnk-datei-2024-214, dnk-datei-2024-215, dnk-datei-2024-216, dnk-datei-2024-217, dnk-datei-2024-218, dnk-datei-2024-219, dnk-datei-2024-22, dnk-datei-2024-220, dnk-datei-2024-221, dnk-datei-2024-222, dnk-datei-2024-223, dnk-datei-2024-224, dnk-datei-2024-225, dnk-datei-2024-226, dnk-datei-2024-227, dnk-datei-2024-228, dnk-datei-2024-229, dnk-datei-2024-23, dnk-datei-2024-230, dnk-datei-2024-231, dnk-datei-2024-232, dnk-datei-2024-233, dnk-datei-2024-234, dnk-datei-2024-235, dnk-datei-2024-236, dnk-datei-2024-237, dnk-datei-2024-238, dnk-datei-2024-24, dnk-datei-2024-25, dnk-datei-2024-26, dnk-datei-2024-27, dnk-datei-2024-28, dnk-datei-2024-29, dnk-datei-2024-3, dnk-datei-2024-30, dnk-datei-2024-31, dnk-datei-2024-32, dnk-datei-2024-33, dnk-datei-2024-34, dnk-datei-2024-35, dnk-datei-2024-36, dnk-datei-2024-37, dnk-datei-2024-38, dnk-datei-2024-39, dnk-datei-2024-4, dnk-datei-2024-40, dnk-datei-2024-41, dnk-datei-2024-42, dnk-datei-2024-43, dnk-datei-2024-44, dnk-datei-2024-45, dnk-datei-2024-46, dnk-datei-2024-47, dnk-datei-2024-48, dnk-datei-2024-49, dnk-datei-2024-5, dnk-datei-2024-50, dnk-datei-2024-51, dnk-datei-2024-52, dnk-datei-2024-53, dnk-datei-2024-54, dnk-datei-2024-55, dnk-datei-2024-56, dnk-datei-2024-57, dnk-datei-2024-58, dnk-datei-2024-59, dnk-datei-2024-6, dnk-datei-2024-60, dnk-datei-2024-61, dnk-datei-2024-62, dnk-datei-2024-63, dnk-datei-2024-64, dnk-datei-2024-65, dnk-datei-2024-66, dnk-datei-2024-67, dnk-datei-2024-68, dnk-datei-2024-69, dnk-datei-2024-7, dnk-datei-2024-70, dnk-datei-2024-71, dnk-datei-2024-72, dnk-datei-2024-73, dnk-datei-2024-74, dnk-datei-2024-75, dnk-datei-2024-76, dnk-datei-2024-77, dnk-datei-2024-78, dnk-datei-2024-79, dnk-datei-2024-8, dnk-datei-2024-80, dnk-datei-2024-81, dnk-datei-2024-82, dnk-datei-2024-83, dnk-datei-2024-84, dnk-datei-2024-85, dnk-datei-2024-86, dnk-datei-2024-87, dnk-datei-2024-88, dnk-datei-2024-89, dnk-datei-2024-9, dnk-datei-2024-90, dnk-datei-2024-91, dnk-datei-2024-92, dnk-datei-2024-93, dnk-datei-2024-94, dnk-datei-2024-95, dnk-datei-2024-96, dnk-datei-2024-97, dnk-datei-2024-98, dnk-datei-2024-99
+31-Jan-26 08:36:14 - INFO - Speichere Chunks in ChromaDB ...
+31-Jan-26 10:19:04 - INFO -   -> gespeichert: 2000/20803
+31-Jan-26 12:10:39 - INFO -   -> gespeichert: 4000/20803
+31-Jan-26 13:54:42 - INFO -   -> gespeichert: 6000/20803
+31-Jan-26 15:37:20 - INFO -   -> gespeichert: 8000/20803
+31-Jan-26 17:21:25 - INFO -   -> gespeichert: 10000/20803
+31-Jan-26 19:29:14 - INFO -   -> gespeichert: 12000/20803
+31-Jan-26 21:13:42 - INFO -   -> gespeichert: 14000/20803
+31-Jan-26 23:10:48 - INFO -   -> gespeichert: 16000/20803
+01-Feb-26 08:06:50 - INFO -   -> gespeichert: 18000/20803
+01-Feb-26 09:50:53 - INFO -   -> gespeichert: 20000/20803
+01-Feb-26 10:32:32 - INFO -   -> gespeichert: 20803/20803
+01-Feb-26 10:32:32 - INFO - Speicherung abgeschlossen.
+01-Feb-26 10:32:32 - INFO - ✅  Ingestion vollständig abgeschlossen.
+01-Feb-26 10:32:32 - INFO - Ingestion-Laufzeit: 93397.9 s
+01-Feb-26 10:38:11 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+01-Feb-26 10:38:11 - INFO - ------------------------------------------------------------ START retrieval.py
+01-Feb-26 10:38:11 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+01-Feb-26 10:38:11 - INFO - Retrieval chain successfully created.
+01-Feb-26 10:38:13 - INFO - Upload watchdog successfully started.
+01-Feb-26 10:39:33 - INFO - New question: "Wie berichtet Unternehmen Adolf Nissen Elektrobau GmbH über ihre CO₂-Emissionen?" | History-Length: 0
+01-Feb-26 10:39:45 - INFO - Time: 12.08 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+01-Feb-26 10:40:50 - INFO - New question: "Kannst du mir Ideen geben, um interessante und innovative Maßnahmen zu etablieren, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?" | History-Length: 0
+01-Feb-26 10:41:02 - INFO - Time: 11.99 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+01-Feb-26 10:58:35 - INFO - Upload watchdog successfully started.
+01-Feb-26 10:58:37 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen?" | History-Length: 0
+01-Feb-26 10:58:52 - INFO - Time: 14.22 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+01-Feb-26 10:59:33 - INFO - Upload watchdog successfully started.
+01-Feb-26 10:59:50 - INFO - New question: "was ist gemeint mit Mobilität?" | History-Length: 1
+01-Feb-26 11:00:03 - INFO - Time: 12.98 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+01-Feb-26 11:38:53 - INFO - Upload watchdog successfully started.
+01-Feb-26 11:39:12 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? und Inwieweit können für solche Nachhaltigkeitsberichte Textbausteine entstehen?" | History-Length: 0
+01-Feb-26 11:39:29 - INFO - Time: 17.29 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+01-Feb-26 11:45:50 - INFO - Upload watchdog successfully started.
+01-Feb-26 11:45:54 - INFO - New question: "Welche Leistungsindikatoren gibt es, welche davon haben sich verbessert, und wie können diese Unternehmen dabei helfen, die eine eigene Nachhaltigkeitsstrategie entwickeln möchten, konkrete Ideen zu gewinnen, um die Nachhaltigkeit in ihrer Branche zu steigern und ihre Nachhaltigkeitsberichte zu verbessern?" | History-Length: 0
+01-Feb-26 11:46:13 - INFO - Time: 19.36 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
