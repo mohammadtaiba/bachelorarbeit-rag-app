@@ -28,4 +28,4 @@ class OllamaEmbeddings(Embeddings):
         response.raise_for_status()
         return response.json()["embedding"]
 
-    logger.info("Das RAG-System ist jetzt mit LMStudio verbunden.")
+    logger.info("Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.")
