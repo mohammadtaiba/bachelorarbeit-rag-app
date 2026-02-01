@@ -21,10 +21,9 @@ def chunk_documents(docs):
         strip_headers=False
     )
 
-    token_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-        encoding_name="cl100k_base",
-        chunk_size=350,
-        chunk_overlap=90,
+    recursiveCharacterTextSplitter = RecursiveCharacterTextSplitter(
+        chunk_size=2000,
+        chunk_overlap=300,
         separators=[
             "\n\n",                 # Absatz
             "\n",                   # Zeile / Listen / Markdown
@@ -55,7 +54,7 @@ def chunk_documents(docs):
             parts = markdownHeaderTextSplitter.split_text(doc.page_content or "")
             for part in parts:
                 # part ist ein Document mit page_content + Header-Metadaten
-                for chunk in token_splitter.split_documents([part]):
+                for chunk in recursiveCharacterTextSplitter.split_documents([part]):
                     chunk.metadata = {
                         "source": src_clean,
                         **chunk.metadata,  # enthält die Header (H1/H2/H3) vom part
@@ -67,7 +66,7 @@ def chunk_documents(docs):
         # Sonst → RecursiveCharacterTextSplitter
         # ---------------------------------------------------------
         else:
-            for chunk in token_splitter.split_documents([doc]):
+            for chunk in recursiveCharacterTextSplitter.split_documents([doc]):
                 chunk.metadata = {"source": src_clean }
                 chunk.page_content = chunk.page_content.rstrip() + suffix
                 chunks.append(chunk)
