@@ -37,7 +37,7 @@ ollama signin
 
 * LLM- und Embedding-Modelle **herunterladen**:
 ````shell
-ollama pull gpt-oss:120b-cloud; ollama pull nomic-embed-text
+ollama pull gpt-oss:120b-cloud; ollama pull nomic-embed-text; ollama qwen3-embedding:8b
 ````
 
 * Alle Modelle **anzeigen** (überprüfe, ob beide Modellen installiert wurden):
@@ -52,7 +52,7 @@ ollama serve
 
 * Embedding-Modell **testen**:
 ````shell
-Invoke-RestMethod -Uri "http://localhost:11434/api/embeddings" -Method Post -ContentType "application/json" -Body '{"model":"nomic-embed-text","prompt":"Dies ist ein Embedding-Test."}'
+Invoke-RestMethod -Uri "http://localhost:11434/api/embeddings" -Method Post -ContentType "application/json" -Body '{"model":"qwen3-embedding:8b","prompt":"Dies ist ein Embedding-Test."}'
 ````
 
 * LLM-Modell **testen**:
@@ -74,14 +74,18 @@ pip install -r requirements.txt
 
 ---
 
-### 5) Chatbot (UI) starten:
+### 5) Die DB-ZIP-Datei `db_qwen3-embedding-8b.zip` extrahieren und umbenennen als `db`.
+
+---
+
+### 6) Chatbot (UI) starten:
 ````shell
 streamlit run main.py
 ````
 
 ---
 
-### 6) Hilfsbefehle
+### 7) Hilfsbefehle
 * Ingestion starten:
 ````shell
 python -m core.ingestion

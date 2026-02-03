@@ -14,3 +14,7 @@
 core/evaluation/results/**
 
 data/upload
+
+db/*
+
+test/db/*
