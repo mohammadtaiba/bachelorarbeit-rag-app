@@ -37,7 +37,7 @@ ollama signin
 
 * LLM- und Embedding-Modelle **herunterladen**:
 ````shell
-ollama pull gpt-oss:120b-cloud; ollama pull nomic-embed-text; ollama qwen3-embedding:8b
+ollama pull gpt-oss:120b-cloud; ollama pull nomic-embed-text; ollama pull qwen3-embedding:8b
 ````
 
 * Alle Modelle **anzeigen** (überprüfe, ob beide Modellen installiert wurden):
