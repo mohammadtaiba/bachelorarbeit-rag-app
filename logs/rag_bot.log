@@ -2186,3 +2186,334 @@ Response body: {"error":"model \"qwen3-embedding\" not found, try pulling it fir
 01-Feb-26 11:45:50 - INFO - Upload watchdog successfully started.
 01-Feb-26 11:45:54 - INFO - New question: "Welche Leistungsindikatoren gibt es, welche davon haben sich verbessert, und wie können diese Unternehmen dabei helfen, die eine eigene Nachhaltigkeitsstrategie entwickeln möchten, konkrete Ideen zu gewinnen, um die Nachhaltigkeit in ihrer Branche zu steigern und ihre Nachhaltigkeitsberichte zu verbessern?" | History-Length: 0
 01-Feb-26 11:46:13 - INFO - Time: 19.36 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:23:57 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 11:23:57 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 11:23:57 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 11:23:57 - INFO - Retrieval chain successfully created.
+04-Feb-26 11:24:01 - INFO - Upload watchdog successfully started.
+04-Feb-26 11:25:26 - INFO - New question: "Wie berichtet Unternehmen Adolf Nissen Elektrobau GmbH über ihre CO₂-Emissionen?" | History-Length: 0
+04-Feb-26 11:25:30 - ERROR - ⚠️ Error in generate_answer() for question: "{question}".
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001D7158BC5D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D7158BC5D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\retrieval.py", line 139, in generate_answer
+    output = BUILD_CHAIN_ONCE.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 164, in _call
+    docs = self._get_docs(new_question, inputs, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 409, in _get_docs
+    docs = self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 1067, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 698, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 798, in similarity_search_with_score
+    query_embedding = self._embedding_function.embed_query(query)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 20, in embed_query
+    return self._embed_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 24, in _embed_text
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D7158BC5D0>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+04-Feb-26 11:27:23 - INFO - New question: "Wie berichtet Unternehmen Adolf Nissen Elektrobau GmbH über ihre CO₂-Emissionen?" | History-Length: 0
+04-Feb-26 11:27:25 - ERROR - ⚠️ Error in generate_answer() for question: "{question}".
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\retrieval.py", line 139, in generate_answer
+    output = BUILD_CHAIN_ONCE.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 164, in _call
+    docs = self._get_docs(new_question, inputs, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 409, in _get_docs
+    docs = self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 1067, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 698, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 798, in similarity_search_with_score
+    query_embedding = self._embedding_function.embed_query(query)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 20, in embed_query
+    return self._embed_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 28, in _embed_text
+    response.raise_for_status()
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/embeddings
+04-Feb-26 11:32:54 - INFO - New question: "Wie berichtet Unternehmen Adolf Nissen Elektrobau GmbH über ihre CO₂-Emissionen?" | History-Length: 0
+04-Feb-26 11:33:03 - INFO - Time: 8.74 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:36:41 - INFO - New question: "Was versteht man unter der Wesentlichkeitsanalyse im Nachhaltigkeitsbericht?" | History-Length: 0
+04-Feb-26 11:36:51 - INFO - Time: 10.62 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:38:06 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Y zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:38:14 - INFO - Time: 7.45 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:39:39 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:40:02 - INFO - Time: 23.38 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:47:28 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 11:47:28 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 11:47:28 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 11:47:28 - INFO - Retrieval chain successfully created.
+04-Feb-26 11:47:36 - INFO - New question: "Wie berichtet Unternehmen Adolf Nissen Elektrobau GmbH über ihre CO₂-Emissionen?" | History-Length: 0
+04-Feb-26 11:47:44 - INFO - Time: 8.19 s, Chunks: 0, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:48:28 - INFO - New question: "Was versteht man unter der Wesentlichkeitsanalyse im Nachhaltigkeitsbericht?" | History-Length: 0
+04-Feb-26 11:48:38 - INFO - Time: 9.55 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:49:21 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:49:28 - INFO - Time: 6.77 s, Chunks: 0, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:50:38 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:50:46 - INFO - Time: 8.38 s, Chunks: 0, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:51:00 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 11:51:00 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 11:51:00 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 11:51:00 - INFO - Retrieval chain successfully created.
+04-Feb-26 11:51:02 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:51:23 - INFO - Time: 20.58 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:52:39 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 11:52:39 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 11:52:39 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 11:52:39 - INFO - Retrieval chain successfully created.
+04-Feb-26 11:52:41 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:52:49 - INFO - Time: 7.95 s, Chunks: 2, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:54:14 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 11:54:14 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 11:54:14 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 11:54:14 - INFO - Retrieval chain successfully created.
+04-Feb-26 11:54:24 - INFO - New question: "Wie berichtet Unternehmen Adolf Nissen Elektrobau GmbH über ihre CO₂-Emissionen?" | History-Length: 0
+04-Feb-26 11:54:32 - INFO - Time: 8.05 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:55:13 - INFO - New question: "Was versteht man unter der Wesentlichkeitsanalyse im Nachhaltigkeitsbericht?" | History-Length: 0
+04-Feb-26 11:55:23 - INFO - Time: 9.09 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:55:55 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:56:11 - INFO - Time: 15.34 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:56:22 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 11:56:40 - INFO - Time: 17.55 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 11:59:57 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 11:59:57 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 11:59:57 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 11:59:57 - INFO - Retrieval chain successfully created.
+04-Feb-26 12:00:03 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 12:00:23 - INFO - Time: 19.27 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 12:00:32 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 12:00:45 - INFO - Time: 12.98 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 12:04:59 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 12:04:59 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 12:04:59 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 12:04:59 - INFO - Retrieval chain successfully created.
+04-Feb-26 12:05:03 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 12:05:20 - INFO - Time: 17.71 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+04-Feb-26 13:27:14 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 13:27:14 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 13:27:14 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 13:27:14 - INFO - Retrieval chain successfully created.
+04-Feb-26 13:27:18 - INFO - Upload watchdog successfully started.
+04-Feb-26 13:27:28 - INFO - New question: "Was versteht man unter der Wesentlichkeitsanalyse im Nachhaltigkeitsbericht?" | History-Length: 0
+04-Feb-26 13:27:34 - INFO - Time: 6.58 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: nomic-embed-text
+04-Feb-26 13:30:58 - INFO - New question: "Welche Maßnahmen nennen Unternehmen der Branche Industrie zur Förderung der Diversität?" | History-Length: 0
+04-Feb-26 13:31:05 - INFO - Time: 6.89 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: nomic-embed-text
+04-Feb-26 13:48:25 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 13:48:25 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 13:48:25 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 13:48:25 - INFO - Retrieval chain successfully created.
+04-Feb-26 13:48:28 - INFO - Upload watchdog successfully started.
+04-Feb-26 13:48:38 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)  und Inwieweit können für solche Nachhaltigkeitsberichte Textbausteine entstehen?" | History-Length: 0
+04-Feb-26 13:49:03 - INFO - Time: 24.78 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: nomic-embed-text
+04-Feb-26 13:55:21 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+04-Feb-26 13:55:21 - INFO - ------------------------------------------------------------ START retrieval.py
+04-Feb-26 13:55:21 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+04-Feb-26 13:55:22 - INFO - Retrieval chain successfully created.
+04-Feb-26 13:55:24 - INFO - Upload watchdog successfully started.
+04-Feb-26 13:55:30 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern) und Inwieweit können für solche Nachhaltigkeitsberichte Textbausteine entstehen?" | History-Length: 0
+04-Feb-26 13:55:53 - INFO - Time: 22.34 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+05-Feb-26 08:52:50 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+05-Feb-26 08:52:50 - INFO - ------------------------------------------------------------ START retrieval.py
+05-Feb-26 08:52:50 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+05-Feb-26 08:52:51 - INFO - Retrieval chain successfully created.
+05-Feb-26 08:52:55 - INFO - Upload watchdog successfully started.
+05-Feb-26 08:53:54 - INFO - Upload watchdog successfully started.
+05-Feb-26 08:54:24 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)?" | History-Length: 0
+05-Feb-26 08:54:28 - ERROR - ⚠️ Error in generate_answer() for question: "{question}".
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "C:\Users\Mohammad Taiba\AppData\Local\Programs\Python\Python311\Lib\http\client.py", line 975, in send
+    self.connect()
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001F743B18C50>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F743B18C50>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\core\retrieval.py", line 141, in generate_answer
+    output = BUILD_CHAIN_ONCE.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\base.py", line 165, in invoke
+    self._call(inputs, run_manager=run_manager)
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 164, in _call
+    docs = self._get_docs(new_question, inputs, run_manager=_run_manager)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain\chains\conversational_retrieval\base.py", line 409, in _get_docs
+    docs = self.retriever.invoke(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\retrievers.py", line 263, in invoke
+    result = self._get_relevant_documents(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 1076, in _get_relevant_documents
+    docs = self.vectorstore.max_marginal_relevance_search(query, **kwargs_)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 1072, in max_marginal_relevance_search
+    embedding = self._embedding_function.embed_query(query)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 20, in embed_query
+    return self._embed_text(text)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\utils\ollama_embed.py", line 24, in _embed_text
+    response = requests.post(
+               ^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mohammad Taiba\PycharmProjects\rag2-app\.venv\Lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=11434): Max retries exceeded with url: /api/embeddings (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001F743B18C50>: Failed to establish a new connection: [WinError 10061] Es konnte keine Verbindung hergestellt werden, da der Zielcomputer die Verbindung verweigerte'))
+05-Feb-26 08:54:45 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)?" | History-Length: 0
+05-Feb-26 08:55:05 - INFO - Time: 19.52 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+05-Feb-26 08:55:43 - INFO - Upload watchdog successfully started.
+05-Feb-26 08:55:52 - INFO - New question: "Welcher interessante und innovative Maßnahmen gibt es und Ideen, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)?" | History-Length: 0
+05-Feb-26 08:56:12 - INFO - Time: 19.71 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+05-Feb-26 08:56:39 - INFO - New question: "Welcher innovative Maßnahmen gibt es, die helfen Nachhaltigkeitsziele im Stadtquartier zu erreichen? (um die Qualität zu verbessern)?" | History-Length: 0
+05-Feb-26 08:56:57 - INFO - Time: 17.57 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+05-Feb-26 08:58:04 - INFO - New question: "Nenne mir fünf innovative Maßnahmen, die dabei helfen, die Nachhaltigkeitsziele im Stadtquartier zu erreichen und die Qualität zu verbessern." | History-Length: 0
+05-Feb-26 08:58:16 - INFO - Time: 12.08 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
+18-Feb-26 11:20:59 - INFO - Das RAG-System ist jetzt mit Ollama-Endpunkt verbunden.
+18-Feb-26 11:20:59 - INFO - ------------------------------------------------------------ START retrieval.py
+18-Feb-26 11:20:59 - INFO - Creating new retrieval chain (Embeddings + Chroma + LLM).
+18-Feb-26 11:21:00 - INFO - Retrieval chain successfully created.
+18-Feb-26 11:21:04 - INFO - Upload watchdog successfully started.
+18-Feb-26 11:22:52 - INFO - New question: "Nenne mir fünf innovative Maßnahmen, die dabei helfen, die Nachhaltigkeitsziele im Stadtquartier zu erreichen und die Qualität zu verbessern." | History-Length: 0
+18-Feb-26 11:23:09 - INFO - Time: 16.82 s, Chunks: 35, LLM-Model: gpt-oss:120b-cloud, Embedding-Model: qwen3-embedding:8b
