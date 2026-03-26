@@ -1,0 +1,1445 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:link="http://purl.org/rss/1.0/modules/link/"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:bib="http://purl.org/net/biblio#"
+ xmlns:foaf="http://xmlns.com/foaf/0.1/"
+ xmlns:prism="http://prismstandard.org/namespaces/1.2/basic/"
+ xmlns:vcard="http://nwalsh.com/rdf/vCard#">
+    <bib:Document rdf:about="https://openai.com/index/introducing-gpt-oss/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_15"/>
+        <dc:title>OpenAI: GPT-OSS</dc:title>
+        <dcterms:abstract>gpt-oss-120b and gpt-oss-20b push the frontier of open-weight reasoning models</dcterms:abstract>
+        <dc:date>2025-12-18</dc:date>
+        <z:language>en-US</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://openai.com/index/introducing-gpt-oss/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-27 18:19:36</dcterms:dateSubmitted>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_15">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/15/introducing-gpt-oss.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://openai.com/index/introducing-gpt-oss/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-27 18:19:41</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:979-8-3335-3595-5">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Independently published</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wilder</foaf:surname>
+                        <foaf:givenName>Jordan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_17"/>
+        <dc:title>Pathways to Sustainability: Strategies for Carbon Reduction, Resource Efficiency, Renewable Energy, Waste Management, Sustainable Agriculture, and Policy Solutions for a Greener Future</dc:title>
+        <dcterms:abstract>Are you feeling overwhelmed by the environmental crises we face today? Do you want to make a real impact but don’t know where to start? Are you searching for practical solutions to live sustainably and reduce your carbon footprint?Pathways to Sustainability is your essential guide to navigating these challenges. This comprehensive resource dives into the heart of sustainability, offering clear, actionable solutions for individuals, businesses, and communities alike.In a world where climate change and resource depletion are pressing issues, this book shines a light on the steps you can take to make a difference. Transform the way you live, work, and advocate for a healthier planet with these key takeaways:Key Takeaways and Benefits:Grasp the Essentials of Sustainability: Understand the foundational principles of sustainable consumption and production, resource efficiency, and environmental stewardship, and why they are vital for our collective future.Reduce Your Carbon Footprint Effectively: Learn practical, impactful methods for cutting carbon emissions, from energy-efficient practices to adopting renewable energy solutions.Master Advanced Waste Management: Discover innovative techniques for reducing, reusing, and recycling waste, along with cutting-edge waste-to-energy technologies.Adopt Sustainable Agriculture Practices: Explore farming methods that enhance soil health, promote biodiversity, and sequester carbon, creating a resilient food system.Engage with Policy and Legislative Solutions: Navigate the landscape of global and national policies aimed at fostering sustainability, and learn how to advocate for impactful change.This book doesn’t just educate-it empowers. Whether you’re an individual aiming to reduce your ecological impact, a business looking to implement greener practices, or a policymaker seeking effective strategies, Pathways to Sustainability equips you with the knowledge and tools to take meaningful action.Join the movement towards a sustainable future. Equip yourself with the insights and strategies outlined in this book to make a lasting difference.Get your copy of Pathways to Sustainability today and start your journey to a greener, healthier planet.</dcterms:abstract>
+        <dc:date>19. Juli 2024</dc:date>
+        <z:language>Englisch</z:language>
+        <z:shortTitle>Pathways to Sustainability</z:shortTitle>
+        <z:libraryCatalog>Amazon</z:libraryCatalog>
+        <dc:identifier>ISBN 979-8-3335-3595-5</dc:identifier>
+        <z:numPages>172</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_17">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Amazon.com Link</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.amazon.de/Pathways-Sustainability-Strategies-Sustainable-Agriculture/dp/B0D9QXKD27/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;sr=8-1&amp;asin=B0D9QXKD27&amp;revisionId=&amp;format=4&amp;depth=1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 13:53:54</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_18">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/18/PDF.pdf"/>
+        <dc:title>EU-Richtlinien</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://eur-lex.europa.eu/legal-content/DE/TXT/PDF/?uri=CELEX:32022L2464</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 15:38:21</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="https://www.scribd.com/document/781336590/Practical-RAG">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>scribd</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Allahyari</foaf:surname>
+                        <foaf:givenName>Mehdi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yang</foaf:surname>
+                        <foaf:givenName>Angelina</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_20"/>
+        <dc:title>A Practical Approach to Retrieval Augmented Generation Systems</dc:title>
+        <dc:date>2023-11-01</dc:date>
+        <z:language>en</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.scribd.com/document/781336590/Practical-RAG</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 20:16:52</dcterms:dateSubmitted>
+        <dc:description>https://mallahyari.github.io/rag-ebook/intro.html</dc:description>
+        <z:numPages>127</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_20">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/20/rag-ebook.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://mallahyari.github.io/rag-ebook/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 20:16:54</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="http://arxiv.org/abs/2312.10997">
+        <z:itemType>preprint</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>arXiv</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gao</foaf:surname>
+                        <foaf:givenName>Yunfan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiong</foaf:surname>
+                        <foaf:givenName>Yun</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gao</foaf:surname>
+                        <foaf:givenName>Xinyu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jia</foaf:surname>
+                        <foaf:givenName>Kangxiang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pan</foaf:surname>
+                        <foaf:givenName>Jinliu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bi</foaf:surname>
+                        <foaf:givenName>Yuxi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dai</foaf:surname>
+                        <foaf:givenName>Yi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Jiawei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Meng</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Haofen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dcterms:isReferencedBy rdf:resource="#item_24"/>
+        <link:link rdf:resource="#item_25"/>
+        <link:link rdf:resource="#item_26"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Computation and Language</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Artificial Intelligence</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Retrieval-Augmented Generation for Large Language Models: A Survey</dc:title>
+        <dcterms:abstract>Large Language Models (LLMs) showcase impressive capabilities but encounter challenges like hallucination, outdated knowledge, and non-transparent, untraceable reasoning processes. Retrieval-Augmented Generation (RAG) has emerged as a promising solution by incorporating knowledge from external databases. This enhances the accuracy and credibility of the generation, particularly for knowledge-intensive tasks, and allows for continuous knowledge updates and integration of domain-specific information. RAG synergistically merges LLMs' intrinsic knowledge with the vast, dynamic repositories of external databases. This comprehensive review paper offers a detailed examination of the progression of RAG paradigms, encompassing the Naive RAG, the Advanced RAG, and the Modular RAG. It meticulously scrutinizes the tripartite foundation of RAG frameworks, which includes the retrieval, the generation and the augmentation techniques. The paper highlights the state-of-the-art technologies embedded in each of these critical components, providing a profound understanding of the advancements in RAG systems. Furthermore, this paper introduces up-to-date evaluation framework and benchmark. At the end, this article delineates the challenges currently faced and points out prospective avenues for research and development.</dcterms:abstract>
+        <dc:date>2024-03-27</dc:date>
+        <z:shortTitle>Retrieval-Augmented Generation for Large Language Models</z:shortTitle>
+        <z:libraryCatalog>arXiv.org</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2312.10997</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 20:43:35</dcterms:dateSubmitted>
+        <dc:description>arXiv:2312.10997 [cs]</dc:description>
+        <dc:identifier>DOI 10.48550/arXiv.2312.10997</dc:identifier>
+        <prism:number>arXiv:2312.10997</prism:number>
+    </rdf:Description>
+    <bib:Memo rdf:about="#item_24">
+       <rdf:value>Comment: Ongoing Work</rdf:value>
+    </bib:Memo>
+    <z:Attachment rdf:about="#item_25">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/25/Gao et al. - 2024 - Retrieval-Augmented Generation for Large Language Models A Survey.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://arxiv.org/pdf/2312.10997</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 20:43:36</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_26">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/26/2312.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2312.10997</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-28 20:43:36</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="https://lesen.amazon.de/?asin=B0F8VYY795&amp;ref_=kwl_kr_iv_rec_1">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>Independently published</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Crossfield</foaf:surname>
+                        <foaf:givenName>Nathaniel</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_32"/>
+        <dc:title>Building Intelligent Systems with RAG 2.0: Develop Next-Gen LLM Applications with LangChain, OpenAI, Pinecone, FAISS, Vector Databases, and LLMOps Tools</dc:title>
+        <dc:date>2025</dc:date>
+        <z:language>Englisch</z:language>
+        <z:libraryCatalog>Amazon</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://lesen.amazon.de/?asin=B0F8VYY795&amp;ref_=kwl_kr_iv_rec_1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-29 19:53:34</dcterms:dateSubmitted>
+        <dc:description>Nicht mehr verfügbar.</dc:description>
+        <z:numPages>492</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_32">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/32/lesen.amazon.de.html"/>
+        <dc:title>Kindle</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://lesen.amazon.de/?asin=B0F8VYY795&amp;ref_=kwl_kr_iv_rec_1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-29 19:53:35</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:978-1-83620-702-3">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Birmingham</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Packt Publishing</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Huang</foaf:surname>
+                        <foaf:givenName>Ken</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_38"/>
+        <dc:title>LLM Design Patterns: A Practical Guide to Building Robust and Efficient AI Systems</dc:title>
+        <dcterms:abstract>Explore reusable design patterns, including data-centric approaches, model development, model fine-tuning, and RAG for LLM application development and advanced prompting techniquesFree with your book: PDF Copy, AI Assistant, and Next-Gen ReaderKey FeaturesLearn comprehensive LLM development, including data prep, training pipelines, and optimizationExplore advanced prompting techniques, such as chain-of-thought, tree-of-thought, RAG, and AI agentsImplement evaluation metrics, interpretability, and bias detection for fair, reliable modelsBook DescriptionThis practical guide for AI professionals enables you to build on the power of design patterns to develop robust, scalable, and efficient large language models (LLMs). Written by a global AI expert and popular author driving standards and innovation in Generative AI, security, and strategy, this book covers the end-to-end lifecycle of LLM development and introduces reusable architectural and engineering solutions to common challenges in data handling, model training, evaluation, and deployment.You’ll learn to clean, augment, and annotate large-scale datasets, architect modular training pipelines, and optimize models using hyperparameter tuning, pruning, and quantization. The chapters help you explore regularization, checkpointing, fine-tuning, and advanced prompting methods, such as reason-and-act, as well as implement reflection, multi-step reasoning, and tool use for intelligent task completion. The book also highlights Retrieval-Augmented Generation (RAG), graph-based retrieval, interpretability, fairness, and RLHF, culminating in the creation of agentic LLM systems.By the end of this book, you’ll be equipped with the knowledge and tools to build next-generation LLMs that are adaptable, efficient, safe, and aligned with human values.What you will learnImplement efficient data prep techniques, including cleaning and augmentationDesign scalable training pipelines with tuning, regularization, and checkpointingOptimize LLMs via pruning, quantization, and fine-tuningEvaluate models with metrics, cross-validation, and interpretabilityUnderstand fairness and detect bias in outputsDevelop RLHF strategies to build secure, agentic AI systemsWho this book is forThis book is essential for AI engineers, architects, data scientists, and software engineers responsible for developing and deploying AI systems powered by large language models. A basic understanding of machine learning concepts and experience in Python programming is a must.Table of ContentsIntroduction to LLM Design PatternsData Cleaning for LLM TrainingData AugmentationHandling Large Datasets for LLM TrainingData VersioningDataset Annotation and LabelingTraining PipelineHyperparameter TuningRegularizationCheckpointing and RecoveryFine-TuningModel PruningQuantizationEvaluation MetricsCross-ValidationInterpretabilityFairness and Bias DetectionAdversarial RobustnessReinforcement Learning from Human FeedbackChain-of-Thought PromptingTree-of-Thoughts PromptingReasoning and ActingReasoning WithOut ObservationReflection TechniquesAutomatic Multi-Step Reasoning and Tool UseRetrieval-Augmented Generation Graph-Based RAGAdvanced RAGEvaluating RAG SystemsAgentic Patterns</dcterms:abstract>
+        <dc:date>30. Mai 2025</dc:date>
+        <z:language>Englisch</z:language>
+        <z:shortTitle>LLM Design Patterns</z:shortTitle>
+        <z:libraryCatalog>Amazon</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.scribd.com/document/921715705/LLM-Design-Patterns-a-Practical-Guide-to-Building-Robust</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:identifier>ISBN 978-1-83620-702-3</dc:identifier>
+        <z:numPages>802</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_38">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Amazon.com Link</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.amazon.de/LLM-Design-Patterns-Practical-Efficient-ebook/dp/B0F9GGJC5P/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=3PDUVXRQECZGV&amp;dib=eyJ2IjoiMSJ9.krDxxa82BdybrN0bgGSmSq2kE5RzBMjS76vWdt0cSNdH1K-dhMHwAjrSmAWIk3NSRNZnRZ-yBXwDL0zKBQoxj595GPLt5DU7krtWKZbmLu9GOwKpnijg5lDj-GkVe3S2x-YfV4Av5ipbTcij489JyHFqOmbM_0UiGTTpp6q4xPeQYDSAxDHpdDIZVYi2db_mqViueeW3TKSk8H84sO0h9J66KffIpcaA4lp8H5G6SkY.B5KF4PiNJjWSFXq-n77k_op-REkIm6luUMIjRWNlLIQ&amp;dib_tag=se&amp;keywords=what+is+llm&amp;qid=1767046999&amp;refinements=p_72%3A184738031&amp;rnid=184716031&amp;s=books&amp;sprefix=what+is+llm%2Cstripbooks%2C88&amp;sr=1-1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-29 22:28:40</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:979-8-3247-3147-2">
+        <z:itemType>book</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                        <vcard:locality>Place of publication not identified</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Independently published</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bouchard</foaf:surname>
+                        <foaf:givenName>Louis-François</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Peters</foaf:surname>
+                        <foaf:givenName>Louie</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_44"/>
+        <dc:title>Building LLMs for Production: Enhancing LLM Abilities and Reliability with Prompting, Fine-Tuning, and RAG</dc:title>
+        <dcterms:abstract>“This is the most comprehensive textbook to date on building LLM applications - all essential topics in an AI Engineer's toolkit.&quot;- Jerry Liu, Co-founder and CEO of LlamaIndexTL;DR(UPDATED ON OCTOBER 2024) With amazing feedback from industry leaders, this book is an end-to-end resource for anyone looking to enhance their skills or dive into the world of AI and develop their understanding of Generative AI and Large Language Models (LLMs). It explores various methods to adapt &quot;foundational&quot; LLMs to specific use cases with enhanced accuracy, reliability, and scalability. Written by over 10 people on our Team at Towards AI and curated by experts from Activeloop, LlamaIndex, Mila, and more, it is a roadmap to the tech stack of the future.The book aims to guide developers through creating LLM products ready for production, leveraging the potential of AI across various industries. It is tailored for readers with an intermediate knowledge of Python.What's Inside this 470-page Book (Updated October 2024)?Hands-on Guide on LLMs, Prompting, Retrieval Augmented Generation (RAG) &amp; Fine-tuningRoadmap for Building Production-Ready Applications using LLMsFundamentals of LLM TheorySimple-to-Advanced LLM Techniques &amp; FrameworksCode Projects with Real-World ApplicationsColab Notebooks that you can run right awayCommunity access and our own AI TutorTable of ContentsChapter I Introduction to Large Language ModelsChapter II LLM Architectures &amp; LandscapeChapter III LLMs in PracticeChapter IV Introduction to PromptingChapter V Retrieval-Augmented GenerationChapter VI Introduction to LangChain &amp; LlamaIndexChapter VII Prompting with LangChainChapter VIII Indexes, Retrievers, and Data PreparationChapter IX Advanced RAGChapter X AgentsChapter XI Fine-TuningChapter XII Deployment and OptimizationWhat Experts Think About The Book&quot;A truly wonderful resource that develops understanding of LLMs from the ground up, from theory to code and modern frameworks. Grounds your knowledge in research trends and frameworks that develop your intuition around what's coming. Highly recommend.&quot;- Pete Huang, Co-founder of The Neuron“This book is filled with end-to-end explanations, examples, and comprehensive details. Louis and the Towards AI team have written an essential read for developers who want to expand their AI expertise and apply it to real-world challenges, making it a valuable addition to both personal and professional libraries.”- Alex Volkov, AI Evangelist at Weights &amp; Biases and Host of ThursdAI news&quot;This book is the most thorough overview of LLMs I've come across. An excellent primer for newcomers and a valuable reference for experienced practitioners.&quot;- Shaw Talebi, Founder of The Data Entrepreneurs, AI Educator and AdvisorWhether you're looking to enhance your skills or dive into the world of AI for the first time as a programmer or software student, our book is for you. From the basics of LLMs to mastering fine-tuning and RAG for scalable, reliable AI applications, we guide you every step of the way.</dcterms:abstract>
+        <dc:date>21. Mai 2024</dc:date>
+        <z:language>Englisch</z:language>
+        <z:shortTitle>Building LLMs for Production</z:shortTitle>
+        <z:libraryCatalog>Amazon</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.scribd.com/document/769463131/Building-LLMs-for-Production-Louis-Francois-Bouchard</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:identifier>ISBN 979-8-3247-3147-2</dc:identifier>
+        <z:numPages>463</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_44">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>Amazon.com Link</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.amazon.de/Building-LLMs-Production-Reliability-Fine-Tuning/dp/B0D4FFPFW8/ref=sr_1_1?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;dib=eyJ2IjoiMSJ9.9kpy3x6e5xxwVRVA5gPF8hEp_-6oVunaUEhHGy8YDUzETvyOSChuLP6zhPLMe1k2YuWeoN9b7exxulwrVbl0R4xLZIFKG1aOiqN-W9u6uLcm2cfwDxchiuFZZp2N9ERwdH5CNYXZkIRkVo-dILtJ2mLbk-0xcHEvYd_QTpEr9El6PSHOYNE77ZhR7CjEM8JmAsveV-KwvLd7dk_pRGxJooqOSv32N8aSmMhqQFTqHqI.ytvpsLrIrl0k7lz0BvOhOx_31GfR-8uqkx6W9mEE0Es&amp;dib_tag=se&amp;keywords=Building+LLMs+For+Production+-+Louis-Francois+Bouchard+%7C+PDF&amp;qid=1767048196&amp;s=books&amp;sr=1-1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-29 22:46:41</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Book rdf:about="urn:isbn:978-0-593-59396-7">
+        <z:itemType>book</z:itemType>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bhaskar</foaf:surname>
+                        <foaf:givenName>Michael</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Suleyman</foaf:surname>
+                        <foaf:givenName>Mustafa</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_47"/>
+        <dc:title>The Coming Wave</dc:title>
+        <dc:date>2023</dc:date>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://dn721906.ca.archive.org/0/items/the-coming-wave-by-mustafa-suleyman-michael-bhaskar-pdfread.net/The%20Coming%20Wave%20By%20Mustafa%20SuleymanMichael%20Bhaskar-pdfread.net.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2025-12-30</dcterms:dateSubmitted>
+        <dc:identifier>ISBN 978-0-593-59396-7</dc:identifier>
+        <z:numPages>455</z:numPages>
+    </bib:Book>
+    <z:Attachment rdf:about="#item_47">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/47/Bhaskar - 2023 - The Coming Wave.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://ieeexplore.ieee.org/document/11180037/">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:2169-3536"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Collini</foaf:surname>
+                        <foaf:givenName>Enrico</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Indra Kurniadi</foaf:surname>
+                        <foaf:givenName>Felix</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nesi</foaf:surname>
+                        <foaf:givenName>Paolo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pantaleo</foaf:surname>
+                        <foaf:givenName>Gianni</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_55"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Accuracy</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Costs</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Retrieval augmented generation</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Vectors</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+                <rdf:value>Context-aware retrieval augmented generation (CA-RAG)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>cosine similarity</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>domain-specific tasks</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>dot product</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Large language models</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>large language models (LLMs)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>retrieval-augmented generation (RAG)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Robustness</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Semantics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Strips</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Training</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Training data</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Context-Aware Retrieval Augmented Generation Using Similarity Validation to Handle Context Inconsistencies in Large Language Models</dc:title>
+        <dcterms:abstract>Large Language Models (LLMs) have transformed natural language processing by offering human-like responses. However, issues such as incorrect information (hallucinations) and errors in specific subject areas remain, especially in Retrieval Augmented Generation (RAG) systems. This study introduces a Context-Aware Retrieval Augmented Generation (CA-RAG), which simplifies the process by removing the need to separately find relevant chunks of a document. Instead, after dividing the document into chunks, both the question and chunks are directly given to the LLMs to produce answers. The method then focuses on improving the answers through additional post-processing, aiming to reduce errors and make the answers more relevant to the question. To evaluate the effectiveness of CA-RAG, two scenarios have been designed. Scenario 1 involved experiments using widely adopted and recognized benchmark datasets, such as TriviaQA, Natural Questions, AmbigQA and Stanford Question Answering Dataset (SQuAD). In this context, the proposed CA-RAG method, combined with similarity measure (either cosine similarity or dot product) between generated answers and chunks, achieved the highest F1-score in TriviaQA and AmbigQA. Scenario 2 tested CA-RAG robustness using a custom dataset comprising domain-specific and unstructured documents. Results from automated and manual evaluations revealed that CA-RAG with post-processing consistently outperformed traditional RAG. These findings highlight the critical role of post-processing techniques and similarity measures in improving the accuracy and relevance of generated answers. CA-RAG demonstrates strong potential as a reliable and versatile solution for Retrieval Augmented Generation tasks across diverse datasets and domains.</dcterms:abstract>
+        <dc:date>2025</dc:date>
+        <z:libraryCatalog>IEEE Xplore</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/document/11180037/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 14:32:19</dcterms:dateSubmitted>
+        <bib:pages>170065-170080</bib:pages>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:2169-3536">
+        <prism:volume>13</prism:volume>
+        <dc:title>IEEE Access</dc:title>
+        <dc:identifier>DOI 10.1109/ACCESS.2025.3614553</dc:identifier>
+        <dc:identifier>ISSN 2169-3536</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_55">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/55/Collini et al. - 2025 - Context-Aware Retrieval Augmented Generation Using Similarity Validation to Handle Context Inconsist.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ieeexplore.ieee.org/stampPDF/getPDF.jsp?tp=&amp;arnumber=11180037&amp;ref=</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 14:32:27</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://dl.acm.org/doi/10.1145/3209581">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>61</prism:volume>
+                <dc:title>Communications of the ACM</dc:title>
+                <dc:identifier>DOI 10.1145/3209581</dc:identifier>
+                <prism:number>6</prism:number>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baeza-Yates</foaf:surname>
+                        <foaf:givenName>Ricardo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_58"/>
+        <link:link rdf:resource="#item_57"/>
+        <dc:title>Bias on the web</dc:title>
+        <dc:date>2018</dc:date>
+        <z:language>en</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://dl.acm.org/doi/10.1145/3209581</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 20:40:31</dcterms:dateSubmitted>
+        <dc:description>DOI: 10.1145/3209581</dc:description>
+        <bib:pages>54–61</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_58">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/58/Baeza-Yates - 2018 - Bias on the web.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_57">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/57/3209581.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://dl.acm.org/doi/epdf/10.1145/3209581</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 20:40:37</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://www.deutscher-nachhaltigkeitskodex.de/de/berichte-einsehen/dnk-erklaerungen-einsehen/">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_60"/>
+        <dc:title>DNK-Datenbank</dc:title>
+        <z:language>de</z:language>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.deutscher-nachhaltigkeitskodex.de/de/berichte-einsehen/dnk-erklaerungen-einsehen/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 21:45:46</dcterms:dateSubmitted>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_60">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/60/dnk-erklaerungen-einsehen.html"/>
+        <dc:title>DNK-Erklärungen einsehen (alter Standard)</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.deutscher-nachhaltigkeitskodex.de/de/berichte-einsehen/dnk-erklaerungen-einsehen/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 21:45:52</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="http://arxiv.org/abs/2503.05212">
+        <z:itemType>preprint</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>arXiv</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>He</foaf:surname>
+                        <foaf:givenName>Guoxiu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Song</foaf:surname>
+                        <foaf:givenName>Xin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Sun</foaf:surname>
+                        <foaf:givenName>Aixin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_68"/>
+        <link:link rdf:resource="#item_69"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Computation and Language</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Artificial Intelligence</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Knowledge Updating? No More Model Editing! Just Selective Contextual Reasoning</dc:title>
+        <dcterms:abstract>As real-world knowledge evolves, the information embedded within large language models (LLMs) can become outdated, inadequate, or erroneous. Model editing has emerged as a prominent approach for updating LLMs' knowledge with minimal computational costs and parameter changes. This approach typically identifies and adjusts specific model parameters associated with newly acquired knowledge. However, existing methods often underestimate the adverse effects that parameter modifications can have on broadly distributed knowledge. More critically, post-edit LLMs frequently struggle with multi-hop reasoning and continuous knowledge updates. Although various studies have discussed these shortcomings, there is a lack of comprehensive evaluation. In this paper, we provide an evaluation of ten model editing methods along four dimensions: reliability, generalization, locality, and portability. Results confirm that all ten popular model editing methods show significant shortcomings across multiple dimensions, suggesting model editing is less promising. We then propose a straightforward method called Selective Contextual Reasoning (SCR), for knowledge updating. SCR does not modify model parameters but harnesses LLM's inherent contextual reasoning capabilities utilizing the updated knowledge pieces. Under SCR, an LLM first assesses whether an incoming query falls within the scope of an external knowledge base. If it does, the relevant external knowledge texts are contextualized to enhance reasoning; otherwise, the query is answered directly. We evaluate SCR against the ten model editing methods on two counterfactual datasets with three backbone LLMs. Empirical results confirm the effectiveness and efficiency of contextual reasoning for knowledge updating.</dcterms:abstract>
+        <dc:date>2025-03-07</dc:date>
+        <z:shortTitle>Knowledge Updating?</z:shortTitle>
+        <z:libraryCatalog>arXiv.org</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2503.05212</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 23:05:03</dcterms:dateSubmitted>
+        <dc:description>arXiv:2503.05212 [cs]</dc:description>
+        <dc:identifier>DOI 10.48550/arXiv.2503.05212</dc:identifier>
+        <prism:number>arXiv:2503.05212</prism:number>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_68">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/68/He et al. - 2025 - Knowledge Updating No More Model Editing! Just Selective Contextual Reasoning.pdf"/>
+        <dc:title>Preprint PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/pdf/2503.05212v1</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 23:05:05</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_69">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/69/2503.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2503.05212</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-03 23:05:05</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://proceedings.iclr.cc/paper_files/paper/2025/hash/5df5b1f121c915d8bdd00db6aac20827-Abstract-Conference.html">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jin</foaf:surname>
+                        <foaf:givenName>Bowen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yoon</foaf:surname>
+                        <foaf:givenName>Jinsung</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Han</foaf:surname>
+                        <foaf:givenName>Jiawei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Arik</foaf:surname>
+                        <foaf:givenName>Sercan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_73"/>
+        <dc:title>Long-Context LLMs Meet RAG: Overcoming Challenges for Long Inputs in RAG</dc:title>
+        <dc:date>2025</dc:date>
+        <z:language>en</z:language>
+        <z:shortTitle>Long-Context LLMs Meet RAG</z:shortTitle>
+        <z:libraryCatalog>proceedings.iclr.cc</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://proceedings.iclr.cc/paper_files/paper/2025/hash/5df5b1f121c915d8bdd00db6aac20827-Abstract-Conference.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 11:07:32</dcterms:dateSubmitted>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_73">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/73/Jin et al. - Long-Context LLMs Meet RAG Overcoming Challenges for Long Inputs in RAG.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://proceedings.iclr.cc/paper_files/paper/2025/file/5df5b1f121c915d8bdd00db6aac20827-Paper-Conference.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 11:07:34</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="http://arxiv.org/abs/2501.09136">
+        <z:itemType>preprint</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>arXiv</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Singh</foaf:surname>
+                        <foaf:givenName>Aditi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ehtesham</foaf:surname>
+                        <foaf:givenName>Abul</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kumar</foaf:surname>
+                        <foaf:givenName>Saket</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Khoei</foaf:surname>
+                        <foaf:givenName>Tala Talaei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_79"/>
+        <link:link rdf:resource="#item_78"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Computation and Language</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Information Retrieval</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Computer Science - Artificial Intelligence</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:title>Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG</dc:title>
+        <dcterms:abstract>Large Language Models (LLMs) have revolutionized artificial intelligence (AI) by enabling human like text generation and natural language understanding. However, their reliance on static training data limits their ability to respond to dynamic, real time queries, resulting in outdated or inaccurate outputs. Retrieval Augmented Generation (RAG) has emerged as a solution, enhancing LLMs by integrating real time data retrieval to provide contextually relevant and up-to-date responses. Despite its promise, traditional RAG systems are constrained by static workflows and lack the adaptability required for multistep reasoning and complex task management. Agentic Retrieval-Augmented Generation (Agentic RAG) transcends these limitations by embedding autonomous AI agents into the RAG pipeline. These agents leverage agentic design patterns reflection, planning, tool use, and multiagent collaboration to dynamically manage retrieval strategies, iteratively refine contextual understanding, and adapt workflows to meet complex task requirements. This integration enables Agentic RAG systems to deliver unparalleled flexibility, scalability, and context awareness across diverse applications. This survey provides a comprehensive exploration of Agentic RAG, beginning with its foundational principles and the evolution of RAG paradigms. It presents a detailed taxonomy of Agentic RAG architectures, highlights key applications in industries such as healthcare, finance, and education, and examines practical implementation strategies. Additionally, it addresses challenges in scaling these systems, ensuring ethical decision making, and optimizing performance for real-world applications, while providing detailed insights into frameworks and tools for implementing Agentic RAG.</dcterms:abstract>
+        <dc:date>2025-02-04</dc:date>
+        <z:shortTitle>Agentic Retrieval-Augmented Generation</z:shortTitle>
+        <z:libraryCatalog>arXiv.org</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2501.09136</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 14:47:35</dcterms:dateSubmitted>
+        <dc:description>arXiv:2501.09136 [cs]</dc:description>
+        <dc:identifier>DOI 10.48550/arXiv.2501.09136</dc:identifier>
+        <prism:number>arXiv:2501.09136</prism:number>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_79">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/79/Singh et al. - 2025 - Agentic Retrieval-Augmented Generation A Survey on Agentic RAG.pdf"/>
+        <dc:title>Preprint PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/pdf/2501.09136v3</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 14:47:38</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_78">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/78/2501.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://arxiv.org/abs/2501.09136</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 14:47:36</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://aclanthology.org/2024.findings-acl.372/">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Findings of the Association for Computational Linguistics: ACL 2024</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2024.findings-acl.372</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Bangkok, Thailand</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xiong</foaf:surname>
+                        <foaf:givenName>Guangzhi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jin</foaf:surname>
+                        <foaf:givenName>Qiao</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lu</foaf:surname>
+                        <foaf:givenName>Zhiyong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenName>Aidong</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ku</foaf:surname>
+                        <foaf:givenName>Lun-Wei</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Martins</foaf:surname>
+                        <foaf:givenName>Andre</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Srikumar</foaf:surname>
+                        <foaf:givenName>Vivek</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_81"/>
+        <dc:title>Benchmarking Retrieval-Augmented Generation for Medicine</dc:title>
+        <dcterms:abstract>While large language models (LLMs) have achieved state-of-the-art performance on a wide range of medical question answering (QA) tasks, they still face challenges with hallucinations and outdated knowledge. Retrieval-augmented generation (RAG) is a promising solution and has been widely adopted. However, a RAG system can involve multiple flexible components, and there is a lack of best practices regarding the optimal RAG setting for various medical purposes. To systematically evaluate such systems, we propose the Medical Information Retrieval-Augmented Generation Evaluation (MIRAGE), a first-of-its-kind benchmark including 7,663 questions from five medical QA datasets. Using MIRAGE, we conducted large-scale experiments with over 1.8 trillion prompt tokens on 41 combinations of different corpora, retrievers, and backbone LLMs through the MedRAG toolkit introduced in this work. Overall, MedRAG improves the accuracy of six different LLMs by up to 18% over chain-of-thought prompting, elevating the performance of GPT-3.5 and Mixtral to GPT-4-level. Our results show that the combination of various medical corpora and retrievers achieves the best performance. In addition, we discovered a log-linear scaling property and the “lost-in-the-middle” effects in medical RAG. We believe our comprehensive evaluations can serve as practical guidelines for implementing RAG systems for medicine.</dcterms:abstract>
+        <dc:date>2024-08</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://aclanthology.org/2024.findings-acl.372/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 14:59:36</dcterms:dateSubmitted>
+        <bib:pages>6233–6251</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>Findings 2024</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_81">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/81/Xiong et al. - 2024 - Benchmarking Retrieval-Augmented Generation for Medicine.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://aclanthology.org/2024.findings-acl.372.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 14:59:37</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="https://aclanthology.org/2023.findings-emnlp.97/">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Findings of the Association for Computational Linguistics: EMNLP 2023</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2023.findings-emnlp.97</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Singapore</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pan</foaf:surname>
+                        <foaf:givenName>Yikang</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pan</foaf:surname>
+                        <foaf:givenName>Liangming</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chen</foaf:surname>
+                        <foaf:givenName>Wenhu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Nakov</foaf:surname>
+                        <foaf:givenName>Preslav</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kan</foaf:surname>
+                        <foaf:givenName>Min-Yen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>William</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bouamor</foaf:surname>
+                        <foaf:givenName>Houda</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pino</foaf:surname>
+                        <foaf:givenName>Juan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bali</foaf:surname>
+                        <foaf:givenName>Kalika</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_83"/>
+        <dc:title>On the Risk of Misinformation Pollution with Large Language Models</dc:title>
+        <dcterms:abstract>We investigate the potential misuse of modern Large Language Models (LLMs) for generating credible-sounding misinformation and its subsequent impact on information-intensive applications, particularly Open-Domain Question Answering (ODQA) systems. We establish a threat model and simulate potential misuse scenarios, both unintentional and intentional, to assess the extent to which LLMs can be utilized to produce misinformation. Our study reveals that LLMs can act as effective misinformation generators, leading to a significant degradation (up to 87%) in the performance of ODQA systems. Moreover, we uncover disparities in the attributes associated with persuading humans and machines, presenting an obstacle to current human-centric approaches to combat misinformation. To mitigate the harm caused by LLM-generated misinformation, we propose three defense strategies: misinformation detection, vigilant prompting, and reader ensemble. These approaches have demonstrated promising results, albeit with certain associated costs. Lastly, we discuss the practicality of utilizing LLMs as automatic misinformation generators and provide relevant resources and code to facilitate future research in this area.</dcterms:abstract>
+        <dc:date>2023-12</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://aclanthology.org/2023.findings-emnlp.97/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 17:43:23</dcterms:dateSubmitted>
+        <bib:pages>1389–1403</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>Findings 2023</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_83">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/83/Pan et al. - 2023 - On the Risk of Misinformation Pollution with Large Language Models.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://aclanthology.org/2023.findings-emnlp.97.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-04 17:43:24</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://research.ebsco.com/linkprocessor/plink?id=443a0b43-b2db-336f-9479-3e8be36626cc">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>27</prism:volume>
+                <dc:title>Journal of Medical Internet Research</dc:title>
+                <dc:identifier>DOI 10.2196/70131</dc:identifier>
+                <dcterms:alternative>Journal of Medical Internet Research</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kelly</foaf:surname>
+                        <foaf:givenName>Anthony</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Noctor</foaf:surname>
+                        <foaf:givenName>Eoin</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ryan</foaf:surname>
+                        <foaf:givenName>Laura</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>van de Ven</foaf:surname>
+                        <foaf:givenName>Pepijn</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_85"/>
+        <link:link rdf:resource="#item_86"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Artificial Intelligence</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Chatbots</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Health Literacy</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Large Language Models</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Traditions</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Trust (Social Behavior)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Type 2 Diabetes</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:title>The effectiveness of a custom AI chatbot for type 2 diabetes mellitus health literacy: Development and evaluation study.</dc:title>
+        <dcterms:abstract>Background: People living with chronic diseases are increasingly seeking health information online. For individuals with diabetes, traditional educational materials often lack reliability and fail to engage or empower them effectively. Innovative approaches such as retrieval-augmented generation (RAG) powered by large language models have the potential to enhance health literacy by delivering interactive, medically accurate, and user-focused resources based on trusted sources. Objective: This study aimed to evaluate the effectiveness of a custom RAG-based artificial intelligence chatbot designed to improve health literacy on type 2 diabetes mellitus (T2DM) by sourcing information from validated reference documents and attributing sources. Methods: A T2DM chatbot was developed using a fixed prompt and reference documents. Two evaluations were performed: (1) a curated set of 44 questions assessed by specialists for appropriateness (appropriate, partly appropriate, or inappropriate) and source attribution (matched, partly matched, unmatched, or general knowledge) and (2) a simulated consultation of 16 queries reflecting a typical patient’s concerns. Results: Of the 44 evaluated questions, 32 (73%) responses cited reference documents, and 12 (27%) were attributed to general knowledge. Among the 32 sourced responses, 30 (94%) were deemed fully appropriate, with the remaining 2 (6%) being deemed partly appropriate. Of the 12 general knowledge responses, 1 (8%) was inappropriate. In the 16-question simulated consultation, all responses (100%) were fully appropriate and sourced from the reference documents. Conclusions: A RAG-based large language model chatbot can deliver contextually appropriate, empathetic, and clinically credible responses to T2DM queries. By consistently citing trusted sources and notifying users when relying on general knowledge, this approach enhances transparency and trust. The findings have relevance for health educators, highlighting that patient-centric reference documents—structured to address frequent patient questions—are particularly effective. Moreover, instances in which the chatbot signals that it has drawn on general knowledge can provide opportunities for health educators to refine and expand their materials, ensuring that more future queries are answered from trusted sources. The findings suggest that such chatbots may support patient education, promote self-management, and be readily adapted to other health contexts. (PsycInfo Database Record (c) 2025 APA, all rights reserved)</dcterms:abstract>
+        <dc:date>2025-05-05</dc:date>
+        <z:language>eng</z:language>
+        <z:shortTitle>The effectiveness of a custom AI chatbot for type 2 diabetes mellitus health literacy</z:shortTitle>
+        <dc:coverage>2026-14924-001</dc:coverage>
+        <z:libraryCatalog>EBSCOhost</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://research.ebsco.com/linkprocessor/plink?id=443a0b43-b2db-336f-9479-3e8be36626cc</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-06 12:02:16</dcterms:dateSubmitted>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_85">
+        <z:itemType>attachment</z:itemType>
+        <dc:title>PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://www.jmir.org/2025/1/e70131/PDF</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-06 12:08:29</dcterms:dateSubmitted>
+        <z:linkMode>3</z:linkMode>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_86">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/86/Kelly et al. - 2025 - The effectiveness of a custom AI chatbot for type 2 diabetes mellitus health literacy Development a.pdf"/>
+        <dc:title>PDF</dc:title>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_88">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+           <bib:Journal></bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Zhang</foaf:surname>
+                        <foaf:givenName>Xumou</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hu</foaf:surname>
+                        <foaf:givenName>Qixuan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kim</foaf:surname>
+                        <foaf:givenName>Jinman</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Dunn</foaf:surname>
+                        <foaf:givenName>Adam G</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_87"/>
+        <dc:title>Strategies for Efficient Retrieval-augmented Generation in Clinical Domains with RAPTOR: A Benchmarking Study</dc:title>
+        <dcterms:abstract>The Recursive Abstractive Processing for TreeOrganized Retrieval (RAPTOR) framework deploys a hierarchical tree-structured datastore to integrate local and global context, enabling efficient handling of long documents for language models. This design is especially useful when cloud-based language models are unavailable or undesirable. For instance, with offline confidential patient records or stringent dataprivacy requirements. We benchmarked RAPTOR on the QuALITY dataset and a novel Clinical Trial question-answering dataset (CTQA) drawn from over 500 000 registry entries. Experiments varied question complexity (simple vs. complex), four language models, four embedding models, and three chunking strategies. Also incorporated GPT-4o as a cloudbased baseline. Results show that, with optimal settings, RAPTOR combined with smaller local models outperforms GPT-4o on complex CTQA questions, although this gain does not extend to QuALITY. These outcomes highlight RAPTOR’s promise as a practical, locally implementable solution for long-context understanding.</dcterms:abstract>
+        <z:language>en</z:language>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_87">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/87/Zhang et al. - Strategies for Efficient Retrieval-augmented Generation in Clinical Domains with RAPTOR A Benchmark.pdf"/>
+        <dc:title>PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://acl-bg.org/proceedings/2025/RANLP%202025/pdf/2025.ranlp-1.164.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-06 16:54:16</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_89">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>12</prism:volume>
+                <dc:title>Bioengineering</dc:title>
+                <dc:identifier>DOI 10.3390/bioengineering12111194</dc:identifier>
+                <dcterms:alternative>Bioengineering</dcterms:alternative>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gomez-Cabello</foaf:surname>
+                        <foaf:givenName>Cesar</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Srinivasagam</foaf:surname>
+                        <foaf:givenName>Prabha</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Haider</foaf:surname>
+                        <foaf:givenName>Syed</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Genovese</foaf:surname>
+                        <foaf:givenName>Ariana</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Collaco</foaf:surname>
+                        <foaf:givenName>Bernardo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wood</foaf:surname>
+                        <foaf:givenName>Nadia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bagaria</foaf:surname>
+                        <foaf:givenName>Sanjay</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Forte</foaf:surname>
+                        <foaf:givenName>Antonio</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_90"/>
+        <dc:title>Comparative Evaluation of Advanced Chunking for Retrieval-Augmented Generation in Large Language Models for Clinical Decision Support</dc:title>
+        <dcterms:abstract>Retrieval-augmented generation (RAG) quality depends on how source documents are segmented before indexing; fixed-length chunks can split concepts or add noise, reducing precision. We evaluated whether proposition, semantic, and adaptive chunking improve accuracy and relevance for safer clinical decision support. Using a curated domain knowledge base with Gemini 1.0 Pro, we built four otherwise identical RAG pipelines that differed only in the chunking strategy: adaptive length, proposition, semantic, and a fixed token-dependent baseline. Thirty common postoperative rhinoplasty questions were submitted to each pipeline. Outcomes included medical accuracy and clinical relevance (3-point Likert scale) and retrieval precision, recall, and F1; group differences were tested with ANOVA and Tukey post hoc analyses. Adaptive chunking achieved the highest accuracy—87% (Likert 2.37 ± 0.72) versus baseline 50% (1.63 ± 0.72; p = 0.001)—and the highest relevance (93%, 2.90 ± 0.40). Retrieval metrics were strongest with adaptive (precision 0.50, recall 0.88, F1 0.64) versus baseline (0.17, 0.40, 0.24). Proposition and semantic strategies improved all metrics relative to baseline, though less than adaptive. Aligning chunks to logical topic boundaries yielded more accurate, relevant answers without modifying the language model, offering a model-agnostic, data-source-neutral lever to enhance the safety and utility of LLM-based clinical decision support.</dcterms:abstract>
+        <dc:date>2025-11-01</dc:date>
+        <z:libraryCatalog>ResearchGate</z:libraryCatalog>
+        <bib:pages>1194</bib:pages>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_90">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/90/Gomez-Cabello et al. - 2025 - Comparative Evaluation of Advanced Chunking for Retrieval-Augmented Generation in Large Language Mod.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.researchgate.net/journal/Bioengineering-2306-5354/publication/397221843_Comparative_Evaluation_of_Advanced_Chunking_for_Retrieval-Augmented_Generation_in_Large_Language_Models_for_Clinical_Decision_Support/links/69273f60acf4cf6385383ce2/Comparative-Evaluation-of-Advanced-Chunking-for-Retrieval-Augmented-Generation-in-Large-Language-Models-for-Clinical-Decision-Support.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-06 17:17:02</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <rdf:Description rdf:about="urn:isbn:979-8-89176-195-7">
+        <z:itemType>conferencePaper</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:identifier>ISBN 979-8-89176-195-7</dc:identifier>
+                <dc:title>Findings of the Association for Computational Linguistics: NAACL 2025</dc:title>
+                <dc:identifier>DOI 10.18653/v1/2025.findings-naacl.114</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+                <vcard:adr>
+                    <vcard:Address>
+                       <vcard:locality>Albuquerque, New Mexico</vcard:locality>
+                    </vcard:Address>
+                </vcard:adr>
+                <foaf:name>Association for Computational Linguistics</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Qu</foaf:surname>
+                        <foaf:givenName>Renyi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tu</foaf:surname>
+                        <foaf:givenName>Ruixuan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Bao</foaf:surname>
+                        <foaf:givenName>Forrest Sheng</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Chiruzzo</foaf:surname>
+                        <foaf:givenName>Luis</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ritter</foaf:surname>
+                        <foaf:givenName>Alan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Wang</foaf:surname>
+                        <foaf:givenName>Lu</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <link:link rdf:resource="#item_92"/>
+        <dc:title>Is Semantic Chunking Worth the Computational Cost?</dc:title>
+        <dcterms:abstract>Recent advances in Retrieval-Augmented Generation (RAG) systems have popularized semantic chunking, which aims to improve retrieval performance by dividing documents into semantically coherent segments. Despite its growing adoption, the actual benefits over simpler fixed-size chunking, where documents are split into consecutive, fixed-size segments, remain unclear. This study systematically evaluates the effectiveness of semantic chunking using three common retrieval-related tasks: document retrieval, evidence retrieval, and retrieval-based answer generation. The results show that the computational costs associated with semantic chunking are not justified by consistent performance gains. These findings challenge the previous assumptions about semantic chunking and highlight the need for more efficient chunking strategies in RAG systems.</dcterms:abstract>
+        <dc:date>2025-04</dc:date>
+        <z:libraryCatalog>ACLWeb</z:libraryCatalog>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://aclanthology.org/2025.findings-naacl.114/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-06 17:25:52</dcterms:dateSubmitted>
+        <bib:pages>2155–2177</bib:pages>
+        <bib:presentedAt>
+           <bib:Conference><dc:title>Findings 2025</dc:title></bib:Conference>
+        </bib:presentedAt>
+    </rdf:Description>
+    <z:Attachment rdf:about="#item_92">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/92/Qu et al. - 2025 - Is Semantic Chunking Worth the Computational Cost.pdf"/>
+        <dc:title>Full Text PDF</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://aclanthology.org/2025.findings-naacl.114.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-06 17:26:32</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://ollama.com/gpt-oss:120b-cloud">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_94"/>
+        <dc:title>gpt-oss:120b-cloud</dc:title>
+        <dcterms:abstract>OpenAI’s open-weight models designed for powerful reasoning, agentic tasks, and versatile developer use cases.</dcterms:abstract>
+        <z:shortTitle>gpt-oss</z:shortTitle>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://ollama.com/gpt-oss:120b-cloud</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-11 14:45:14</dcterms:dateSubmitted>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_94">
+        <z:itemType>attachment</z:itemType>
+        <rdf:resource rdf:resource="files/94/gpt-oss120b-cloud.html"/>
+        <dc:title>Snapshot</dc:title>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://ollama.com/gpt-oss:120b-cloud</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2026-01-11 14:45:19</dcterms:dateSubmitted>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+</rdf:RDF>
