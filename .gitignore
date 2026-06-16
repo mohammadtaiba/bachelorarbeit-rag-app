@@ -20,3 +20,4 @@ db/*
 test/db/*
 
 docs/*.pdf
+docs/*.docx
