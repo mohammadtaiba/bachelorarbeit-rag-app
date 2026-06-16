@@ -21,3 +21,4 @@ test/db/*
 
 docs/*.pdf
 docs/*.docx
+test/*.html
