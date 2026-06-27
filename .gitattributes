@@ -1,0 +1,2 @@
+*.zip filter=lfs diff=lfs merge=lfs -text
+db_qwen3-embedding-8b.zip filter=lfs diff=lfs merge=lfs -text
