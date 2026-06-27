@@ -1,4 +1,4 @@
-# RAG-Bot für Nachhaltigkeitsberichte
+# RAG-Chatbot für Nachhaltigkeitsberichte
 
 ![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white)
