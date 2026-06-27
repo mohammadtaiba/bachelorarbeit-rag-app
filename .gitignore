@@ -22,3 +22,17 @@ test/db/*
 docs/*.pdf
 docs/*.docx
 test/*.html
+core/__pycache__/__init__.cpython-311.pyc
+core/__pycache__/config.cpython-311.pyc
+core/__pycache__/ingestion.cpython-311.pyc
+core/__pycache__/retrieval.cpython-311.pyc
+test/__pycache__/conftest.cpython-311-pytest-9.1.1.pyc
+test/__pycache__/test_llm_response.cpython-311-pytest-9.1.1.pyc
+utils/__pycache__/__init__.cpython-311.pyc
+utils/__pycache__/answer_meta_questions.cpython-311.pyc
+utils/__pycache__/chunking.cpython-311.pyc
+utils/__pycache__/loaders.cpython-311.pyc
+utils/__pycache__/logger.cpython-311.pyc
+utils/__pycache__/manage_files.cpython-311.pyc
+utils/__pycache__/ollama_embed.cpython-311.pyc
+utils/__pycache__/watchdog.cpython-311.pyc
