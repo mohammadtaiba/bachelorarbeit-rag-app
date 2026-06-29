@@ -11,6 +11,30 @@ Interaktive Streamlit-Anwendung zur Analyse von Nachhaltigkeitsberichten auf Bas
 
 Das Projekt wurde im Rahmen einer Bachelorarbeit entwickelt und untersucht, wie RAG-Ansätze die Auswertung und Verbesserung von Nachhaltigkeitsberichten unterstützen können.
 
+
+## Inhaltsverzeichnis
+
+* [Projektziel](#projektziel)
+* [Funktionsumfang](#funktionsumfang)
+* [Screenshots](#screenshots)
+
+  * [Chat-Oberfläche](#chat-oberfläche)
+  * [Systemarchitektur](#systemarchitektur)
+* [Tech Stack](#tech-stack)
+* [Projektstruktur](#projektstruktur)
+* [Voraussetzungen](#voraussetzungen)
+* [Lokaler Start](#lokaler-start)
+
+  * [1) Virtuelle Umgebung erstellen](#1-virtuelle-umgebung-erstellen)
+  * [2) Abhängigkeiten installieren](#2-abhängigkeiten-installieren)
+  * [3) Datenbasis bereitstellen](#3-datenbasis-bereitstellen)
+  * [4) Ollama-Modelle prüfen](#4-ollama-modelle-prüfen)
+  * [5) App starten](#5-app-starten)
+* [Hinweise](#hinweise)
+* [License](#license)
+
+
+
 ## Projektziel
 
 Ziel ist es, Nachhaltigkeitsberichte schnell, nachvollziehbar und strukturiert auszuwerten. Die Anwendung soll nicht nur Antworten liefern, sondern den Analyseprozess transparent machen: Welche Quelle wurde verwendet? Welche Informationen sind relevant? Welche nächsten Fragen lohnen sich?
@@ -112,8 +136,17 @@ ollama list
 streamlit run main.py
 ```
 
-
 ## Hinweise
 
 - Die konkrete Modell- und Pfadkonfiguration wird über `.env` gesteuert.
 - Die Anwendung ist für lokale Ausführung und Demonstration ausgelegt.
+
+
+## License
+
+Copyright (c) 2026 Mohammad Taiba. All rights reserved.
+
+This project is published for portfolio and review purposes only. See [LICENSE](./LICENSE).
+
+
+
